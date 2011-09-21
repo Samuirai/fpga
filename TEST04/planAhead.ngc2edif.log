@@ -1,0 +1,68 @@
+Release 13.2 - ngc2edif O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+Reading design main.ngc ...
+WARNING:NetListWriters:298 - No output is written to main.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus COUNTER<10 : 0> on block main is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus GND_4_o_GND_4_o_div_13/n0779<14 : 6> on
+   block main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus GND_4_o_GND_4_o_div_18/n0819<15 : 3> on
+   block main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Mmux_GND_4_o_GND_4_o_mux_8_OUT_rs_lut<13
+   : 0> on block main is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_18/Madd_a[15]_GND_11_o_add_19_OUT_cy<13 : 10> on block
+   main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_13/Madd_a[14]_b[7]_add_21_OUT_cy<12 : 9> on block main is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_18/Madd_a[15]_GND_11_o_add_21_OUT_cy<13 : 9> on block
+   main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_13/Madd_a[14]_GND_7_o_add_23_OUT_cy<12 : 8> on block main
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_18/Madd_a[15]_GND_11_o_add_23_OUT_cy<12 : 8> on block
+   main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_13/Madd_a[14]_GND_7_o_add_25_OUT_cy<11 : 7> on block main
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_18/Madd_a[15]_GND_11_o_add_25_OUT_cy<12 : 7> on block
+   main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_13/Madd_a[14]_GND_7_o_add_27_OUT_cy<11 : 6> on block main
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_18/Madd_a[15]_GND_11_o_add_27_OUT_cy<12 : 6> on block
+   main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_13/Madd_a[14]_GND_7_o_add_29_OUT[14:0]_cy<11 : 5> on
+   block main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_18/Madd_a[15]_GND_11_o_add_29_OUT_cy<12 : 5> on block
+   main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_13/Madd_a[14]_GND_7_o_add_31_OUT[14:0]_cy<11 : 4> on
+   block main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_18/Madd_a[15]_GND_11_o_add_31_OUT[15:0]_lut<15 : 4> on
+   block main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_13/Madd_a[14]_GND_7_o_add_33_OUT[14:0]_lut<14 : 3> on
+   block main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_18/Madd_a[15]_GND_11_o_add_33_OUT[15:0]_lut<15 : 3> on
+   block main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   GND_4_o_GND_4_o_div_18/Madd_a[15]_GND_11_o_add_35_OUT[15:0]_lut<15 : 2> on
+   block main is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file main.edif ...
+ngc2edif: Total memory usage is 70640 kilobytes
+

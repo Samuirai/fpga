@@ -1,0 +1,3 @@
+vhdl work "sevenSegment.vhd"
+vhdl work "clockDivider2.vhd"
+vhdl work "main.vhd"

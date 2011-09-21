@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=Z:\coding\fpga\TEST04\main.ncd
+OUTFILE=Z:\coding\fpga\TEST04\main.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=Z:\coding\fpga\TEST04
+LICENSE=WebPack
+USER_INFO=207836452_0_0_931
