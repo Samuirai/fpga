@@ -73,21 +73,8 @@ begin
 		variable zahl,ziel,start : integer;
 	begin
 		-- sets the counting speed
-
-		-- sets the ziel (destination) for the counting from the switches
-		start := to_integer(unsigned(sw));
-		
-		if start>ziel then
-			speed <= 8000/(start-ziel);
-		end if;
-		if start<ziel then
-			speed <= 8000/(ziel-start);
-		end if;
-		if start=ziel then
-			speed <= 500;
-		end if;
-		ziel := to_integer(unsigned(sw));	
-		
+		speed <= 500;
+		ziel := to_integer(unsigned(sw));
 		-- count up or down, depends on the ziel (destination) what binary number is set by the switches
 		if (clk3'event and clk3 = '1') then	
 			if COUNTER > ziel then

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2011-09-20T00:28:47</DateModified>
+  <DateModified>2011-09-21T19:13:15</DateModified>
   <ModuleName>main</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2011-09-20T00:56:19</SummaryTimeStamp>
   <SavedFilePath>Z:/coding/fpga/TEST04/iseconfig/main.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>Z:/coding/fpga/TEST04\</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>Z:/coding/fpga/TEST04</ImplementationReportsDirectory>
   <DateInitialized>2011-09-20T00:19:46</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
