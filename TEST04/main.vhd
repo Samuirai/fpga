@@ -54,7 +54,7 @@ architecture Behavioral of main is
 	-- signals used inside of the main blog
 	signal z1,z2,z3,z4 : STD_LOGIC_VECTOR (3 downto 0);
 	signal COUNTER: integer range 0 to 9999;
-	signal speed: integer range 0 to 50000;
+	signal speed: integer range 0 to 50000 := 500;
 begin
 	
 	-- divides the clock. clk2 for the 7segment multiplex
@@ -70,12 +70,25 @@ begin
 	-- process to count and calculate the numbers for the 7 segment display
 	process
 		variable einer,zehner,hunderter,tausender : integer range 0 to 9;
-		variable zahl,ziel : integer;
+		variable zahl,ziel,start : integer;
 	begin
-		speed <= 500;
+		-- sets the counting speed
+
+		-- sets the ziel (destination) for the counting from the switches
+		start := to_integer(unsigned(sw));
+		
+		if start>ziel then
+			speed <= 8000/(start-ziel);
+		end if;
+		if start<ziel then
+			speed <= 8000/(ziel-start);
+		end if;
+		if start=ziel then
+			speed <= 500;
+		end if;
 		ziel := to_integer(unsigned(sw));	
 		
-		-- count up or down, depends on the ziel (goal) what binary number is set by the switches
+		-- count up or down, depends on the ziel (destination) what binary number is set by the switches
 		if (clk3'event and clk3 = '1') then	
 			if COUNTER > ziel then
 				COUNTER <= COUNTER-1;

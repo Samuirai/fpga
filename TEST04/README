@@ -1,0 +1,11 @@
+This is my first VHDL Test Project for my NEXYS3 Board from digilent with an Spartan-6
+What it does:
+    You can set a binary number with the switches on the board.
+    The 7-Segment Display, with the 4 digits, will display this number, after counting to it.
+    It can count reverse or forward, depending on the current and new number.
+What I have learned:
+    FPGA 100mhz clock is too fast for the signals for the 7-Segment Display. It was not possible to multiplex it.
+    When I reduced the clock speed, everything worked.
+    Having multiple VHDL modules and used them in a main module.
+
+This folder includes the full 13.2 ISE Project. You can clone this and open the project.

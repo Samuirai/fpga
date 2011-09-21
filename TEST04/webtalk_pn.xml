@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pn" timeStamp="Wed Sep 21 13:20:16 2011">
+<application name="pn" timeStamp="Wed Sep 21 15:15:02 2011">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="F72EEC2DF9214402BD2D9F0B69A8F675" type="project"/>
-<property name="ProjectIteration" value="37" type="project"/>
+<property name="ProjectIteration" value="43" type="project"/>
 <property name="ProjectFile" value="Z:/coding/fpga/TEST04/TEST04.xise" type="project"/>
 <property name="ProjectCreationTimestamp" value="2011-09-20T00:19:28" type="project"/>
 </section>
@@ -24,7 +24,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_UserConstraintEditorPreference" value="Text Editor" type="process"/>
 <property name="PROP_intProjectCreationTimestamp" value="2011-09-20T00:19:28" type="design"/>
 <property name="PROP_intWbtProjectID" value="F72EEC2DF9214402BD2D9F0B69A8F675" type="design"/>
-<property name="PROP_intWbtProjectIteration" value="37" type="process"/>
+<property name="PROP_intWbtProjectIteration" value="43" type="process"/>
 <property name="PROP_intWorkingDirLocWRTProjDir" value="Same" type="design"/>
 <property name="PROP_intWorkingDirUsed" value="No" type="design"/>
 <property name="PROP_lockPinsUcfFile" value="changed" type="process"/>
