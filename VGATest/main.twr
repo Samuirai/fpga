@@ -1,0 +1,652 @@
+--------------------------------------------------------------------------------
+Release 13.2 Trace  (nt)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\13.2\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml main.twx main.ncd -o main.twr main.pcf
+
+Design file:              main.ncd
+Physical constraint file: main.pcf
+Device,package,speed:     xc6slx16,csg324,C,-3 (PRODUCTION 1.19 2011-06-20)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 
+50%;
+
+ 1889 paths analyzed, 64 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   3.307ns.
+--------------------------------------------------------------------------------
+
+Paths for end point CockDivider25Mhz/COUNT1_17 (SLICE_X25Y36.B1), 18 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     6.693ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               CockDivider25Mhz/COUNT1_1 (FF)
+  Destination:          CockDivider25Mhz/COUNT1_17 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.258ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.014ns (0.150 - 0.164)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: CockDivider25Mhz/COUNT1_1 to CockDivider25Mhz/COUNT1_17
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y32.BQ      Tcko                  0.391   CockDivider25Mhz/COUNT1<3>
+                                                       CockDivider25Mhz/COUNT1_1
+    SLICE_X24Y32.B1      net (fanout=3)        0.622   CockDivider25Mhz/COUNT1<1>
+    SLICE_X24Y32.COUT    Topcyb                0.375   CockDivider25Mhz/Mcount_COUNT1_cy<3>
+                                                       CockDivider25Mhz/COUNT1<1>_rt
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<3>
+    SLICE_X24Y33.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcount_COUNT1_cy<3>
+    SLICE_X24Y33.COUT    Tbyp                  0.076   CockDivider25Mhz/Mcount_COUNT1_cy<7>
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<7>
+    SLICE_X24Y34.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcount_COUNT1_cy<7>
+    SLICE_X24Y34.COUT    Tbyp                  0.076   CockDivider25Mhz/Mcount_COUNT1_cy<11>
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<11>
+    SLICE_X24Y35.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcount_COUNT1_cy<11>
+    SLICE_X24Y35.COUT    Tbyp                  0.076   CockDivider25Mhz/Mcount_COUNT1_cy<15>
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<15>
+    SLICE_X24Y36.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcount_COUNT1_cy<15>
+    SLICE_X24Y36.BMUX    Tcinb                 0.260   CockDivider25Mhz/Mcount_COUNT1_cy<19>
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<19>
+    SLICE_X25Y36.B1      net (fanout=1)        1.048   Result<17>
+    SLICE_X25Y36.CLK     Tas                   0.322   CockDivider25Mhz/COUNT1<19>
+                                                       CockDivider25Mhz/COUNT1_17_rstpot
+                                                       CockDivider25Mhz/COUNT1_17
+    -------------------------------------------------  ---------------------------
+    Total                                      3.258ns (1.576ns logic, 1.682ns route)
+                                                       (48.4% logic, 51.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.722ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               CockDivider25Mhz/COUNT1_0 (FF)
+  Destination:          CockDivider25Mhz/COUNT1_17 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.229ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.014ns (0.150 - 0.164)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: CockDivider25Mhz/COUNT1_0 to CockDivider25Mhz/COUNT1_17
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y32.AQ      Tcko                  0.391   CockDivider25Mhz/COUNT1<3>
+                                                       CockDivider25Mhz/COUNT1_0
+    SLICE_X24Y32.A2      net (fanout=3)        0.573   CockDivider25Mhz/COUNT1<0>
+    SLICE_X24Y32.COUT    Topcya                0.395   CockDivider25Mhz/Mcount_COUNT1_cy<3>
+                                                       CockDivider25Mhz/Mcount_COUNT1_lut<0>_INV_0
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<3>
+    SLICE_X24Y33.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcount_COUNT1_cy<3>
+    SLICE_X24Y33.COUT    Tbyp                  0.076   CockDivider25Mhz/Mcount_COUNT1_cy<7>
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<7>
+    SLICE_X24Y34.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcount_COUNT1_cy<7>
+    SLICE_X24Y34.COUT    Tbyp                  0.076   CockDivider25Mhz/Mcount_COUNT1_cy<11>
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<11>
+    SLICE_X24Y35.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcount_COUNT1_cy<11>
+    SLICE_X24Y35.COUT    Tbyp                  0.076   CockDivider25Mhz/Mcount_COUNT1_cy<15>
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<15>
+    SLICE_X24Y36.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcount_COUNT1_cy<15>
+    SLICE_X24Y36.BMUX    Tcinb                 0.260   CockDivider25Mhz/Mcount_COUNT1_cy<19>
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<19>
+    SLICE_X25Y36.B1      net (fanout=1)        1.048   Result<17>
+    SLICE_X25Y36.CLK     Tas                   0.322   CockDivider25Mhz/COUNT1<19>
+                                                       CockDivider25Mhz/COUNT1_17_rstpot
+                                                       CockDivider25Mhz/COUNT1_17
+    -------------------------------------------------  ---------------------------
+    Total                                      3.229ns (1.596ns logic, 1.633ns route)
+                                                       (49.4% logic, 50.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.724ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               CockDivider25Mhz/COUNT1_2 (FF)
+  Destination:          CockDivider25Mhz/COUNT1_17 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.227ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.014ns (0.150 - 0.164)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: CockDivider25Mhz/COUNT1_2 to CockDivider25Mhz/COUNT1_17
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y32.CQ      Tcko                  0.391   CockDivider25Mhz/COUNT1<3>
+                                                       CockDivider25Mhz/COUNT1_2
+    SLICE_X24Y32.C1      net (fanout=3)        0.671   CockDivider25Mhz/COUNT1<2>
+    SLICE_X24Y32.COUT    Topcyc                0.295   CockDivider25Mhz/Mcount_COUNT1_cy<3>
+                                                       CockDivider25Mhz/COUNT1<2>_rt
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<3>
+    SLICE_X24Y33.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcount_COUNT1_cy<3>
+    SLICE_X24Y33.COUT    Tbyp                  0.076   CockDivider25Mhz/Mcount_COUNT1_cy<7>
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<7>
+    SLICE_X24Y34.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcount_COUNT1_cy<7>
+    SLICE_X24Y34.COUT    Tbyp                  0.076   CockDivider25Mhz/Mcount_COUNT1_cy<11>
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<11>
+    SLICE_X24Y35.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcount_COUNT1_cy<11>
+    SLICE_X24Y35.COUT    Tbyp                  0.076   CockDivider25Mhz/Mcount_COUNT1_cy<15>
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<15>
+    SLICE_X24Y36.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcount_COUNT1_cy<15>
+    SLICE_X24Y36.BMUX    Tcinb                 0.260   CockDivider25Mhz/Mcount_COUNT1_cy<19>
+                                                       CockDivider25Mhz/Mcount_COUNT1_cy<19>
+    SLICE_X25Y36.B1      net (fanout=1)        1.048   Result<17>
+    SLICE_X25Y36.CLK     Tas                   0.322   CockDivider25Mhz/COUNT1<19>
+                                                       CockDivider25Mhz/COUNT1_17_rstpot
+                                                       CockDivider25Mhz/COUNT1_17
+    -------------------------------------------------  ---------------------------
+    Total                                      3.227ns (1.496ns logic, 1.731ns route)
+                                                       (46.4% logic, 53.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point CockDivider25Mhz/COUNT1_25 (SLICE_X25Y38.B3), 52 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     6.717ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               CockDivider25Mhz/COUNT1_19 (FF)
+  Destination:          CockDivider25Mhz/COUNT1_25 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.233ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.015ns (0.144 - 0.159)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: CockDivider25Mhz/COUNT1_19 to CockDivider25Mhz/COUNT1_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y36.DQ      Tcko                  0.391   CockDivider25Mhz/COUNT1<19>
+                                                       CockDivider25Mhz/COUNT1_19
+    SLICE_X22Y33.D2      net (fanout=3)        1.010   CockDivider25Mhz/COUNT1<19>
+    SLICE_X22Y33.COUT    Topcyd                0.274   CockDivider25Mhz/Mcompar_n0006_cy<3>
+                                                       CockDivider25Mhz/Mcompar_n0006_lutdi3
+                                                       CockDivider25Mhz/Mcompar_n0006_cy<3>
+    SLICE_X22Y34.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcompar_n0006_cy<3>
+    SLICE_X22Y34.BMUX    Tcinb                 0.268   CockDivider25Mhz/Mcompar_n0006_cy<5>
+                                                       CockDivider25Mhz/Mcompar_n0006_cy<5>
+    SLICE_X25Y38.B3      net (fanout=27)       0.965   CockDivider25Mhz/Mcompar_n0006_cy<5>
+    SLICE_X25Y38.CLK     Tas                   0.322   CockDivider25Mhz/COUNT1<26>
+                                                       CockDivider25Mhz/COUNT1_25_rstpot
+                                                       CockDivider25Mhz/COUNT1_25
+    -------------------------------------------------  ---------------------------
+    Total                                      3.233ns (1.255ns logic, 1.978ns route)
+                                                       (38.8% logic, 61.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.725ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               CockDivider25Mhz/COUNT1_20 (FF)
+  Destination:          CockDivider25Mhz/COUNT1_25 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.228ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.012ns (0.144 - 0.156)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: CockDivider25Mhz/COUNT1_20 to CockDivider25Mhz/COUNT1_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y37.AQ      Tcko                  0.391   CockDivider25Mhz/COUNT1<23>
+                                                       CockDivider25Mhz/COUNT1_20
+    SLICE_X22Y34.A1      net (fanout=3)        1.053   CockDivider25Mhz/COUNT1<20>
+    SLICE_X22Y34.BMUX    Topab                 0.497   CockDivider25Mhz/Mcompar_n0006_cy<5>
+                                                       CockDivider25Mhz/Mcompar_n0006_lut<4>
+                                                       CockDivider25Mhz/Mcompar_n0006_cy<5>
+    SLICE_X25Y38.B3      net (fanout=27)       0.965   CockDivider25Mhz/Mcompar_n0006_cy<5>
+    SLICE_X25Y38.CLK     Tas                   0.322   CockDivider25Mhz/COUNT1<26>
+                                                       CockDivider25Mhz/COUNT1_25_rstpot
+                                                       CockDivider25Mhz/COUNT1_25
+    -------------------------------------------------  ---------------------------
+    Total                                      3.228ns (1.210ns logic, 2.018ns route)
+                                                       (37.5% logic, 62.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.727ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               CockDivider25Mhz/COUNT1_7 (FF)
+  Destination:          CockDivider25Mhz/COUNT1_25 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.219ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.019ns (0.144 - 0.163)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: CockDivider25Mhz/COUNT1_7 to CockDivider25Mhz/COUNT1_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y33.DQ      Tcko                  0.391   CockDivider25Mhz/COUNT1<7>
+                                                       CockDivider25Mhz/COUNT1_7
+    SLICE_X22Y33.B1      net (fanout=3)        0.890   CockDivider25Mhz/COUNT1<7>
+    SLICE_X22Y33.COUT    Topcyb                0.380   CockDivider25Mhz/Mcompar_n0006_cy<3>
+                                                       CockDivider25Mhz/Mcompar_n0006_lut<1>
+                                                       CockDivider25Mhz/Mcompar_n0006_cy<3>
+    SLICE_X22Y34.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcompar_n0006_cy<3>
+    SLICE_X22Y34.BMUX    Tcinb                 0.268   CockDivider25Mhz/Mcompar_n0006_cy<5>
+                                                       CockDivider25Mhz/Mcompar_n0006_cy<5>
+    SLICE_X25Y38.B3      net (fanout=27)       0.965   CockDivider25Mhz/Mcompar_n0006_cy<5>
+    SLICE_X25Y38.CLK     Tas                   0.322   CockDivider25Mhz/COUNT1<26>
+                                                       CockDivider25Mhz/COUNT1_25_rstpot
+                                                       CockDivider25Mhz/COUNT1_25
+    -------------------------------------------------  ---------------------------
+    Total                                      3.219ns (1.361ns logic, 1.858ns route)
+                                                       (42.3% logic, 57.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point CockDivider25Mhz/COUNT1_24 (SLICE_X25Y38.A3), 52 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     6.725ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               CockDivider25Mhz/COUNT1_19 (FF)
+  Destination:          CockDivider25Mhz/COUNT1_24 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.225ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.015ns (0.144 - 0.159)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: CockDivider25Mhz/COUNT1_19 to CockDivider25Mhz/COUNT1_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y36.DQ      Tcko                  0.391   CockDivider25Mhz/COUNT1<19>
+                                                       CockDivider25Mhz/COUNT1_19
+    SLICE_X22Y33.D2      net (fanout=3)        1.010   CockDivider25Mhz/COUNT1<19>
+    SLICE_X22Y33.COUT    Topcyd                0.274   CockDivider25Mhz/Mcompar_n0006_cy<3>
+                                                       CockDivider25Mhz/Mcompar_n0006_lutdi3
+                                                       CockDivider25Mhz/Mcompar_n0006_cy<3>
+    SLICE_X22Y34.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcompar_n0006_cy<3>
+    SLICE_X22Y34.BMUX    Tcinb                 0.268   CockDivider25Mhz/Mcompar_n0006_cy<5>
+                                                       CockDivider25Mhz/Mcompar_n0006_cy<5>
+    SLICE_X25Y38.A3      net (fanout=27)       0.957   CockDivider25Mhz/Mcompar_n0006_cy<5>
+    SLICE_X25Y38.CLK     Tas                   0.322   CockDivider25Mhz/COUNT1<26>
+                                                       CockDivider25Mhz/COUNT1_24_rstpot
+                                                       CockDivider25Mhz/COUNT1_24
+    -------------------------------------------------  ---------------------------
+    Total                                      3.225ns (1.255ns logic, 1.970ns route)
+                                                       (38.9% logic, 61.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.733ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               CockDivider25Mhz/COUNT1_20 (FF)
+  Destination:          CockDivider25Mhz/COUNT1_24 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.220ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.012ns (0.144 - 0.156)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: CockDivider25Mhz/COUNT1_20 to CockDivider25Mhz/COUNT1_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y37.AQ      Tcko                  0.391   CockDivider25Mhz/COUNT1<23>
+                                                       CockDivider25Mhz/COUNT1_20
+    SLICE_X22Y34.A1      net (fanout=3)        1.053   CockDivider25Mhz/COUNT1<20>
+    SLICE_X22Y34.BMUX    Topab                 0.497   CockDivider25Mhz/Mcompar_n0006_cy<5>
+                                                       CockDivider25Mhz/Mcompar_n0006_lut<4>
+                                                       CockDivider25Mhz/Mcompar_n0006_cy<5>
+    SLICE_X25Y38.A3      net (fanout=27)       0.957   CockDivider25Mhz/Mcompar_n0006_cy<5>
+    SLICE_X25Y38.CLK     Tas                   0.322   CockDivider25Mhz/COUNT1<26>
+                                                       CockDivider25Mhz/COUNT1_24_rstpot
+                                                       CockDivider25Mhz/COUNT1_24
+    -------------------------------------------------  ---------------------------
+    Total                                      3.220ns (1.210ns logic, 2.010ns route)
+                                                       (37.6% logic, 62.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.735ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               CockDivider25Mhz/COUNT1_7 (FF)
+  Destination:          CockDivider25Mhz/COUNT1_24 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.211ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.019ns (0.144 - 0.163)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: CockDivider25Mhz/COUNT1_7 to CockDivider25Mhz/COUNT1_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y33.DQ      Tcko                  0.391   CockDivider25Mhz/COUNT1<7>
+                                                       CockDivider25Mhz/COUNT1_7
+    SLICE_X22Y33.B1      net (fanout=3)        0.890   CockDivider25Mhz/COUNT1<7>
+    SLICE_X22Y33.COUT    Topcyb                0.380   CockDivider25Mhz/Mcompar_n0006_cy<3>
+                                                       CockDivider25Mhz/Mcompar_n0006_lut<1>
+                                                       CockDivider25Mhz/Mcompar_n0006_cy<3>
+    SLICE_X22Y34.CIN     net (fanout=1)        0.003   CockDivider25Mhz/Mcompar_n0006_cy<3>
+    SLICE_X22Y34.BMUX    Tcinb                 0.268   CockDivider25Mhz/Mcompar_n0006_cy<5>
+                                                       CockDivider25Mhz/Mcompar_n0006_cy<5>
+    SLICE_X25Y38.A3      net (fanout=27)       0.957   CockDivider25Mhz/Mcompar_n0006_cy<5>
+    SLICE_X25Y38.CLK     Tas                   0.322   CockDivider25Mhz/COUNT1<26>
+                                                       CockDivider25Mhz/COUNT1_24_rstpot
+                                                       CockDivider25Mhz/COUNT1_24
+    -------------------------------------------------  ---------------------------
+    Total                                      3.211ns (1.361ns logic, 1.850ns route)
+                                                       (42.4% logic, 57.6% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point CockDivider25Mhz/clk_out (SLICE_X20Y34.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.503ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               CockDivider25Mhz/clk_out (FF)
+  Destination:          CockDivider25Mhz/clk_out (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.503ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: CockDivider25Mhz/clk_out to CockDivider25Mhz/clk_out
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y34.CQ      Tcko                  0.200   CockDivider25Mhz/clk_out
+                                                       CockDivider25Mhz/clk_out
+    SLICE_X20Y34.C5      net (fanout=2)        0.068   CockDivider25Mhz/clk_out
+    SLICE_X20Y34.CLK     Tah         (-Th)    -0.235   CockDivider25Mhz/clk_out
+                                                       CockDivider25Mhz/clk_out_rt
+                                                       CockDivider25Mhz/clk_out_glue_rst_cy
+                                                       CockDivider25Mhz/clk_out
+    -------------------------------------------------  ---------------------------
+    Total                                      0.503ns (0.435ns logic, 0.068ns route)
+                                                       (86.5% logic, 13.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point CockDivider25Mhz/clk_out (SLICE_X20Y34.A5), 2 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      0.836ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               CockDivider25Mhz/COUNT1_21 (FF)
+  Destination:          CockDivider25Mhz/clk_out (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.835ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.001ns (0.081 - 0.082)
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: CockDivider25Mhz/COUNT1_21 to CockDivider25Mhz/clk_out
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y37.BQ      Tcko                  0.198   CockDivider25Mhz/COUNT1<23>
+                                                       CockDivider25Mhz/COUNT1_21
+    SLICE_X20Y34.A5      net (fanout=3)        0.303   CockDivider25Mhz/COUNT1<21>
+    SLICE_X20Y34.CLK     Tah         (-Th)    -0.334   CockDivider25Mhz/clk_out
+                                                       CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_lutdi4
+                                                       CockDivider25Mhz/clk_out_glue_rst_cy
+                                                       CockDivider25Mhz/clk_out
+    -------------------------------------------------  ---------------------------
+    Total                                      0.835ns (0.532ns logic, 0.303ns route)
+                                                       (63.7% logic, 36.3% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.840ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               CockDivider25Mhz/COUNT1_21 (FF)
+  Destination:          CockDivider25Mhz/clk_out (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.839ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.001ns (0.081 - 0.082)
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: CockDivider25Mhz/COUNT1_21 to CockDivider25Mhz/clk_out
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y37.BQ      Tcko                  0.198   CockDivider25Mhz/COUNT1<23>
+                                                       CockDivider25Mhz/COUNT1_21
+    SLICE_X20Y34.A5      net (fanout=3)        0.303   CockDivider25Mhz/COUNT1<21>
+    SLICE_X20Y34.CLK     Tah         (-Th)    -0.338   CockDivider25Mhz/clk_out
+                                                       CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_lut<4>
+                                                       CockDivider25Mhz/clk_out_glue_rst_cy
+                                                       CockDivider25Mhz/clk_out
+    -------------------------------------------------  ---------------------------
+    Total                                      0.839ns (0.536ns logic, 0.303ns route)
+                                                       (63.9% logic, 36.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point CockDivider25Mhz/clk_out (SLICE_X20Y34.CIN), 39 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      0.848ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               CockDivider25Mhz/COUNT1_18 (FF)
+  Destination:          CockDivider25Mhz/clk_out (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.844ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.004ns (0.081 - 0.085)
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: CockDivider25Mhz/COUNT1_18 to CockDivider25Mhz/clk_out
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y36.CQ      Tcko                  0.198   CockDivider25Mhz/COUNT1<19>
+                                                       CockDivider25Mhz/COUNT1_18
+    SLICE_X20Y33.D5      net (fanout=3)        0.318   CockDivider25Mhz/COUNT1<18>
+    SLICE_X20Y33.COUT    Topcyd                0.181   CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_cy<3>
+                                                       CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_lut<3>
+                                                       CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_cy<3>
+    SLICE_X20Y34.CIN     net (fanout=1)        0.001   CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_cy<3>
+    SLICE_X20Y34.CLK     Tckcin      (-Th)    -0.146   CockDivider25Mhz/clk_out
+                                                       CockDivider25Mhz/clk_out_glue_rst_cy
+                                                       CockDivider25Mhz/clk_out
+    -------------------------------------------------  ---------------------------
+    Total                                      0.844ns (0.525ns logic, 0.319ns route)
+                                                       (62.2% logic, 37.8% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.855ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               CockDivider25Mhz/COUNT1_18 (FF)
+  Destination:          CockDivider25Mhz/clk_out (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.851ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.004ns (0.081 - 0.085)
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: CockDivider25Mhz/COUNT1_18 to CockDivider25Mhz/clk_out
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y36.CQ      Tcko                  0.198   CockDivider25Mhz/COUNT1<19>
+                                                       CockDivider25Mhz/COUNT1_18
+    SLICE_X20Y33.D5      net (fanout=3)        0.318   CockDivider25Mhz/COUNT1<18>
+    SLICE_X20Y33.COUT    Topcyd                0.188   CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_cy<3>
+                                                       CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_lutdi3
+                                                       CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_cy<3>
+    SLICE_X20Y34.CIN     net (fanout=1)        0.001   CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_cy<3>
+    SLICE_X20Y34.CLK     Tckcin      (-Th)    -0.146   CockDivider25Mhz/clk_out
+                                                       CockDivider25Mhz/clk_out_glue_rst_cy
+                                                       CockDivider25Mhz/clk_out
+    -------------------------------------------------  ---------------------------
+    Total                                      0.851ns (0.532ns logic, 0.319ns route)
+                                                       (62.5% logic, 37.5% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.855ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               CockDivider25Mhz/COUNT1_5 (FF)
+  Destination:          CockDivider25Mhz/clk_out (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.847ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.008ns (0.081 - 0.089)
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: CockDivider25Mhz/COUNT1_5 to CockDivider25Mhz/clk_out
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y33.BQ      Tcko                  0.198   CockDivider25Mhz/COUNT1<7>
+                                                       CockDivider25Mhz/COUNT1_5
+    SLICE_X20Y33.B4      net (fanout=3)        0.272   CockDivider25Mhz/COUNT1<5>
+    SLICE_X20Y33.COUT    Topcyb                0.230   CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_cy<3>
+                                                       CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_lutdi1
+                                                       CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_cy<3>
+    SLICE_X20Y34.CIN     net (fanout=1)        0.001   CockDivider25Mhz/Mcompar_COUNT1[26]_GND_6_o_LessThan_2_o_cy<3>
+    SLICE_X20Y34.CLK     Tckcin      (-Th)    -0.146   CockDivider25Mhz/clk_out
+                                                       CockDivider25Mhz/clk_out_glue_rst_cy
+                                                       CockDivider25Mhz/clk_out
+    -------------------------------------------------  ---------------------------
+    Total                                      0.847ns (0.574ns logic, 0.273ns route)
+                                                       (67.8% logic, 32.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 8.270ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.730ns (578.035MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X3Y13.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 9.570ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: CockDivider25Mhz/clk_out/CLK
+  Logical resource: CockDivider25Mhz/clk_out/CK
+  Location pin: SLICE_X20Y34.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 9.606ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 0.394ns (2538.071MHz) (Tcp)
+  Physical resource: CockDivider25Mhz/COUNT1<3>/CLK
+  Logical resource: CockDivider25Mhz/COUNT1_0/CK
+  Location pin: SLICE_X25Y32.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.307|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 1889 paths, 0 nets, and 154 connections
+
+Design statistics:
+   Minimum period:   3.307ns{1}   (Maximum frequency: 302.389MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sat Sep 24 15:20:00 2011 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 160 MB
+
+
+
