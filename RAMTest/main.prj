@@ -1,0 +1,2 @@
+vhdl work "../Binary7SegCounter/clockDivider2.vhd"
+vhdl work "main.vhd"
