@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2011-09-24T02:44:53</DateModified>
+  <DateModified>2011-09-27T23:58:58</DateModified>
   <ModuleName>main</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>Z:/coding/fpga/VGATest/iseconfig/main.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>Z:/coding/fpga/VGATest\</ImplementationReportsDirectory>
+  <SavedFilePath>D:/Informatik/fpga/VGATest/iseconfig/main.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/Informatik/fpga/VGATest\</ImplementationReportsDirectory>
   <DateInitialized>2011-09-23T22:17:56</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

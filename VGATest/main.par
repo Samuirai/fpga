@@ -1,13 +1,13 @@
 Release 13.2 par O.61xd (nt)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-FABIANFSSLEB88A::  Sat Sep 24 15:19:43 2011
+SAMUIRAI-PC::  Wed Sep 28 04:07:02 2011
 
 par -w -intstyle ise -ol high -mt off main_map.ncd main.ncd main.pcf 
 
 
 Constraints file: main.pcf.
-Loading device for application Rf_Device from file '6slx16.nph' in environment C:\Xilinx\13.2\ISE_DS\ISE\.
+Loading device for application Rf_Device from file '6slx16.nph' in environment D:\Xilinx\13.2\ISE_DS\ISE\.
    "main" is an NCD, version 3.2, device xc6slx16, package csg324, speed -3
 
 Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
@@ -21,29 +21,29 @@ Device speed data version:  "PRODUCTION 1.19 2011-06-20".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                    53 out of  18,224    1%
-    Number used as Flip Flops:                  53
-    Number used as Latches:                      0
+  Number of Slice Registers:                   475 out of  18,224    2%
+    Number used as Flip Flops:                 405
+    Number used as Latches:                     70
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        145 out of   9,112    1%
-    Number used as logic:                      142 out of   9,112    1%
-      Number using O6 output only:              79
-      Number using O5 output only:              44
-      Number using O5 and O6:                   19
+  Number of Slice LUTs:                      2,169 out of   9,112   23%
+    Number used as logic:                    2,163 out of   9,112   23%
+      Number using O6 output only:           1,880
+      Number using O5 output only:              36
+      Number using O5 and O6:                  247
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:      3
-      Number with same-slice register load:      0
-      Number with same-slice carry load:         3
+    Number used exclusively as route-thrus:      6
+      Number with same-slice register load:      1
+      Number with same-slice carry load:         5
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    47 out of   2,278    2%
-  Number of LUT Flip Flop pairs used:          148
-    Number with an unused Flip Flop:            95 out of     148   64%
-    Number with an unused LUT:                   3 out of     148    2%
-    Number of fully used LUT-FF pairs:          50 out of     148   33%
+  Number of occupied Slices:                   957 out of   2,278   42%
+  Number of LUT Flip Flop pairs used:        2,309
+    Number with an unused Flip Flop:         1,837 out of   2,309   79%
+    Number with an unused LUT:                 140 out of   2,309    6%
+    Number of fully used LUT-FF pairs:         332 out of   2,309   14%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -54,16 +54,16 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        28 out of     232   12%
-    Number of LOCed IOBs:                       28 out of      28  100%
+  Number of bonded IOBs:                        93 out of     232   40%
+    Number of LOCed IOBs:                       76 out of      93   81%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
   Number of RAMB8BWERs:                          0 out of      64    0%
   Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
   Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
-  Number of BUFG/BUFGMUXs:                       2 out of      16   12%
-    Number used as BUFGs:                        2
+  Number of BUFG/BUFGMUXs:                       3 out of      16   18%
+    Number used as BUFGs:                        3
     Number used as BUFGMUX:                      0
   Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
   Number of ILOGIC2/ISERDES2s:                   0 out of     248    0%
@@ -73,7 +73,7 @@ Specific Feature Utilization:
   Number of BUFHs:                               0 out of     128    0%
   Number of BUFPLLs:                             0 out of       8    0%
   Number of BUFPLL_MCBs:                         0 out of       4    0%
-  Number of DSP48A1s:                            0 out of      32    0%
+  Number of DSP48A1s:                            4 out of      32   12%
   Number of ICAPs:                               0 out of       1    0%
   Number of MCBs:                                0 out of       2    0%
   Number of PCILOGICSEs:                         0 out of       2    0%
@@ -86,35 +86,37 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 5 secs 
-Finished initial Timing Analysis.  REAL time: 5 secs 
+Starting initial Timing Analysis.  REAL time: 4 secs 
+Finished initial Timing Analysis.  REAL time: 4 secs 
 
+WARNING:Par:288 - The signal btnl_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal btnr_IBUF has no load.  PAR will not attempt to route this signal.
 Starting Router
 
 
-Phase  1  : 532 unrouted;      REAL time: 5 secs 
+Phase  1  : 13114 unrouted;      REAL time: 5 secs 
 
-Phase  2  : 451 unrouted;      REAL time: 6 secs 
+Phase  2  : 12097 unrouted;      REAL time: 6 secs 
 
-Phase  3  : 150 unrouted;      REAL time: 6 secs 
+Phase  3  : 6006 unrouted;      REAL time: 39 secs 
 
-Phase  4  : 150 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
+Phase  4  : 6006 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 40 secs 
 
 Updating file: main.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 44 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 44 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 44 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 44 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 44 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
-Total REAL time to Router completion: 7 secs 
-Total CPU time to Router completion: 7 secs 
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 44 secs 
+Total REAL time to Router completion: 44 secs 
+Total CPU time to Router completion: 44 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -132,10 +134,226 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP | BUFGMUX_X3Y13| No   |    8 |  0.013     |  0.874      |
-+---------------------+--------------+------+------+------------+-------------+
 |CockDivider25Mhz/clk |              |      |      |            |             |
-|           _out_BUFG |  BUFGMUX_X2Y3| No   |    9 |  0.020     |  0.877      |
+|           _out_BUFG |  BUFGMUX_X2Y3| No   |   57 |  0.053     |  0.905      |
++---------------------+--------------+------+------+------------+-------------+
+|CockDivider500/clk_o |              |      |      |            |             |
+|             ut_BUFG |  BUFGMUX_X2Y2| No   |  183 |  0.060     |  0.906      |
++---------------------+--------------+------+------+------------+-------------+
+|           clk_BUFGP | BUFGMUX_X3Y13| No   |    5 |  0.005     |  0.904      |
++---------------------+--------------+------+------+------------+-------------+
+|CockDivider1000/clk_ |              |      |      |            |             |
+|                 out |         Local|      |    8 |  0.965     |  2.106      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z4[3]_AND_27 |              |      |      |            |             |
+|                 2_o |         Local|      |    2 |  0.000     |  0.469      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z4[3]_AND_27 |              |      |      |            |             |
+|                 4_o |         Local|      |    2 |  0.000     |  0.582      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z4[3]_AND_27 |              |      |      |            |             |
+|                 6_o |         Local|      |    2 |  0.000     |  0.596      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z4[3]_AND_27 |              |      |      |            |             |
+|                 8_o |         Local|      |    2 |  0.000     |  0.793      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_vgaBlue[1]_A |              |      |      |            |             |
+|            ND_246_o |         Local|      |    2 |  0.000     |  0.307      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_vgaBlue[1]_A |              |      |      |            |             |
+|            ND_244_o |         Local|      |    2 |  0.000     |  0.681      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemOE_AND_28 |              |      |      |            |             |
+|                 6_o |         Local|      |    2 |  0.000     |  0.307      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_RamCE_AND_28 |              |      |      |            |             |
+|                 4_o |         Local|      |    2 |  0.000     |  0.716      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_RamLB_AND_29 |              |      |      |            |             |
+|                 4_o |         Local|      |    2 |  0.000     |  0.625      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z1[3]_AND_25 |              |      |      |            |             |
+|                 0_o |         Local|      |    2 |  0.000     |  0.949      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z1[3]_AND_25 |              |      |      |            |             |
+|                 2_o |         Local|      |    2 |  0.000     |  0.446      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_RamUB_AND_29 |              |      |      |            |             |
+|                 2_o |         Local|      |    2 |  0.000     |  0.661      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z1[3]_AND_25 |              |      |      |            |             |
+|                 4_o |         Local|      |    2 |  0.000     |  0.681      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z1[3]_AND_24 |              |      |      |            |             |
+|                 8_o |         Local|      |    2 |  0.000     |  0.707      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemWR_AND_28 |              |      |      |            |             |
+|                 8_o |         Local|      |    1 |  0.000     |  0.280      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_vgaRed[2]_AN |              |      |      |            |             |
+|             D_236_o |         Local|      |    2 |  0.000     |  0.468      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_vgaRed[2]_AN |              |      |      |            |             |
+|             D_234_o |         Local|      |    2 |  0.000     |  0.492      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_vgaRed[2]_AN |              |      |      |            |             |
+|             D_232_o |         Local|      |    2 |  0.000     |  0.634      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_led[7]_AND_3 |              |      |      |            |             |
+|                10_o |         Local|      |    2 |  0.000     |  0.471      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_led[7]_AND_3 |              |      |      |            |             |
+|                08_o |         Local|      |    2 |  0.000     |  0.471      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_led[7]_AND_3 |              |      |      |            |             |
+|                06_o |         Local|      |    2 |  0.000     |  0.474      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_led[7]_AND_3 |              |      |      |            |             |
+|                04_o |         Local|      |    2 |  0.000     |  0.469      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_led[7]_AND_3 |              |      |      |            |             |
+|                02_o |         Local|      |    2 |  0.000     |  0.582      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_led[7]_AND_3 |              |      |      |            |             |
+|                00_o |         Local|      |    2 |  0.000     |  0.487      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_led[7]_AND_2 |              |      |      |            |             |
+|                98_o |         Local|      |    2 |  0.000     |  0.648      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_led[7]_AND_2 |              |      |      |            |             |
+|                96_o |         Local|      |    2 |  0.000     |  0.314      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemClk_AND_2 |              |      |      |            |             |
+|                80_o |         Local|      |    2 |  0.000     |  0.602      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_RamCRE_AND_2 |              |      |      |            |             |
+|                90_o |         Local|      |    2 |  0.000     |  0.578      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_210_o |         Local|      |    2 |  0.000     |  0.713      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_208_o |         Local|      |    2 |  0.000     |  0.469      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_206_o |         Local|      |    2 |  0.000     |  1.383      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_190_o |         Local|      |    2 |  0.000     |  0.492      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_204_o |         Local|      |    2 |  0.000     |  0.628      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_188_o |         Local|      |    2 |  0.000     |  0.474      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_202_o |         Local|      |    2 |  0.000     |  0.474      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_186_o |         Local|      |    2 |  0.000     |  0.470      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_200_o |         Local|      |    2 |  0.000     |  0.467      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_184_o |         Local|      |    2 |  0.000     |  0.493      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_198_o |         Local|      |    2 |  0.000     |  0.312      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_182_o |         Local|      |    2 |  0.000     |  0.748      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_196_o |         Local|      |    2 |  0.000     |  0.474      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_180_o |         Local|      |    2 |  0.000     |  0.712      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_194_o |         Local|      |    2 |  0.000     |  0.474      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_178_o |         Local|      |    2 |  0.000     |  0.310      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_192_o |         Local|      |    2 |  0.000     |  0.467      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z2[3]_AND_26 |              |      |      |            |             |
+|                 2_o |         Local|      |    2 |  0.000     |  0.314      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z2[3]_AND_26 |              |      |      |            |             |
+|                 0_o |         Local|      |    2 |  0.000     |  0.471      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z2[3]_AND_25 |              |      |      |            |             |
+|                 8_o |         Local|      |    2 |  0.000     |  0.477      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z2[3]_AND_25 |              |      |      |            |             |
+|                 6_o |         Local|      |    2 |  0.000     |  0.661      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z3[3]_AND_27 |              |      |      |            |             |
+|                 0_o |         Local|      |    2 |  0.000     |  0.468      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z3[3]_AND_26 |              |      |      |            |             |
+|                 8_o |         Local|      |    2 |  0.000     |  0.469      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z3[3]_AND_26 |              |      |      |            |             |
+|                 6_o |         Local|      |    2 |  0.000     |  0.582      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_z3[3]_AND_26 |              |      |      |            |             |
+|                 4_o |         Local|      |    2 |  0.000     |  0.312      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_GND_6_o_AND_ |              |      |      |            |             |
+|               316_o |         Local|      |    2 |  0.000     |  0.777      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_GND_6_o_AND_ |              |      |      |            |             |
+|               314_o |         Local|      |    2 |  0.000     |  0.567      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_GND_6_o_AND_ |              |      |      |            |             |
+|               312_o |         Local|      |    2 |  0.000     |  0.505      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_vgaGreen[2]_ |              |      |      |            |             |
+|           AND_242_o |         Local|      |    2 |  0.000     |  0.446      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_vgaGreen[2]_ |              |      |      |            |             |
+|           AND_240_o |         Local|      |    2 |  0.000     |  0.492      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_vgaGreen[2]_ |              |      |      |            |             |
+|           AND_238_o |         Local|      |    2 |  0.000     |  0.310      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_230_o |         Local|      |    2 |  0.000     |  0.494      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_228_o |         Local|      |    2 |  0.000     |  0.709      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_226_o |         Local|      |    2 |  0.000     |  0.469      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_224_o |         Local|      |    2 |  0.000     |  0.681      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_222_o |         Local|      |    2 |  0.000     |  0.474      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_220_o |         Local|      |    2 |  0.000     |  0.617      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_218_o |         Local|      |    2 |  0.000     |  0.684      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_216_o |         Local|      |    2 |  0.000     |  0.684      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_214_o |         Local|      |    2 |  0.000     |  0.493      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdr[26]_A |              |      |      |            |             |
+|            ND_212_o |         Local|      |    2 |  0.000     |  0.680      |
++---------------------+--------------+------+------+------------+-------------+
+|GND_6_o_MemAdv_AND_2 |              |      |      |            |             |
+|                82_o |         Local|      |    1 |  0.000     |  0.752      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -155,8 +373,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_ | SETUP       |     6.693ns|     3.307ns|       0|           0
-  pin" 100 MHz HIGH 50%                     | HOLD        |     0.503ns|            |       0|           0
+  TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_ | SETUP       |     6.876ns|     3.124ns|       0|           0
+  pin" 100 MHz HIGH 50%                     | HOLD        |     0.440ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -167,17 +385,19 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 9 secs 
-Total CPU time to PAR completion: 9 secs 
+WARNING:Par:283 - There are 2 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Peak Memory Usage:  233 MB
+Total REAL time to PAR completion: 45 secs 
+Total CPU time to PAR completion: 45 secs 
+
+Peak Memory Usage:  260 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.
 Timing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 0
+Number of warning messages: 4
 Number of info messages: 0
 
 Writing design to file main.ncd

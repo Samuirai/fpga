@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=Z:\coding\fpga\VGATest\main.ncd
-OUTFILE=Z:\coding\fpga\VGATest\main.bit
+INFILE=D:\Informatik\fpga\VGATest\main.ncd
+OUTFILE=D:\Informatik\fpga\VGATest\main.bit
 FAMILY=Spartan6
 PART=xc6slx16-3csg324
-WORKINGDIR=Z:\coding\fpga\VGATest
+WORKINGDIR=D:\Informatik\fpga\VGATest
 LICENSE=WebPack
 USER_INFO=207836452_0_0_931

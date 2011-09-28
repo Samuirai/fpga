@@ -1,16 +1,16 @@
 Release 13.2 ngdbuild O.61xd (nt)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-Command Line: C:\Xilinx\13.2\ISE_DS\ISE\bin\nt\unwrapped\ngdbuild.exe -intstyle
-ise -dd _ngo -nt timestamp -uc Z:/coding/fpga/Nexys3_Master.ucf -p
+Command Line: D:\Xilinx\13.2\ISE_DS\ISE\bin\nt\unwrapped\ngdbuild.exe -intstyle
+ise -dd _ngo -nt timestamp -uc D:/Informatik/fpga/Nexys3_Master.ucf -p
 xc6slx16-csg324-3 main.ngc main.ngd
 
-Reading NGO file "Z:/coding/fpga/VGATest/main.ngc" ...
+Reading NGO file "D:/Informatik/fpga/VGATest/main.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
 Annotating constraints to design from ucf file
-"Z:/coding/fpga/Nexys3_Master.ucf" ...
+"D:/Informatik/fpga/Nexys3_Master.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
 Done...
@@ -28,7 +28,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 124416 kilobytes
+Total memory usage is 114984 kilobytes
 
 Writing NGD file "main.ngd" ...
 Total REAL time to NGDBUILD completion:  3 sec

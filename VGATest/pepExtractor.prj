@@ -1,0 +1,4 @@
+work	"../Binary7SegCounter/clockDivider2.vhd"
+work	"main.vhd"
+work	"samuirai.vhd"
+work	"vga_controller.vhd"
