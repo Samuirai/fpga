@@ -5,34 +5,34 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1369" delta="old" >"D:\Informatik\fpga\Binary7SegCounter\sevenSegment.vhd" Line 40: Possible infinite loop; process does not have a wait statement
+<msg type="warning" file="HDLCompiler" num="1369" delta="old" >"\\psf\home\coding\fpga\Binary7SegCounter\sevenSegment.vhd" Line 40: Possible infinite loop; process does not have a wait statement
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1369" delta="old" >"D:\Informatik\fpga\Binary7SegCounter\clockDivider2.vhd" Line 43: Possible infinite loop; process does not have a wait statement
+<msg type="warning" file="HDLCompiler" num="1369" delta="old" >"\\psf\home\coding\fpga\Binary7SegCounter\clockDivider2.vhd" Line 43: Possible infinite loop; process does not have a wait statement
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"D:\Informatik\fpga\VGATest\main.vhd" Line 131: <arg fmt="%s" index="1">status</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"\\psf\home\coding\fpga\VGATest\main.vhd" Line 131: <arg fmt="%s" index="1">status</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"D:\Informatik\fpga\VGATest\main.vhd" Line 132: <arg fmt="%s" index="1">clk2</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"\\psf\home\coding\fpga\VGATest\main.vhd" Line 132: <arg fmt="%s" index="1">clk2</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"D:\Informatik\fpga\VGATest\main.vhd" Line 160: <arg fmt="%s" index="1">status</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"\\psf\home\coding\fpga\VGATest\main.vhd" Line 160: <arg fmt="%s" index="1">status</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"D:\Informatik\fpga\VGATest\main.vhd" Line 161: <arg fmt="%s" index="1">clk4</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"\\psf\home\coding\fpga\VGATest\main.vhd" Line 161: <arg fmt="%s" index="1">clk4</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"D:\Informatik\fpga\VGATest\main.vhd" Line 209: <arg fmt="%s" index="1">status</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"\\psf\home\coding\fpga\VGATest\main.vhd" Line 209: <arg fmt="%s" index="1">status</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"D:\Informatik\fpga\VGATest\main.vhd" Line 211: <arg fmt="%s" index="1">clk4</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"\\psf\home\coding\fpga\VGATest\main.vhd" Line 211: <arg fmt="%s" index="1">clk4</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"D:\Informatik\fpga\VGATest\main.vhd" Line 252: <arg fmt="%s" index="1">status</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"\\psf\home\coding\fpga\VGATest\main.vhd" Line 251: <arg fmt="%s" index="1">status</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"D:\Informatik\fpga\VGATest\main.vhd" Line 253: <arg fmt="%s" index="1">clk4</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"\\psf\home\coding\fpga\VGATest\main.vhd" Line 252: <arg fmt="%s" index="1">clk4</arg> should be on the sensitivity list of the process
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">btnl</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -74,7 +74,7 @@
 <msg type="info" file="Xst" num="3231" delta="old" >The small RAM &lt;<arg fmt="%s" index="1">Mram_out2[3]_PWR_24_o_mux_14_OUT</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">GND_62_o_clk4_DFF_129</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GND_60_o_clk4_DFF_128&gt; &lt;GND_58_o_clk4_DFF_127&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">GND_62_o_clk4_DFF_129</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GND_60_o_clk4_DFF_128&gt; &lt;GND_58_o_clk4_DFF_127&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Data_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Data_10&gt; </arg>
@@ -145,7 +145,7 @@ Xilinx highly recommends one of the following:
 <msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">VGAController/vcounter_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 </msg>
 
 </messages>

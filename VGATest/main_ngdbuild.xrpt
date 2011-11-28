@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<document OS="nt" product="ISE" version="13.2">
+<document OS="nt64" product="ISE" version="13.2">
 
   <!--The data in this file is primarily intended for consumption by Xilinx tools.
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="NgdBuild" timeStamp="Wed Sep 28 04:06:39 2011">
+  <application stringID="NgdBuild" timeStamp="Wed Sep 28 23:53:16 2011">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="D:\Xilinx\13.2\ISE_DS\ISE\\lib\nt;D:\Xilinx\13.2\ISE_DS\ISE\\bin\nt;D:\Xilinx\13.2\ISE_DS\PlanAhead\bin;D:\Xilinx\13.2\ISE_DS\ISE\bin\nt;D:\Xilinx\13.2\ISE_DS\ISE\lib\nt;D:\Xilinx\13.2\ISE_DS\EDK\bin\nt;D:\Xilinx\13.2\ISE_DS\EDK\lib\nt;D:\Xilinx\13.2\ISE_DS\EDK\gnu\microblaze\nt\bin;D:\Xilinx\13.2\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;D:\Xilinx\13.2\ISE_DS\EDK\gnuwin\bin;D:\Xilinx\13.2\ISE_DS\common\bin\nt;D:\Xilinx\13.2\ISE_DS\common\lib\nt;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;D:\Programme\Smart Projects\IsoBuster;C:\Python27;C:\Python27\Scripts;C:\Python27\Lib\site-packages\django\bin;C:\Program Files\Autodesk\Backburner\;C:\Program Files\OpenSSH\bin;C:\Program Files\Git\cmd;D:\Programme\QuickTime\QTSystem\"/>
+          <item stringID="value" value="C:\Xilinx\13.2\ISE_DS\ISE\\lib\nt64;C:\Xilinx\13.2\ISE_DS\ISE\\bin\nt64;C:\Program Files (x86)\Parallels\Parallels Tools\Applications;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -20,32 +20,20 @@
         </row>
         <row stringID="row" value="2">
           <item stringID="variable" value="XILINX"/>
-          <item stringID="value" value="D:\Xilinx\13.2\ISE_DS\ISE\"/>
-        </row>
-        <row stringID="row" value="3">
-          <item stringID="variable" value="XILINX_DSP"/>
-          <item stringID="value" value="D:\Xilinx\13.2\ISE_DS\ISE"/>
-        </row>
-        <row stringID="row" value="4">
-          <item stringID="variable" value="XILINX_EDK"/>
-          <item stringID="value" value="D:\Xilinx\13.2\ISE_DS\EDK"/>
-        </row>
-        <row stringID="row" value="5">
-          <item stringID="variable" value="XILINX_PLANAHEAD"/>
-          <item stringID="value" value="D:\Xilinx\13.2\ISE_DS\PlanAhead"/>
+          <item stringID="value" value="C:\Xilinx\13.2\ISE_DS\ISE\"/>
         </row>
       </table>
       <item stringID="User_EnvOs" value="OS Information">
-        <item stringID="User_EnvOsname" value="Microsoft Windows 7 , 32-bit"/>
-        <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
+        <item stringID="User_EnvOsname" value="Microsoft Windows 7 , 64-bit"/>
+        <item stringID="User_EnvOsrelease" value="major release  (build 7600)"/>
       </item>
-      <item stringID="User_EnvHost" value="Samuirai-PC"/>
+      <item stringID="User_EnvHost" value="FABIANFSSLEB88A"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="Intel(R) Core(TM)2 Quad CPU    Q6600  @ 2.40GHz"/>
-          <item stringID="speed" value="2706 MHz"/>
+          <item stringID="arch" value="Intel(R) Core(TM) i5-2467M CPU @ 1.60GHz"/>
+          <item stringID="speed" value="1600 MHz"/>
         </row>
       </table>
     </section>
@@ -54,7 +42,7 @@
         <item DEFAULT="None" label="-intstyle" stringID="NGDBUILD_intstyle" value="ise"/>
         <item DEFAULT="None" label="-dd" stringID="NGDBUILD_output_dir" value="_ngo"/>
         <item DEFAULT="None" label="-p" stringID="NGDBUILD_partname" value="xc6slx16-csg324-3"/>
-        <item DEFAULT="None" label="-uc" stringID="NGDBUILD_ucf_file" value="D:/Informatik/fpga/Nexys3_Master.ucf"/>
+        <item DEFAULT="None" label="-uc" stringID="NGDBUILD_ucf_file" value="Z:/coding/fpga/Nexys3_Master.ucf"/>
       </section>
     </task>
     <task stringID="NGDBUILD_REPORT">

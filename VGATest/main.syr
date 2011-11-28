@@ -1,16 +1,16 @@
-Release 13.2 - xst O.61xd (nt)
+Release 13.2 - xst O.61xd (nt64)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: main.prj
 
@@ -106,21 +106,21 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "D:\Informatik\fpga\VGATest\vga_controller.vhd" into library work
+Parsing VHDL file "\\psf\home\coding\fpga\VGATest\vga_controller.vhd" into library work
 Parsing entity <vga_controller>.
 Parsing architecture <Behavioral> of entity <vga_controller>.
-Parsing VHDL file "D:\Informatik\fpga\VGATest\samuirai.vhd" into library work
+Parsing VHDL file "\\psf\home\coding\fpga\VGATest\samuirai.vhd" into library work
 Parsing package <samuirai>.
 Parsing package body <samuirai>.
-Parsing VHDL file "D:\Informatik\fpga\Binary7SegCounter\sevenSegment.vhd" into library work
+Parsing VHDL file "\\psf\home\coding\fpga\Binary7SegCounter\sevenSegment.vhd" into library work
 Parsing entity <sevenSegment>.
 Parsing architecture <Behavioral> of entity <sevensegment>.
-WARNING:HDLCompiler:1369 - "D:\Informatik\fpga\Binary7SegCounter\sevenSegment.vhd" Line 40: Possible infinite loop; process does not have a wait statement
-Parsing VHDL file "D:\Informatik\fpga\Binary7SegCounter\clockDivider2.vhd" into library work
+WARNING:HDLCompiler:1369 - "\\psf\home\coding\fpga\Binary7SegCounter\sevenSegment.vhd" Line 40: Possible infinite loop; process does not have a wait statement
+Parsing VHDL file "\\psf\home\coding\fpga\Binary7SegCounter\clockDivider2.vhd" into library work
 Parsing entity <clockDivider>.
 Parsing architecture <Behavioral> of entity <clockdivider>.
-WARNING:HDLCompiler:1369 - "D:\Informatik\fpga\Binary7SegCounter\clockDivider2.vhd" Line 43: Possible infinite loop; process does not have a wait statement
-Parsing VHDL file "D:\Informatik\fpga\VGATest\main.vhd" into library work
+WARNING:HDLCompiler:1369 - "\\psf\home\coding\fpga\Binary7SegCounter\clockDivider2.vhd" Line 43: Possible infinite loop; process does not have a wait statement
+Parsing VHDL file "\\psf\home\coding\fpga\VGATest\main.vhd" into library work
 Parsing entity <main>.
 Parsing architecture <Behavioral> of entity <main>.
 
@@ -135,21 +135,21 @@ Elaborating entity <clockDivider> (architecture <Behavioral>) from library <work
 Elaborating entity <vga_controller> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <sevenSegment> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "D:\Informatik\fpga\VGATest\main.vhd" Line 131: status should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "D:\Informatik\fpga\VGATest\main.vhd" Line 132: clk2 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "D:\Informatik\fpga\VGATest\main.vhd" Line 160: status should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "D:\Informatik\fpga\VGATest\main.vhd" Line 161: clk4 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "D:\Informatik\fpga\VGATest\main.vhd" Line 209: status should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "D:\Informatik\fpga\VGATest\main.vhd" Line 211: clk4 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "D:\Informatik\fpga\VGATest\main.vhd" Line 252: status should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "D:\Informatik\fpga\VGATest\main.vhd" Line 253: clk4 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGATest\main.vhd" Line 131: status should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGATest\main.vhd" Line 132: clk2 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGATest\main.vhd" Line 160: status should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGATest\main.vhd" Line 161: clk4 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGATest\main.vhd" Line 209: status should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGATest\main.vhd" Line 211: clk4 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGATest\main.vhd" Line 251: status should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGATest\main.vhd" Line 252: clk4 should be on the sensitivity list of the process
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <main>.
-    Related source file is "d:/informatik/fpga/vgatest/main.vhd".
+    Related source file is "//psf/home/coding/fpga/vgatest/main.vhd".
 WARNING:Xst:647 - Input <btnl> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <btnr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 27-bit register for signal <MemAdr[26]_dff_10_OUT>.
@@ -278,7 +278,7 @@ WARNING:Xst:647 - Input <btnr> is never used. This port will be preserved and le
     Found 10-bit adder for signal <x[9]_GND_6_o_add_35_OUT> created at line 195.
     Found 9-bit adder for signal <y[8]_GND_6_o_add_37_OUT> created at line 199.
     Found 10-bit adder for signal <x2[9]_GND_6_o_add_100_OUT> created at line 239.
-    Found 9-bit adder for signal <y2[8]_GND_6_o_add_102_OUT> created at line 244.
+    Found 9-bit adder for signal <y2[8]_GND_6_o_add_102_OUT> created at line 243.
     Found 4-bit subtractor for signal <GND_6_o_GND_6_o_sub_35_OUT<3:0>> created at line 188.
     Found 4-bit subtractor for signal <GND_6_o_GND_6_o_sub_100_OUT<3:0>> created at line 232.
     Found 4x10-bit multiplier for signal <y[8]_PWR_6_o_MuLt_21_OUT> created at line 186.
@@ -311,7 +311,7 @@ WARNING:Xst:647 - Input <btnr> is never used. This port will be preserved and le
     Found 9-bit comparator greater for signal <y[8]_PWR_6_o_LessThan_19_o> created at line 163
     Found 9-bit comparator greater for signal <y[8]_PWR_6_o_LessThan_37_o> created at line 198
     Found 10-bit comparator greater for signal <x2[9]_PWR_6_o_LessThan_85_o> created at line 212
-    Found 9-bit comparator greater for signal <y2[8]_PWR_6_o_LessThan_102_o> created at line 243
+    Found 9-bit comparator greater for signal <y2[8]_PWR_6_o_LessThan_102_o> created at line 242
     WARNING:Xst:2404 -  FFs/Latches <_i000076<1:1>> (without init value) have a constant value of 1 in block <main>.
     WARNING:Xst:2404 -  FFs/Latches <_i000076<1:3>> (without init value) have a constant value of 0 in block <main>.
     WARNING:Xst:2404 -  FFs/Latches <_i000078<1:1>> (without init value) have a constant value of 0 in block <main>.
@@ -332,7 +332,7 @@ WARNING:Xst:647 - Input <btnr> is never used. This port will be preserved and le
 Unit <main> synthesized.
 
 Synthesizing Unit <clockDivider>.
-    Related source file is "d:/informatik/fpga/binary7segcounter/clockdivider2.vhd".
+    Related source file is "//psf/home/coding/fpga/binary7segcounter/clockdivider2.vhd".
     Found 1-bit register for signal <clk_out>.
     Found 16-bit register for signal <COUNT1>.
     Found 16-bit adder for signal <COUNT1[15]_GND_7_o_add_0_OUT> created at line 46.
@@ -345,7 +345,7 @@ Synthesizing Unit <clockDivider>.
 Unit <clockDivider> synthesized.
 
 Synthesizing Unit <vga_controller>.
-    Related source file is "d:/informatik/fpga/vgatest/vga_controller.vhd".
+    Related source file is "//psf/home/coding/fpga/vgatest/vga_controller.vhd".
     Found 11-bit register for signal <hcounter>.
     Found 11-bit register for signal <vcounter>.
     Found 1-bit register for signal <HS>.
@@ -367,7 +367,7 @@ Synthesizing Unit <vga_controller>.
 Unit <vga_controller> synthesized.
 
 Synthesizing Unit <sevenSegment>.
-    Related source file is "d:/informatik/fpga/binary7segcounter/sevensegment.vhd".
+    Related source file is "//psf/home/coding/fpga/binary7segcounter/sevensegment.vhd".
     Found 8-bit register for signal <out1>.
     Found 2-bit register for signal <COUNT1>.
     Found 4-bit register for signal <out2>.
@@ -3433,12 +3433,12 @@ clk            |    4.226|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 55.00 secs
-Total CPU time to Xst completion: 55.57 secs
+Total REAL time to Xst completion: 66.00 secs
+Total CPU time to Xst completion: 65.25 secs
  
 --> 
 
-Total memory usage is 233328 kilobytes
+Total memory usage is 298224 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   31 (   0 filtered)

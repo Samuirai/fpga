@@ -207,7 +207,7 @@ begin
 
 			
 		elsif Status=INIT2 then
-		
+			
 			if (clk4'event and clk4 = '1') then
 				if x2<640 then
 					
@@ -238,7 +238,6 @@ begin
 					Status<=IDLE;
 					x2 := x2+1;
 				else
-					
 					x2 := 1;
 					if y2<480 then
 						y2 := y2+1;
