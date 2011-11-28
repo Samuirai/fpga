@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">sw&lt;7:0&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">write1</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">STATE</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">read2</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">STATE</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">read3</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">STATE</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">read4</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">STATE</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">read5</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">STATE</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">RamOE</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">MemAdv</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">led_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">led_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">led_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">led_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">RamOE</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">MemAdv</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">led_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">led_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">led_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">led_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">STATE[3]_clk_DFF_91</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">15 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;STATE[3]_clk_DFF_92&gt; &lt;STATE[3]_clk_DFF_93&gt; &lt;STATE[3]_clk_DFF_94&gt; &lt;STATE[3]_clk_DFF_95&gt; &lt;STATE[3]_clk_DFF_96&gt; &lt;STATE[3]_clk_DFF_97&gt; &lt;STATE[3]_clk_DFF_98&gt; &lt;STATE[3]_clk_DFF_99&gt; &lt;STATE[3]_clk_DFF_100&gt; &lt;STATE[3]_clk_DFF_101&gt; &lt;STATE[3]_clk_DFF_102&gt; &lt;STATE[3]_clk_DFF_103&gt; &lt;STATE[3]_clk_DFF_104&gt; &lt;STATE[3]_clk_DFF_105&gt; &lt;STATE[3]_clk_DFF_106&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">RamUB</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">main</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;RamLB&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">idle_31</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_30</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_29</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_28</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_27</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_26</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_25</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_24</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_23</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_22</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_21</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_20</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_19</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_18</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_17</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_16</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_15</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_14</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_13</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_12</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_11</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_9</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_8</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">idle_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+</messages>
+
