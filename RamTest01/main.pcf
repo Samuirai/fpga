@@ -1,16 +1,17 @@
 //! **************************************************************************
-// Written by: Map O.61xd on Sun Nov 27 04:57:00 2011
+// Written by: Map O.61xd on Tue Nov 29 00:12:57 2011
 //! **************************************************************************
 
 SCHEMATIC START;
-COMP "RamUB" LOCATE = SITE "K15" LEVEL 1;
+COMP "RamCE" LOCATE = SITE "L15" LEVEL 1;
 COMP "Data<9>" LOCATE = SITE "P6" LEVEL 1;
+COMP "MemWait" LOCATE = SITE "V4" LEVEL 1;
 COMP "Data<10>" LOCATE = SITE "P12" LEVEL 1;
 COMP "Data<11>" LOCATE = SITE "U13" LEVEL 1;
+COMP "MemWR" LOCATE = SITE "M16" LEVEL 1;
 COMP "Data<12>" LOCATE = SITE "V13" LEVEL 1;
 COMP "led<0>" LOCATE = SITE "U16" LEVEL 1;
 COMP "Data<13>" LOCATE = SITE "U10" LEVEL 1;
-COMP "MemWait" LOCATE = SITE "V4" LEVEL 1;
 COMP "led<1>" LOCATE = SITE "V16" LEVEL 1;
 COMP "Data<14>" LOCATE = SITE "R8" LEVEL 1;
 COMP "led<2>" LOCATE = SITE "U15" LEVEL 1;
@@ -23,7 +24,7 @@ COMP "led<5>" LOCATE = SITE "N11" LEVEL 1;
 COMP "led<6>" LOCATE = SITE "R11" LEVEL 1;
 COMP "led<7>" LOCATE = SITE "T11" LEVEL 1;
 COMP "RamOE" LOCATE = SITE "L18" LEVEL 1;
-COMP "MemWR" LOCATE = SITE "M16" LEVEL 1;
+COMP "RamUB" LOCATE = SITE "K15" LEVEL 1;
 COMP "sw<0>" LOCATE = SITE "T10" LEVEL 1;
 COMP "sw<1>" LOCATE = SITE "T9" LEVEL 1;
 COMP "sw<2>" LOCATE = SITE "V9" LEVEL 1;
@@ -49,7 +50,6 @@ COMP "MemAdv" LOCATE = SITE "H18" LEVEL 1;
 COMP "MemAdr<6>" LOCATE = SITE "G16" LEVEL 1;
 COMP "MemAdr<15>" LOCATE = SITE "E18" LEVEL 1;
 COMP "MemAdr<23>" LOCATE = SITE "C18" LEVEL 1;
-COMP "RamCE" LOCATE = SITE "L15" LEVEL 1;
 COMP "MemAdr<7>" LOCATE = SITE "H16" LEVEL 1;
 COMP "MemAdr<16>" LOCATE = SITE "E16" LEVEL 1;
 COMP "MemAdr<8>" LOCATE = SITE "H15" LEVEL 1;
@@ -68,17 +68,28 @@ COMP "RamCRE" LOCATE = SITE "M18" LEVEL 1;
 COMP "Data<6>" LOCATE = SITE "T3" LEVEL 1;
 COMP "Data<7>" LOCATE = SITE "R5" LEVEL 1;
 COMP "Data<8>" LOCATE = SITE "N5" LEVEL 1;
-TIMEGRP sys_clk_pin = BEL "idle_0" BEL "idle_1" BEL "idle_2" BEL "idle_3" BEL
-        "idle_4" BEL "idle_5" BEL "idle_6" BEL "RamCE" BEL "MemWR" BEL "RamUB"
-        BEL "led_0" BEL "led_1" BEL "led_2" BEL "led_3" BEL
-        "STATE[3]_clk_DFF_91" BEL "STATE[3]_clk_DFF_107" BEL "Data_0" BEL
-        "Data_1" BEL "Data_2" BEL "Data_3" BEL "Data_4" BEL "Data_5" BEL
-        "Data_6" BEL "Data_7" BEL "Data_8" BEL "Data_9" BEL "Data_10" BEL
-        "Data_11" BEL "Data_12" BEL "Data_13" BEL "Data_14" BEL "Data_15" BEL
-        "STATE_FSM_FFd3" BEL "STATE_FSM_FFd4" BEL "STATE_FSM_FFd2" BEL
-        "STATE_FSM_FFd1" BEL "STATE_FSM_FFd2_1" BEL "STATE_FSM_FFd3_1" BEL
-        "STATE_FSM_FFd4_1" BEL "STATE_FSM_FFd1_1" BEL "MemWait" BEL
-        "clk_BUFGP/BUFG";
+TIMEGRP sys_clk_pin = BEL "WriteRequest" BEL "MemoryController/STATE_FSM_FFd1"
+        BEL "MemoryController/STATE_FSM_FFd2" BEL
+        "MemoryController/STATE_FSM_FFd3" BEL
+        "MemoryController/STATE_FSM_FFd4" BEL
+        "MemoryController/STATE[3]_clk_DFF_100" BEL
+        "MemoryController/STATE[3]_clk_DFF_84" BEL "MemoryController/RamUB"
+        BEL "MemoryController/MemWR" BEL "MemoryController/RamCE" BEL
+        "MemoryController/idle_4" BEL "MemoryController/idle_3" BEL
+        "MemoryController/idle_2" BEL "MemoryController/idle_1" BEL
+        "MemoryController/idle_0" BEL "MemoryController/MemData_15" BEL
+        "MemoryController/MemData_14" BEL "MemoryController/MemData_13" BEL
+        "MemoryController/MemData_12" BEL "MemoryController/MemData_11" BEL
+        "MemoryController/MemData_10" BEL "MemoryController/MemData_9" BEL
+        "MemoryController/MemData_8" BEL "MemoryController/MemData_7" BEL
+        "MemoryController/MemData_6" BEL "MemoryController/MemData_5" BEL
+        "MemoryController/MemData_4" BEL "MemoryController/MemData_3" BEL
+        "MemoryController/MemData_2" BEL "MemoryController/MemData_1" BEL
+        "MemoryController/MemData_0" BEL "MemoryController/STATE_FSM_FFd2_1"
+        BEL "MemoryController/STATE_FSM_FFd3_1" BEL
+        "MemoryController/STATE_FSM_FFd1_1" BEL "MemoryController/MemWait" BEL
+        "clk_BUFGP/BUFG" BEL "WriteRequest_1" BEL "WriteRequest_2" BEL
+        "WriteRequest_3" BEL "WriteRequest_4";
 TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 SCHEMATIC END;
 

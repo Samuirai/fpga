@@ -27,19 +27,19 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 
 50%;
 
- 330 paths analyzed, 164 endpoints analyzed, 0 failing endpoints
+ 246 paths analyzed, 149 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   3.523ns.
+ Minimum period is   3.212ns.
 --------------------------------------------------------------------------------
 
-Paths for end point STATE_FSM_FFd3 (SLICE_X18Y9.BX), 11 paths
+Paths for end point MemoryController/STATE_FSM_FFd3_1 (SLICE_X18Y12.A2), 9 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     6.477ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               idle_4 (FF)
-  Destination:          STATE_FSM_FFd3 (FF)
+Slack (setup path):     6.788ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MemoryController/idle_4 (FF)
+  Destination:          MemoryController/STATE_FSM_FFd3_1 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.462ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.026ns (0.235 - 0.261)
+  Data Path Delay:      3.149ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.028ns (0.241 - 0.269)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -50,36 +50,37 @@ Slack (setup path):     6.477ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: idle_4 to STATE_FSM_FFd3
+  Maximum Data Path at Slow Process Corner: MemoryController/idle_4 to MemoryController/STATE_FSM_FFd3_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y12.AQ      Tcko                  0.391   idle<6>
-                                                       idle_4
-    SLICE_X18Y10.A1      net (fanout=2)        0.851   idle<4>
-    SLICE_X18Y10.COUT    Topcya                0.379   Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<3>
-                                                       Mcompar_idle[31]_GND_4_o_LessThan_39_o_lut<0>
-                                                       Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<3>
-    SLICE_X18Y11.CIN     net (fanout=1)        0.003   Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<3>
-    SLICE_X18Y11.CMUX    Tcinc                 0.284   Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<6>_l1
-                                                       STATE_FSM_FFd1-In1_cy
-    SLICE_X19Y9.A6       net (fanout=10)       0.361   Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<6>
-    SLICE_X19Y9.A        Tilo                  0.259   MemWait_IOBUF
-                                                       STATE_FSM_FFd3-In1
-    SLICE_X18Y9.BX       net (fanout=1)        0.848   STATE_FSM_FFd3-In
-    SLICE_X18Y9.CLK      Tdick                 0.086   STATE_FSM_FFd2_1
-                                                       STATE_FSM_FFd3
+    SLICE_X23Y15.BQ      Tcko                  0.391   MemoryController/RamUB
+                                                       MemoryController/idle_4
+    SLICE_X20Y14.A1      net (fanout=2)        0.668   MemoryController/idle<4>
+    SLICE_X20Y14.COUT    Topcya                0.395   MemoryController/Mcompar_n0000_cy<3>
+                                                       MemoryController/Mcompar_n0000_lut<0>
+                                                       MemoryController/Mcompar_n0000_cy<3>
+    SLICE_X20Y15.CIN     net (fanout=1)        0.003   MemoryController/Mcompar_n0000_cy<3>
+    SLICE_X20Y15.CMUX    Tcinc                 0.279   MemoryController/Mcompar_n0000_cy<6>_l1
+                                                       MemoryController/STATE_FSM_FFd1-In11_cy
+    SLICE_X19Y12.B6      net (fanout=8)        0.571   MemoryController/Mcompar_n0000_cy<6>
+    SLICE_X19Y12.B       Tilo                  0.259   MemoryController/STATE_FSM_FFd4
+                                                       MemoryController/STATE_FSM_FFd3-In1
+    SLICE_X18Y12.A2      net (fanout=1)        0.429   MemoryController/STATE_FSM_FFd3-In
+    SLICE_X18Y12.CLK     Tas                   0.154   MemoryController/STATE_FSM_FFd2_1
+                                                       MemoryController/STATE_FSM_FFd3-In_rt
+                                                       MemoryController/STATE_FSM_FFd3_1
     -------------------------------------------------  ---------------------------
-    Total                                      3.462ns (1.399ns logic, 2.063ns route)
-                                                       (40.4% logic, 59.6% route)
+    Total                                      3.149ns (1.478ns logic, 1.671ns route)
+                                                       (46.9% logic, 53.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     6.486ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               idle_6 (FF)
-  Destination:          STATE_FSM_FFd3 (FF)
+Slack (setup path):     6.865ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MemoryController/idle_1 (FF)
+  Destination:          MemoryController/STATE_FSM_FFd3_1 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.453ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.026ns (0.235 - 0.261)
+  Data Path Delay:      3.073ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.027ns (0.241 - 0.268)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -90,36 +91,37 @@ Slack (setup path):     6.486ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: idle_6 to STATE_FSM_FFd3
+  Maximum Data Path at Slow Process Corner: MemoryController/idle_1 to MemoryController/STATE_FSM_FFd3_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y12.CQ      Tcko                  0.391   idle<6>
-                                                       idle_6
-    SLICE_X18Y10.B1      net (fanout=2)        0.841   idle<6>
-    SLICE_X18Y10.COUT    Topcyb                0.380   Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<3>
-                                                       Mcompar_idle[31]_GND_4_o_LessThan_39_o_lut<1>1
-                                                       Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<3>
-    SLICE_X18Y11.CIN     net (fanout=1)        0.003   Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<3>
-    SLICE_X18Y11.CMUX    Tcinc                 0.284   Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<6>_l1
-                                                       STATE_FSM_FFd1-In1_cy
-    SLICE_X19Y9.A6       net (fanout=10)       0.361   Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<6>
-    SLICE_X19Y9.A        Tilo                  0.259   MemWait_IOBUF
-                                                       STATE_FSM_FFd3-In1
-    SLICE_X18Y9.BX       net (fanout=1)        0.848   STATE_FSM_FFd3-In
-    SLICE_X18Y9.CLK      Tdick                 0.086   STATE_FSM_FFd2_1
-                                                       STATE_FSM_FFd3
+    SLICE_X23Y14.BQ      Tcko                  0.391   MemoryController/idle<3>
+                                                       MemoryController/idle_1
+    SLICE_X20Y14.A2      net (fanout=2)        0.592   MemoryController/idle<1>
+    SLICE_X20Y14.COUT    Topcya                0.395   MemoryController/Mcompar_n0000_cy<3>
+                                                       MemoryController/Mcompar_n0000_lut<0>
+                                                       MemoryController/Mcompar_n0000_cy<3>
+    SLICE_X20Y15.CIN     net (fanout=1)        0.003   MemoryController/Mcompar_n0000_cy<3>
+    SLICE_X20Y15.CMUX    Tcinc                 0.279   MemoryController/Mcompar_n0000_cy<6>_l1
+                                                       MemoryController/STATE_FSM_FFd1-In11_cy
+    SLICE_X19Y12.B6      net (fanout=8)        0.571   MemoryController/Mcompar_n0000_cy<6>
+    SLICE_X19Y12.B       Tilo                  0.259   MemoryController/STATE_FSM_FFd4
+                                                       MemoryController/STATE_FSM_FFd3-In1
+    SLICE_X18Y12.A2      net (fanout=1)        0.429   MemoryController/STATE_FSM_FFd3-In
+    SLICE_X18Y12.CLK     Tas                   0.154   MemoryController/STATE_FSM_FFd2_1
+                                                       MemoryController/STATE_FSM_FFd3-In_rt
+                                                       MemoryController/STATE_FSM_FFd3_1
     -------------------------------------------------  ---------------------------
-    Total                                      3.453ns (1.400ns logic, 2.053ns route)
-                                                       (40.5% logic, 59.5% route)
+    Total                                      3.073ns (1.478ns logic, 1.595ns route)
+                                                       (48.1% logic, 51.9% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     6.586ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               idle_5 (FF)
-  Destination:          STATE_FSM_FFd3 (FF)
+Slack (setup path):     6.967ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MemoryController/idle_0 (FF)
+  Destination:          MemoryController/STATE_FSM_FFd3_1 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.353ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.026ns (0.235 - 0.261)
+  Data Path Delay:      2.971ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.027ns (0.241 - 0.268)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -130,39 +132,40 @@ Slack (setup path):     6.586ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: idle_5 to STATE_FSM_FFd3
+  Maximum Data Path at Slow Process Corner: MemoryController/idle_0 to MemoryController/STATE_FSM_FFd3_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y12.BQ      Tcko                  0.391   idle<6>
-                                                       idle_5
-    SLICE_X18Y10.B3      net (fanout=2)        0.741   idle<5>
-    SLICE_X18Y10.COUT    Topcyb                0.380   Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<3>
-                                                       Mcompar_idle[31]_GND_4_o_LessThan_39_o_lut<1>1
-                                                       Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<3>
-    SLICE_X18Y11.CIN     net (fanout=1)        0.003   Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<3>
-    SLICE_X18Y11.CMUX    Tcinc                 0.284   Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<6>_l1
-                                                       STATE_FSM_FFd1-In1_cy
-    SLICE_X19Y9.A6       net (fanout=10)       0.361   Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<6>
-    SLICE_X19Y9.A        Tilo                  0.259   MemWait_IOBUF
-                                                       STATE_FSM_FFd3-In1
-    SLICE_X18Y9.BX       net (fanout=1)        0.848   STATE_FSM_FFd3-In
-    SLICE_X18Y9.CLK      Tdick                 0.086   STATE_FSM_FFd2_1
-                                                       STATE_FSM_FFd3
+    SLICE_X23Y14.AQ      Tcko                  0.391   MemoryController/idle<3>
+                                                       MemoryController/idle_0
+    SLICE_X20Y14.A3      net (fanout=2)        0.490   MemoryController/idle<0>
+    SLICE_X20Y14.COUT    Topcya                0.395   MemoryController/Mcompar_n0000_cy<3>
+                                                       MemoryController/Mcompar_n0000_lut<0>
+                                                       MemoryController/Mcompar_n0000_cy<3>
+    SLICE_X20Y15.CIN     net (fanout=1)        0.003   MemoryController/Mcompar_n0000_cy<3>
+    SLICE_X20Y15.CMUX    Tcinc                 0.279   MemoryController/Mcompar_n0000_cy<6>_l1
+                                                       MemoryController/STATE_FSM_FFd1-In11_cy
+    SLICE_X19Y12.B6      net (fanout=8)        0.571   MemoryController/Mcompar_n0000_cy<6>
+    SLICE_X19Y12.B       Tilo                  0.259   MemoryController/STATE_FSM_FFd4
+                                                       MemoryController/STATE_FSM_FFd3-In1
+    SLICE_X18Y12.A2      net (fanout=1)        0.429   MemoryController/STATE_FSM_FFd3-In
+    SLICE_X18Y12.CLK     Tas                   0.154   MemoryController/STATE_FSM_FFd2_1
+                                                       MemoryController/STATE_FSM_FFd3-In_rt
+                                                       MemoryController/STATE_FSM_FFd3_1
     -------------------------------------------------  ---------------------------
-    Total                                      3.353ns (1.400ns logic, 1.953ns route)
-                                                       (41.8% logic, 58.2% route)
+    Total                                      2.971ns (1.478ns logic, 1.493ns route)
+                                                       (49.7% logic, 50.3% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point led_0 (SLICE_X34Y2.CE), 3 paths
+Paths for end point MemoryController/MemData_4 (SLICE_X5Y2.A4), 1 path
 --------------------------------------------------------------------------------
-Slack (setup path):     6.603ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               STATE_FSM_FFd2_1 (FF)
-  Destination:          led_0 (FF)
+Slack (setup path):     6.855ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MemoryController/STATE_FSM_FFd1 (FF)
+  Destination:          MemoryController/MemData_4 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.405ns (Levels of Logic = 1)
-  Clock Path Skew:      0.043ns (0.292 - 0.249)
+  Data Path Delay:      3.123ns (Levels of Logic = 1)
+  Clock Path Skew:      0.013ns (0.371 - 0.358)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -173,29 +176,30 @@ Slack (setup path):     6.603ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: STATE_FSM_FFd2_1 to led_0
+  Maximum Data Path at Slow Process Corner: MemoryController/STATE_FSM_FFd1 to MemoryController/MemData_4
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y9.DQ       Tcko                  0.447   STATE_FSM_FFd2_1
-                                                       STATE_FSM_FFd2_1
-    SLICE_X29Y13.C4      net (fanout=2)        0.958   STATE_FSM_FFd2_1
-    SLICE_X29Y13.C       Tilo                  0.259   RamLB_OBUF
-                                                       _n0199_inv1
-    SLICE_X34Y2.CE       net (fanout=4)        1.410   _n0199_inv
-    SLICE_X34Y2.CLK      Tceck                 0.331   led_3
-                                                       led_0
+    SLICE_X20Y16.AQ      Tcko                  0.408   MemoryController/STATE_FSM_FFd1
+                                                       MemoryController/STATE_FSM_FFd1
+    SLICE_X5Y2.A4        net (fanout=26)       2.393   MemoryController/STATE_FSM_FFd1
+    SLICE_X5Y2.CLK       Tas                   0.322   MemoryController/MemData<7>
+                                                       MemoryController/Mmux_n0162111
+                                                       MemoryController/MemData_4
     -------------------------------------------------  ---------------------------
-    Total                                      3.405ns (1.037ns logic, 2.368ns route)
-                                                       (30.5% logic, 69.5% route)
+    Total                                      3.123ns (0.730ns logic, 2.393ns route)
+                                                       (23.4% logic, 76.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     6.618ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               STATE_FSM_FFd1_1 (FF)
-  Destination:          led_0 (FF)
+
+Paths for end point MemoryController/MemData_7 (SLICE_X5Y2.D4), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     6.893ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MemoryController/STATE_FSM_FFd1 (FF)
+  Destination:          MemoryController/MemData_7 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.382ns (Levels of Logic = 1)
-  Clock Path Skew:      0.035ns (0.292 - 0.257)
+  Data Path Delay:      3.085ns (Levels of Logic = 1)
+  Clock Path Skew:      0.013ns (0.371 - 0.358)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -206,243 +210,106 @@ Slack (setup path):     6.618ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: STATE_FSM_FFd1_1 to led_0
+  Maximum Data Path at Slow Process Corner: MemoryController/STATE_FSM_FFd1 to MemoryController/MemData_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y13.AQ      Tcko                  0.447   STATE_FSM_FFd1_1
-                                                       STATE_FSM_FFd1_1
-    SLICE_X29Y13.C3      net (fanout=2)        0.935   STATE_FSM_FFd1_1
-    SLICE_X29Y13.C       Tilo                  0.259   RamLB_OBUF
-                                                       _n0199_inv1
-    SLICE_X34Y2.CE       net (fanout=4)        1.410   _n0199_inv
-    SLICE_X34Y2.CLK      Tceck                 0.331   led_3
-                                                       led_0
+    SLICE_X20Y16.AQ      Tcko                  0.408   MemoryController/STATE_FSM_FFd1
+                                                       MemoryController/STATE_FSM_FFd1
+    SLICE_X5Y2.D4        net (fanout=26)       2.355   MemoryController/STATE_FSM_FFd1
+    SLICE_X5Y2.CLK       Tas                   0.322   MemoryController/MemData<7>
+                                                       MemoryController/Mmux_n0162141
+                                                       MemoryController/MemData_7
     -------------------------------------------------  ---------------------------
-    Total                                      3.382ns (1.037ns logic, 2.345ns route)
-                                                       (30.7% logic, 69.3% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     6.790ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               STATE_FSM_FFd3_1 (FF)
-  Destination:          led_0 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.218ns (Levels of Logic = 1)
-  Clock Path Skew:      0.043ns (0.292 - 0.249)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: STATE_FSM_FFd3_1 to led_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X19Y9.AQ       Tcko                  0.391   MemWait_IOBUF
-                                                       STATE_FSM_FFd3_1
-    SLICE_X29Y13.C5      net (fanout=2)        0.827   STATE_FSM_FFd3_1
-    SLICE_X29Y13.C       Tilo                  0.259   RamLB_OBUF
-                                                       _n0199_inv1
-    SLICE_X34Y2.CE       net (fanout=4)        1.410   _n0199_inv
-    SLICE_X34Y2.CLK      Tceck                 0.331   led_3
-                                                       led_0
-    -------------------------------------------------  ---------------------------
-    Total                                      3.218ns (0.981ns logic, 2.237ns route)
-                                                       (30.5% logic, 69.5% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point led_2 (SLICE_X34Y2.CE), 3 paths
---------------------------------------------------------------------------------
-Slack (setup path):     6.639ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               STATE_FSM_FFd2_1 (FF)
-  Destination:          led_2 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.369ns (Levels of Logic = 1)
-  Clock Path Skew:      0.043ns (0.292 - 0.249)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: STATE_FSM_FFd2_1 to led_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X18Y9.DQ       Tcko                  0.447   STATE_FSM_FFd2_1
-                                                       STATE_FSM_FFd2_1
-    SLICE_X29Y13.C4      net (fanout=2)        0.958   STATE_FSM_FFd2_1
-    SLICE_X29Y13.C       Tilo                  0.259   RamLB_OBUF
-                                                       _n0199_inv1
-    SLICE_X34Y2.CE       net (fanout=4)        1.410   _n0199_inv
-    SLICE_X34Y2.CLK      Tceck                 0.295   led_3
-                                                       led_2
-    -------------------------------------------------  ---------------------------
-    Total                                      3.369ns (1.001ns logic, 2.368ns route)
-                                                       (29.7% logic, 70.3% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     6.654ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               STATE_FSM_FFd1_1 (FF)
-  Destination:          led_2 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.346ns (Levels of Logic = 1)
-  Clock Path Skew:      0.035ns (0.292 - 0.257)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: STATE_FSM_FFd1_1 to led_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X18Y13.AQ      Tcko                  0.447   STATE_FSM_FFd1_1
-                                                       STATE_FSM_FFd1_1
-    SLICE_X29Y13.C3      net (fanout=2)        0.935   STATE_FSM_FFd1_1
-    SLICE_X29Y13.C       Tilo                  0.259   RamLB_OBUF
-                                                       _n0199_inv1
-    SLICE_X34Y2.CE       net (fanout=4)        1.410   _n0199_inv
-    SLICE_X34Y2.CLK      Tceck                 0.295   led_3
-                                                       led_2
-    -------------------------------------------------  ---------------------------
-    Total                                      3.346ns (1.001ns logic, 2.345ns route)
-                                                       (29.9% logic, 70.1% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     6.826ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               STATE_FSM_FFd3_1 (FF)
-  Destination:          led_2 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.182ns (Levels of Logic = 1)
-  Clock Path Skew:      0.043ns (0.292 - 0.249)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: STATE_FSM_FFd3_1 to led_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X19Y9.AQ       Tcko                  0.391   MemWait_IOBUF
-                                                       STATE_FSM_FFd3_1
-    SLICE_X29Y13.C5      net (fanout=2)        0.827   STATE_FSM_FFd3_1
-    SLICE_X29Y13.C       Tilo                  0.259   RamLB_OBUF
-                                                       _n0199_inv1
-    SLICE_X34Y2.CE       net (fanout=4)        1.410   _n0199_inv
-    SLICE_X34Y2.CLK      Tceck                 0.295   led_3
-                                                       led_2
-    -------------------------------------------------  ---------------------------
-    Total                                      3.182ns (0.945ns logic, 2.237ns route)
-                                                       (29.7% logic, 70.3% route)
+    Total                                      3.085ns (0.730ns logic, 2.355ns route)
+                                                       (23.7% logic, 76.3% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point STATE_FSM_FFd4 (SLICE_X18Y9.C5), 1 path
+Paths for end point MemoryController/STATE_FSM_FFd4 (SLICE_X19Y12.C5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.518ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               STATE_FSM_FFd4 (FF)
-  Destination:          STATE_FSM_FFd4 (FF)
+Slack (hold path):      0.501ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MemoryController/STATE_FSM_FFd4 (FF)
+  Destination:          MemoryController/STATE_FSM_FFd4 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.518ns (Levels of Logic = 1)
+  Data Path Delay:      0.501ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 10.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: STATE_FSM_FFd4 to STATE_FSM_FFd4
+  Minimum Data Path at Fast Process Corner: MemoryController/STATE_FSM_FFd4 to MemoryController/STATE_FSM_FFd4
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y9.CQ       Tcko                  0.234   STATE_FSM_FFd2_1
-                                                       STATE_FSM_FFd4
-    SLICE_X18Y9.C5       net (fanout=29)       0.087   STATE_FSM_FFd4
-    SLICE_X18Y9.CLK      Tah         (-Th)    -0.197   STATE_FSM_FFd2_1
-                                                       STATE_FSM_FFd4-In1
-                                                       STATE_FSM_FFd4
+    SLICE_X19Y12.CQ      Tcko                  0.198   MemoryController/STATE_FSM_FFd4
+                                                       MemoryController/STATE_FSM_FFd4
+    SLICE_X19Y12.C5      net (fanout=28)       0.088   MemoryController/STATE_FSM_FFd4
+    SLICE_X19Y12.CLK     Tah         (-Th)    -0.215   MemoryController/STATE_FSM_FFd4
+                                                       MemoryController/STATE_FSM_FFd4-In1
+                                                       MemoryController/STATE_FSM_FFd4
     -------------------------------------------------  ---------------------------
-    Total                                      0.518ns (0.431ns logic, 0.087ns route)
-                                                       (83.2% logic, 16.8% route)
+    Total                                      0.501ns (0.413ns logic, 0.088ns route)
+                                                       (82.4% logic, 17.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point STATE_FSM_FFd3_1 (SLICE_X19Y9.A5), 1 path
+Paths for end point MemoryController/STATE_FSM_FFd3 (SLICE_X19Y12.B5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.509ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MemoryController/STATE_FSM_FFd3 (FF)
+  Destination:          MemoryController/STATE_FSM_FFd3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.509ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: MemoryController/STATE_FSM_FFd3 to MemoryController/STATE_FSM_FFd3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y12.BQ      Tcko                  0.198   MemoryController/STATE_FSM_FFd4
+                                                       MemoryController/STATE_FSM_FFd3
+    SLICE_X19Y12.B5      net (fanout=27)       0.096   MemoryController/STATE_FSM_FFd3
+    SLICE_X19Y12.CLK     Tah         (-Th)    -0.215   MemoryController/STATE_FSM_FFd4
+                                                       MemoryController/STATE_FSM_FFd3-In1
+                                                       MemoryController/STATE_FSM_FFd3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.509ns (0.413ns logic, 0.096ns route)
+                                                       (81.1% logic, 18.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point MemoryController/STATE_FSM_FFd2 (SLICE_X19Y12.A4), 1 path
 --------------------------------------------------------------------------------
 Slack (hold path):      0.556ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               STATE_FSM_FFd3 (FF)
-  Destination:          STATE_FSM_FFd3_1 (FF)
+  Source:               MemoryController/STATE_FSM_FFd4 (FF)
+  Destination:          MemoryController/STATE_FSM_FFd2 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.558ns (Levels of Logic = 1)
-  Clock Path Skew:      0.002ns (0.034 - 0.032)
-  Source Clock:         clk_BUFGP rising at 10.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: STATE_FSM_FFd3 to STATE_FSM_FFd3_1
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X18Y9.BQ       Tcko                  0.234   STATE_FSM_FFd2_1
-                                                       STATE_FSM_FFd3
-    SLICE_X19Y9.A5       net (fanout=30)       0.109   STATE_FSM_FFd3
-    SLICE_X19Y9.CLK      Tah         (-Th)    -0.215   MemWait_IOBUF
-                                                       STATE_FSM_FFd3-In1
-                                                       STATE_FSM_FFd3_1
-    -------------------------------------------------  ---------------------------
-    Total                                      0.558ns (0.449ns logic, 0.109ns route)
-                                                       (80.5% logic, 19.5% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point STATE_FSM_FFd4 (SLICE_X18Y9.C6), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.582ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               STATE_FSM_FFd3 (FF)
-  Destination:          STATE_FSM_FFd4 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.582ns (Levels of Logic = 1)
+  Data Path Delay:      0.556ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 10.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: STATE_FSM_FFd3 to STATE_FSM_FFd4
+  Minimum Data Path at Fast Process Corner: MemoryController/STATE_FSM_FFd4 to MemoryController/STATE_FSM_FFd2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y9.BQ       Tcko                  0.234   STATE_FSM_FFd2_1
-                                                       STATE_FSM_FFd3
-    SLICE_X18Y9.C6       net (fanout=30)       0.151   STATE_FSM_FFd3
-    SLICE_X18Y9.CLK      Tah         (-Th)    -0.197   STATE_FSM_FFd2_1
-                                                       STATE_FSM_FFd4-In1
-                                                       STATE_FSM_FFd4
+    SLICE_X19Y12.CQ      Tcko                  0.198   MemoryController/STATE_FSM_FFd4
+                                                       MemoryController/STATE_FSM_FFd4
+    SLICE_X19Y12.A4      net (fanout=28)       0.143   MemoryController/STATE_FSM_FFd4
+    SLICE_X19Y12.CLK     Tah         (-Th)    -0.215   MemoryController/STATE_FSM_FFd4
+                                                       MemoryController/STATE_FSM_FFd2-In21
+                                                       MemoryController/STATE_FSM_FFd2
     -------------------------------------------------  ---------------------------
-    Total                                      0.582ns (0.431ns logic, 0.151ns route)
-                                                       (74.1% logic, 25.9% route)
+    Total                                      0.556ns (0.413ns logic, 0.143ns route)
+                                                       (74.3% logic, 25.7% route)
 
 --------------------------------------------------------------------------------
 
@@ -456,20 +323,20 @@ Slack: 8.270ns (period - min period limit)
   Location pin: BUFGMUX_X3Y13.I0
   Clock network: clk_BUFGP/IBUFG
 --------------------------------------------------------------------------------
-Slack: 9.570ns (period - min period limit)
+Slack: 8.361ns (period - min period limit)
   Period: 10.000ns
-  Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: Data_7/CLK
-  Logical resource: Data_4/CK
-  Location pin: SLICE_X4Y2.CLK
+  Min period limit: 1.639ns (610.128MHz) (Tockper)
+  Physical resource: WriteRequest_4/CLK0
+  Logical resource: WriteRequest_4/CK0
+  Location pin: OLOGIC_X13Y1.CLK0
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 9.570ns (period - min period limit)
+Slack: 8.361ns (period - min period limit)
   Period: 10.000ns
-  Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: Data_7/CLK
-  Logical resource: Data_5/CK
-  Location pin: SLICE_X4Y2.CLK
+  Min period limit: 1.639ns (610.128MHz) (Tockper)
+  Physical resource: WriteRequest_3/CLK0
+  Logical resource: WriteRequest_3/CK0
+  Location pin: OLOGIC_X13Y0.CLK0
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -486,7 +353,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.523|         |         |         |
+clk            |    3.212|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -495,16 +362,16 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 330 paths, 0 nets, and 185 connections
+Constraints cover 246 paths, 0 nets, and 169 connections
 
 Design statistics:
-   Minimum period:   3.523ns{1}   (Maximum frequency: 283.849MHz)
+   Minimum period:   3.212ns{1}   (Maximum frequency: 311.332MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Sun Nov 27 04:57:22 2011 
+Analysis completed Tue Nov 29 00:13:22 2011 
 --------------------------------------------------------------------------------
 
 Trace Settings:

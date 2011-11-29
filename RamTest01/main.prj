@@ -1,2 +1,3 @@
 vhdl work "samuirai.vhd"
+vhdl work "memctrl.vhd"
 vhdl work "main.vhd"

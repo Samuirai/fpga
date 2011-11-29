@@ -3,14 +3,14 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: main.prj
 
@@ -109,15 +109,21 @@ Slice Utilization Ratio Delta      : 5
 Parsing VHDL file "\\psf\home\coding\fpga\RamTest01\samuirai.vhd" into library work
 Parsing package <samuirai>.
 Parsing package body <samuirai>.
+Parsing VHDL file "\\psf\home\coding\fpga\RamTest01\memctrl.vhd" into library work
+Parsing entity <memctrl>.
+Parsing architecture <Behavioral> of entity <memctrl>.
 Parsing VHDL file "\\psf\home\coding\fpga\RamTest01\main.vhd" into library work
 Parsing entity <main>.
 Parsing architecture <Behavioral> of entity <main>.
+WARNING:HDLCompiler:1369 - "\\psf\home\coding\fpga\RamTest01\main.vhd" Line 97: Possible infinite loop; process does not have a wait statement
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
 
 Elaborating entity <main> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <memctrl> (architecture <Behavioral>) from library <work>.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -126,6 +132,33 @@ Elaborating entity <main> (architecture <Behavioral>) from library <work>.
 Synthesizing Unit <main>.
     Related source file is "//psf/home/coding/fpga/ramtest01/main.vhd".
 WARNING:Xst:647 - Input <sw<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Register <DataRequest_dummy_dummy_dummy_dummy_dummy_dummy_dummy> equivalent to <WriteRequest> has been removed
+    Register <DataRequest_dummy_dummy_dummy_dummy_dummy_dummy> equivalent to <WriteRequest> has been removed
+    Register <DataRequest_dummy_dummy_dummy_dummy_dummy> equivalent to <WriteRequest> has been removed
+    Register <DataRequest_dummy_dummy_dummy_dummy> equivalent to <WriteRequest> has been removed
+    Register <DataRequest_dummy_dummy_dummy> equivalent to <WriteRequest> has been removed
+    Register <DataRequest_dummy_dummy> equivalent to <WriteRequest> has been removed
+    Register <DataRequest_dummy> equivalent to <WriteRequest> has been removed
+    Register <DataRequest> equivalent to <WriteRequest> has been removed
+    Found 8-bit register for signal <led>.
+    Found 1-bit register for signal <WriteRequest>.
+    WARNING:Xst:2404 -  FFs/Latches <DataRequest<1:1>> (without init value) have a constant value of 0 in block <main>.
+    WARNING:Xst:2404 -  FFs/Latches <DataRequest<1:1>> (without init value) have a constant value of 0 in block <main>.
+    WARNING:Xst:2404 -  FFs/Latches <DataRequest<1:1>> (without init value) have a constant value of 0 in block <main>.
+    WARNING:Xst:2404 -  FFs/Latches <DataRequest<1:1>> (without init value) have a constant value of 0 in block <main>.
+    WARNING:Xst:2404 -  FFs/Latches <DataRequest<1:1>> (without init value) have a constant value of 0 in block <main>.
+    WARNING:Xst:2404 -  FFs/Latches <DataRequest<1:1>> (without init value) have a constant value of 0 in block <main>.
+    WARNING:Xst:2404 -  FFs/Latches <DataRequest<1:1>> (without init value) have a constant value of 0 in block <main>.
+    WARNING:Xst:2404 -  FFs/Latches <DataRequest<1:1>> (without init value) have a constant value of 0 in block <main>.
+    WARNING:Xst:2404 -  FFs/Latches <AdrRequest<1:23>> (without init value) have a constant value of 0 in block <main>.
+    Summary:
+	inferred   9 D-type flip-flop(s).
+Unit <main> synthesized.
+
+Synthesizing Unit <memctrl>.
+    Related source file is "//psf/home/coding/fpga/ramtest01/memctrl.vhd".
+WARNING:Xst:2935 - Signal 'MemClk', unconnected in block 'memctrl', is tied to its initial value (0).
+WARNING:Xst:2935 - Signal 'RamCRE', unconnected in block 'memctrl', is tied to its initial value (0).
     Found 1-bit register for signal <RamCE>.
     Found 1-bit register for signal <RamOE>.
     Found 1-bit register for signal <MemWR>.
@@ -134,9 +167,16 @@ WARNING:Xst:647 - Input <sw<7:0>> is never used. This port will be preserved and
     Found 1-bit register for signal <RamUB>.
     Found 1-bit register for signal <RamLB>.
     Found 1-bit register for signal <STATE[3]_clk_DFF_46_q>.
-    Found 8-bit register for signal <led>.
+    Found 1-bit register for signal <busy>.
     Found 32-bit register for signal <idle>.
     Found 4-bit register for signal <STATE>.
+    Found 1-bit register for signal <STATE[3]_clk_DFF_84>.
+    Found 1-bit register for signal <STATE[3]_clk_DFF_85>.
+    Found 1-bit register for signal <STATE[3]_clk_DFF_86>.
+    Found 1-bit register for signal <STATE[3]_clk_DFF_87>.
+    Found 1-bit register for signal <STATE[3]_clk_DFF_88>.
+    Found 1-bit register for signal <STATE[3]_clk_DFF_89>.
+    Found 1-bit register for signal <STATE[3]_clk_DFF_90>.
     Found 1-bit register for signal <STATE[3]_clk_DFF_91>.
     Found 1-bit register for signal <STATE[3]_clk_DFF_92>.
     Found 1-bit register for signal <STATE[3]_clk_DFF_93>.
@@ -147,57 +187,51 @@ WARNING:Xst:647 - Input <sw<7:0>> is never used. This port will be preserved and
     Found 1-bit register for signal <STATE[3]_clk_DFF_98>.
     Found 1-bit register for signal <STATE[3]_clk_DFF_99>.
     Found 1-bit register for signal <STATE[3]_clk_DFF_100>.
-    Found 1-bit register for signal <STATE[3]_clk_DFF_101>.
-    Found 1-bit register for signal <STATE[3]_clk_DFF_102>.
-    Found 1-bit register for signal <STATE[3]_clk_DFF_103>.
-    Found 1-bit register for signal <STATE[3]_clk_DFF_104>.
-    Found 1-bit register for signal <STATE[3]_clk_DFF_105>.
-    Found 1-bit register for signal <STATE[3]_clk_DFF_106>.
-    Found 1-bit register for signal <STATE[3]_clk_DFF_107>.
     Found 1-bit register for signal <MemAdv>.
 INFO:Xst:1799 - State write1 is never reached in FSM <STATE>.
+INFO:Xst:1799 - State read1 is never reached in FSM <STATE>.
 INFO:Xst:1799 - State read2 is never reached in FSM <STATE>.
 INFO:Xst:1799 - State read3 is never reached in FSM <STATE>.
 INFO:Xst:1799 - State read4 is never reached in FSM <STATE>.
 INFO:Xst:1799 - State read5 is never reached in FSM <STATE>.
     Found finite state machine <FSM_0> for signal <STATE>.
     -----------------------------------------------------------------------
-    | States             | 15                                             |
-    | Transitions        | 19                                             |
-    | Inputs             | 1                                              |
-    | Outputs            | 15                                             |
+    | States             | 16                                             |
+    | Transitions        | 20                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 11                                             |
     | Clock              | clk (rising_edge)                              |
     | Power Up State     | init                                           |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 32-bit subtractor for signal <idle[31]_GND_4_o_sub_40_OUT<31:0>> created at line 262.
-    Found 1-bit tristate buffer for signal <Data<15>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<14>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<13>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<12>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<11>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<10>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<9>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<8>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<7>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<6>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<5>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<4>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<3>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<2>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<1>> created at line 62
-    Found 1-bit tristate buffer for signal <Data<0>> created at line 62
-    Found 1-bit tristate buffer for signal <MemWait> created at line 62
-    Found 32-bit comparator greater for signal <idle[31]_GND_4_o_LessThan_39_o> created at line 261
+    Found 32-bit subtractor for signal <idle[31]_GND_5_o_sub_40_OUT<31:0>> created at line 256.
+    Found 1-bit tristate buffer for signal <MemData<15>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<14>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<13>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<12>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<11>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<10>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<9>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<8>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<7>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<6>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<5>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<4>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<3>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<2>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<1>> created at line 58
+    Found 1-bit tristate buffer for signal <MemData<0>> created at line 58
+    Found 1-bit tristate buffer for signal <MemWait> created at line 58
+    Found 32-bit comparator greater for signal <n0000> created at line 78
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  80 D-type flip-flop(s).
+	inferred  96 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred  14 Multiplexer(s).
+	inferred  13 Multiplexer(s).
 	inferred  17 Tristate(s).
 	inferred   1 Finite State Machine(s).
-Unit <main> synthesized.
+Unit <memctrl> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -205,16 +239,17 @@ HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 1
  32-bit subtractor                                     : 1
-# Registers                                            : 27
- 1-bit register                                        : 24
+# Registers                                            : 30
+ 1-bit register                                        : 26
  16-bit register                                       : 1
+ 23-bit register                                       : 1
  32-bit register                                       : 1
  8-bit register                                        : 1
 # Comparators                                          : 1
  32-bit comparator greater                             : 1
-# Multiplexers                                         : 14
+# Multiplexers                                         : 13
  16-bit 2-to-1 multiplexer                             : 1
- 32-bit 2-to-1 multiplexer                             : 13
+ 32-bit 2-to-1 multiplexer                             : 12
 # Tristates                                            : 17
  1-bit tristate buffer                                 : 17
 # FSMs                                                 : 1
@@ -225,12 +260,47 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1293 - FF/Latch <RamOE> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemAdv> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_4> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_5> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_6> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_7> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <STATE[3]_clk_DFF_84> in Unit <MemoryController> is equivalent to the following 15 FFs/Latches, which will be removed : <STATE[3]_clk_DFF_85> <STATE[3]_clk_DFF_86> <STATE[3]_clk_DFF_87> <STATE[3]_clk_DFF_88> <STATE[3]_clk_DFF_89> <STATE[3]_clk_DFF_90> <STATE[3]_clk_DFF_91> <STATE[3]_clk_DFF_92> <STATE[3]_clk_DFF_93> <STATE[3]_clk_DFF_94> <STATE[3]_clk_DFF_95> <STATE[3]_clk_DFF_96> <STATE[3]_clk_DFF_97> <STATE[3]_clk_DFF_98> <STATE[3]_clk_DFF_99> 
+WARNING:Xst:1426 - The value init of the FF/Latch WriteRequest hinder the constant cleaning in the block main.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch led_7 hinder the constant cleaning in the block main.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch led_6 hinder the constant cleaning in the block main.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch led_5 hinder the constant cleaning in the block main.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch led_4 hinder the constant cleaning in the block main.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1293 - FF/Latch <MemAdv> has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <busy> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <RamOE> has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_23> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_22> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_21> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_20> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_19> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_18> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_17> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_16> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_15> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_14> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_1> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_2> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_3> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_4> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_5> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_6> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_7> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_8> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_9> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_10> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_11> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_12> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MemAdr_13> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_0> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_1> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_2> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_3> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -238,13 +308,13 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 1
  32-bit subtractor                                     : 1
-# Registers                                            : 80
- Flip-Flops                                            : 80
+# Registers                                            : 105
+ Flip-Flops                                            : 105
 # Comparators                                          : 1
  32-bit comparator greater                             : 1
-# Multiplexers                                         : 14
+# Multiplexers                                         : 13
  16-bit 2-to-1 multiplexer                             : 1
- 32-bit 2-to-1 multiplexer                             : 13
+ 32-bit 2-to-1 multiplexer                             : 12
 # FSMs                                                 : 1
 
 =========================================================================
@@ -252,15 +322,26 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1293 - FF/Latch <RamOE> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemAdv> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_4> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_5> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_6> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_7> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <STATE[3]_clk_DFF_91> in Unit <main> is equivalent to the following 15 FFs/Latches, which will be removed : <STATE[3]_clk_DFF_92> <STATE[3]_clk_DFF_93> <STATE[3]_clk_DFF_94> <STATE[3]_clk_DFF_95> <STATE[3]_clk_DFF_96> <STATE[3]_clk_DFF_97> <STATE[3]_clk_DFF_98> <STATE[3]_clk_DFF_99> <STATE[3]_clk_DFF_100> <STATE[3]_clk_DFF_101> <STATE[3]_clk_DFF_102> <STATE[3]_clk_DFF_103> <STATE[3]_clk_DFF_104> <STATE[3]_clk_DFF_105> <STATE[3]_clk_DFF_106> 
+WARNING:Xst:1293 - FF/Latch <RamOE> has a constant value of 0 in block <memctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <busy> (without init value) has a constant value of 0 in block <memctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemAdv> has a constant value of 0 in block <memctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1426 - The value init of the FF/Latch WriteRequest hinder the constant cleaning in the block main.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch led_7 hinder the constant cleaning in the block main.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch led_6 hinder the constant cleaning in the block main.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch led_5 hinder the constant cleaning in the block main.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch led_4 hinder the constant cleaning in the block main.
+   You should achieve better results by setting this init to 1.
+INFO:Xst:2261 - The FF/Latch <STATE[3]_clk_DFF_84> in Unit <memctrl> is equivalent to the following 15 FFs/Latches, which will be removed : <STATE[3]_clk_DFF_85> <STATE[3]_clk_DFF_86> <STATE[3]_clk_DFF_87> <STATE[3]_clk_DFF_88> <STATE[3]_clk_DFF_89> <STATE[3]_clk_DFF_90> <STATE[3]_clk_DFF_91> <STATE[3]_clk_DFF_92> <STATE[3]_clk_DFF_93> <STATE[3]_clk_DFF_94> <STATE[3]_clk_DFF_95> <STATE[3]_clk_DFF_96> <STATE[3]_clk_DFF_97> <STATE[3]_clk_DFF_98> <STATE[3]_clk_DFF_99> 
+INFO:Xst:2261 - The FF/Latch <led_0> in Unit <main> is equivalent to the following 3 FFs/Latches, which will be removed : <led_1> <led_2> <led_3> 
+INFO:Xst:2261 - The FF/Latch <led_4> in Unit <main> is equivalent to the following 3 FFs/Latches, which will be removed : <led_5> <led_6> <led_7> 
+INFO:Xst:2261 - The FF/Latch <MemAdr_1> in Unit <memctrl> is equivalent to the following 22 FFs/Latches, which will be removed : <MemAdr_2> <MemAdr_3> <MemAdr_4> <MemAdr_5> <MemAdr_6> <MemAdr_7> <MemAdr_8> <MemAdr_9> <MemAdr_10> <MemAdr_11> <MemAdr_12> <MemAdr_13> <MemAdr_14> <MemAdr_15> <MemAdr_16> <MemAdr_17> <MemAdr_18> <MemAdr_19> <MemAdr_20> <MemAdr_21> <MemAdr_22> <MemAdr_23> 
+WARNING:Xst:1710 - FF/Latch <MemAdr_1> (without init value) has a constant value of 0 in block <memctrl>. This FF/Latch will be trimmed during the optimization process.
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_0> on signal <STATE[1:4]> with user encoding.
+Optimizing FSM <MemoryController/FSM_0> on signal <STATE[1:4]> with user encoding.
 --------------------
  State  | Encoding
 --------------------
@@ -274,48 +355,53 @@ Optimizing FSM <FSM_0> on signal <STATE[1:4]> with user encoding.
  write7 | 0111
  write8 | 1000
  write9 | 1001
- read1  | 1010
+ finish | 1010
+ read1  | unreached
  read2  | unreached
  read3  | unreached
  read4  | unreached
  read5  | unreached
 --------------------
-INFO:Xst:2261 - The FF/Latch <RamUB> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <RamLB> 
+INFO:Xst:2261 - The FF/Latch <RamUB> in Unit <memctrl> is equivalent to the following FF/Latch, which will be removed : <RamLB> 
+WARNING:Xst:1293 - FF/Latch <led_0> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <main> ...
-WARNING:Xst:1293 - FF/Latch <idle_31> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_30> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_29> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_28> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_27> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_26> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_25> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_24> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_23> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_22> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_21> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_20> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_19> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_18> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_17> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_16> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_15> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_14> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_13> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_12> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_11> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_10> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_9> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_8> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <idle_7> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <MemoryController/idle_5> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_6> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_7> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_8> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_9> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_10> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_11> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_12> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_13> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_14> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_15> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_16> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_17> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_18> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_19> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_20> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_21> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_22> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_23> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_24> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_25> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_26> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_27> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_28> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_29> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_30> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MemoryController/idle_31> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <WriteRequest> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_4> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 0.
-FlipFlop STATE_FSM_FFd1 has been replicated 1 time(s)
-FlipFlop STATE_FSM_FFd2 has been replicated 1 time(s)
-FlipFlop STATE_FSM_FFd3 has been replicated 1 time(s)
-FlipFlop STATE_FSM_FFd4 has been replicated 1 time(s)
+FlipFlop MemoryController/STATE_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop MemoryController/STATE_FSM_FFd2 has been replicated 1 time(s)
+FlipFlop MemoryController/STATE_FSM_FFd3 has been replicated 1 time(s)
+FlipFlop WriteRequest has been replicated 4 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
 
@@ -323,8 +409,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 41
- Flip-Flops                                            : 41
+# Registers                                            : 39
+ Flip-Flops                                            : 39
 
 =========================================================================
 
@@ -347,21 +433,21 @@ Top Level Output File Name         : main.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 72
+# BELS                             : 62
 #      GND                         : 1
-#      INV                         : 10
+#      INV                         : 8
 #      LUT1                        : 1
-#      LUT2                        : 3
+#      LUT2                        : 1
 #      LUT3                        : 2
 #      LUT4                        : 6
-#      LUT5                        : 20
-#      LUT6                        : 6
-#      MUXCY                       : 15
+#      LUT5                        : 11
+#      LUT6                        : 13
+#      MUXCY                       : 13
 #      VCC                         : 1
-#      XORCY                       : 7
-# FlipFlops/Latches                : 41
-#      FD                          : 25
-#      FDE                         : 16
+#      XORCY                       : 5
+# FlipFlops/Latches                : 39
+#      FD                          : 29
+#      FDE                         : 10
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 56
@@ -375,20 +461,21 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              41  out of  18224     0%  
- Number of Slice LUTs:                   48  out of   9112     0%  
-    Number used as Logic:                48  out of   9112     0%  
+ Number of Slice Registers:              35  out of  18224     0%  
+ Number of Slice LUTs:                   42  out of   9112     0%  
+    Number used as Logic:                42  out of   9112     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     53
-   Number with an unused Flip Flop:      12  out of     53    22%  
-   Number with an unused LUT:             5  out of     53     9%  
-   Number of fully used LUT-FF pairs:    36  out of     53    67%  
+ Number of LUT Flip Flop pairs used:     45
+   Number with an unused Flip Flop:      10  out of     45    22%  
+   Number with an unused LUT:             3  out of     45     6%  
+   Number of fully used LUT-FF pairs:    32  out of     45    71%  
    Number of unique control sets:         3
 
 IO Utilization: 
  Number of IOs:                          65
  Number of bonded IOBs:                  57  out of    232    24%  
+    IOB Flip Flops/Latches:               4
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -414,7 +501,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 41    |
+clk                                | BUFGP                  | 39    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -425,7 +512,7 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 3.088ns (Maximum Frequency: 323.881MHz)
+   Minimum period: 3.034ns (Maximum Frequency: 329.598MHz)
    Minimum input arrival time before clock: 2.211ns
    Maximum output required time after clock: 4.807ns
    Maximum combinational path delay: No path found
@@ -436,33 +523,33 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 3.088ns (frequency: 323.881MHz)
-  Total number of paths / destination ports: 330 / 57
+  Clock period: 3.034ns (frequency: 329.598MHz)
+  Total number of paths / destination ports: 246 / 44
 -------------------------------------------------------------------------
-Delay:               3.088ns (Levels of Logic = 9)
-  Source:            idle_0 (FF)
-  Destination:       idle_0 (FF)
+Delay:               3.034ns (Levels of Logic = 9)
+  Source:            MemoryController/idle_0 (FF)
+  Destination:       MemoryController/STATE_FSM_FFd2 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: idle_0 to idle_0
+  Data Path: MemoryController/idle_0 to MemoryController/STATE_FSM_FFd2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              2   0.447   0.961  idle_0 (idle_0)
-     LUT5:I0->O            1   0.203   0.000  Mcompar_idle[31]_GND_4_o_LessThan_39_o_lut<0> (Mcompar_idle[31]_GND_4_o_LessThan_39_o_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<0> (Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<1> (Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<2> (Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<3> (Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<4> (Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<5> (Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<5>)
-     MUXCY:CI->O          11   0.019   0.883  Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<6> (Mcompar_idle[31]_GND_4_o_LessThan_39_o_cy<6>)
-     LUT5:I4->O            1   0.205   0.000  Mmux_STATE[3]_idle[31]_wide_mux_52_OUT231 (STATE[3]_idle[31]_wide_mux_52_OUT<2>)
-     FDE:D                     0.102          idle_2
+     FDE:C->Q              2   0.447   0.961  MemoryController/idle_0 (MemoryController/idle_0)
+     LUT5:I0->O            1   0.203   0.000  MemoryController/Mcompar_n0000_lut<0> (MemoryController/Mcompar_n0000_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  MemoryController/Mcompar_n0000_cy<0> (MemoryController/Mcompar_n0000_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  MemoryController/Mcompar_n0000_cy<1> (MemoryController/Mcompar_n0000_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  MemoryController/Mcompar_n0000_cy<2> (MemoryController/Mcompar_n0000_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  MemoryController/Mcompar_n0000_cy<3> (MemoryController/Mcompar_n0000_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  MemoryController/Mcompar_n0000_cy<4> (MemoryController/Mcompar_n0000_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  MemoryController/Mcompar_n0000_cy<5> (MemoryController/Mcompar_n0000_cy<5>)
+     MUXCY:CI->O           9   0.019   0.830  MemoryController/Mcompar_n0000_cy<6> (MemoryController/Mcompar_n0000_cy<6>)
+     LUT4:I3->O            2   0.205   0.000  MemoryController/STATE_FSM_FFd2-In21 (MemoryController/STATE_FSM_FFd2-In)
+     FD:D                      0.102          MemoryController/STATE_FSM_FFd2
     ----------------------------------------
-    Total                      3.088ns (1.243ns logic, 1.845ns route)
-                                       (40.3% logic, 59.7% route)
+    Total                      3.034ns (1.243ns logic, 1.791ns route)
+                                       (41.0% logic, 59.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -470,16 +557,16 @@ Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
 -------------------------------------------------------------------------
 Offset:              2.211ns (Levels of Logic = 2)
   Source:            MemWait (PAD)
-  Destination:       MemWait (FF)
+  Destination:       MemoryController/MemWait (FF)
   Destination Clock: clk rising
 
-  Data Path: MemWait to MemWait
+  Data Path: MemWait to MemoryController/MemWait
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           1   1.222   0.684  MemWait_IOBUF (N19)
-     LUT2:I0->O            1   0.203   0.000  MemWait_rstpot (MemWait_rstpot)
-     FD:D                      0.102          MemWait
+     IOBUF:IO->O           1   1.222   0.684  MemWait_IOBUF (N16)
+     LUT2:I0->O            1   0.203   0.000  MemoryController/MemWait_rstpot (MemoryController/MemWait_rstpot)
+     FD:D                      0.102          MemoryController/MemWait
     ----------------------------------------
     Total                      2.211ns (1.527ns logic, 0.684ns route)
                                        (69.1% logic, 30.9% route)
@@ -489,16 +576,16 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 42 / 25
 -------------------------------------------------------------------------
 Offset:              4.807ns (Levels of Logic = 2)
-  Source:            STATE[3]_clk_DFF_91 (FF)
+  Source:            MemoryController/STATE[3]_clk_DFF_84 (FF)
   Destination:       Data<15> (PAD)
   Source Clock:      clk rising
 
-  Data Path: STATE[3]_clk_DFF_91 to Data<15>
+  Data Path: MemoryController/STATE[3]_clk_DFF_84 to Data<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              1   0.447   0.579  STATE[3]_clk_DFF_91 (STATE[3]_clk_DFF_91)
-     INV:I->O             16   0.206   1.004  STATE[3]_clk_DFF_100_inv1_INV_0 (STATE[3]_clk_DFF_100_inv)
+     FDE:C->Q              1   0.447   0.579  MemoryController/STATE[3]_clk_DFF_84 (MemoryController/STATE[3]_clk_DFF_84)
+     INV:I->O             16   0.206   1.004  MemoryController/STATE[3]_clk_DFF_84_inv1_INV_0 (MemoryController/STATE[3]_clk_DFF_84_inv)
      IOBUF:T->IO               2.571          Data_15_IOBUF (Data<15>)
     ----------------------------------------
     Total                      4.807ns (3.224ns logic, 1.583ns route)
@@ -514,20 +601,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.088|         |         |         |
+clk            |    3.034|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.36 secs
+Total CPU time to Xst completion: 8.05 secs
  
 --> 
 
-Total memory usage is 244208 kilobytes
+Total memory usage is 244336 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   38 (   0 filtered)
-Number of infos    :    7 (   0 filtered)
+Number of warnings :   85 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
 

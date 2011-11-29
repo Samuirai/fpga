@@ -49,227 +49,68 @@ entity main is
 end main;
 
 architecture Behavioral of main is
-		signal STATE : STATE_MACHINE := INIT;
-		signal idle : integer := 10;
-		signal test : STD_ULOGIC_VECTOR (15 downto 0);
-		signal test2 : STD_ULOGIC_VECTOR (23 downto 1);
+	component memctrl 
+		PORT( MemAdr : out STD_ULOGIC_VECTOR (23 downto 1);
+			MemData : inout STD_ULOGIC_VECTOR (15 downto 0);
+			RamOE: out STD_ULOGIC := '0';
+			MemWR: out STD_ULOGIC := '0';
+			MemAdv: out STD_ULOGIC := '0';
+			MemWait: inout STD_ULOGIC := '0';
+			MemClk: out STD_ULOGIC := '0';
+			RamCE: out STD_ULOGIC := '0';
+			RamCRE: out STD_ULOGIC := '0';
+			RamUB: out STD_ULOGIC := '0';
+			RamLB: out STD_ULOGIC := '0';
+			clk: in STD_ULOGIC;
+			DataRequest : inout STD_ULOGIC_VECTOR (15 downto 0);
+			AdrRequest : in STD_ULOGIC_VECTOR (23 downto 1);
+			WriteRequest: in STD_ULOGIC;
+			busy: out STD_ULOGIC
+		);
+	end component;
+	
+	signal MemBusy: STD_ULOGIC := '0';
+	signal DataRequest: STD_ULOGIC_VECTOR (15 downto 0) := "0000000000000000";
+	signal AdrRequest: STD_ULOGIC_VECTOR (23 downto 1) := "00000000000000000000000";
+	signal WriteRequest: STD_ULOGIC := '0';
+	
 begin
-	--led <= leds;
-	MemClk <= '0';
-	RamCRE <= '0';
-	test <= "0011011100010011";
-	test2 <= "00000000000000000000000";
-	process (clk) is
-		
+	
+	MemoryController: memctrl port map(
+			MemAdr => MemAdr,
+			MemData => Data,
+			DataRequest => DataRequest,
+			RamOE => RamOE,
+			MemWR => MemWR,
+			MemAdv => MemAdv,
+			MemWait => MemWait,
+			MemClk => MemClk,
+			RamCE => RamCE,
+			RamCRE => RamCRE,
+			RamUB => RamUB,
+			RamLB => RamLB,
+			clk => clk,
+			busy => MemBusy,
+			AdrRequest => AdrRequest,
+			WriteRequest => WriteRequest
+		);
+	process 
+	
 	begin
 		if (clk'event and clk = '1') then
-		case STATE is
-			when INIT =>
-				-- INIT
-				MemAdv <= '0';
-				RamCE <= '1';
-				RamOE <= '0';
-				MemWR <= '0';
-				MemAdr <= "-----------------------";
-				Data <= "ZZZZZZZZZZZZZZZZ";
-				RamUB <= '1';
-				RamLB <= '1';
-				MemWait <= 'Z';
-				led <= "00000000";
-					
-				idle <= 100; -- safe
-				if idle > 0 then
-					idle <= idle - 1;
-				else
-					STATE <= WRITE2;
-				end if;
-				
-			when WRITE1 =>
-			
-				MemAdv <= '0';
-				RamCE <= '1';
-				RamOE <= '0';
-				MemWR <= '0';
-				MemAdr <= "-----------------------";
-				Data <= "ZZZZZZZZZZZZZZZZ";
-				RamUB <= '1';
-				RamLB <= '1';
-				MemWait <= 'Z';
-				led <= "00000001";
-					
-				idle <= 100; -- safe
-				if idle > 0 then
-					idle <= idle - 1;
-				else
-					STATE <= WRITE2;
-				end if;
-				
-			when WRITE2 =>
-			
-				MemAdv <= '0';
-				RamCE <= '1';
-				RamOE <= '0';
-				MemWR <= '1';             
-				MemAdr <= test2;
-				Data <= "ZZZZZZZZZZZZZZZZ";
-				RamUB <= '1';
-				RamLB <= '1';
-				MemWait <= 'Z';
-				led <= "00000010";
-					
-				idle <= 15; -- 10ns
-				if idle > 0 then
-					idle <= idle - 1;
-				else
-					STATE <= WRITE3;
-				end if;
-				
-			when WRITE3 =>
-			
-				MemAdv <= '0';
-				RamCE <= '0';
-				RamOE <= '0';
-				MemWR <= '1';             
-				MemAdr <= test2;
-				Data <= "ZZZZZZZZZZZZZZZZ";
-				RamUB <= '1';
-				RamLB <= '1';
-				MemWait <= 'Z';
-				led <= "00000011";
-					
-				idle <= 5; -- 0ns
-				if idle > 0 then
-					idle <= idle - 1;
-				else
-					STATE <= WRITE4;
-				end if;
-				
-			when WRITE4 =>
-			
-				MemAdv <= '0';
-				RamCE <= '0';
-				RamOE <= '0';
-				MemWR <= '1';             
-				MemAdr <= test2;
-				Data <= "ZZZZZZZZZZZZZZZZ";
-				RamUB <= '0';
-				RamLB <= '0';
-				MemWait <= 'Z';
-				led <= "00000100";
-					
-				idle <= 5; -- 1ns
-				if idle > 0 then
-					idle <= idle - 1;
-				else
-					STATE <= WRITE5;
-				end if;
-				
-			when WRITE5 =>
-			
-				MemAdv <= '0';
-				RamCE <= '0';
-				RamOE <= '0';
-				MemWR <= '1';             
-				MemAdr <= test2;
-				Data <= "ZZZZZZZZZZZZZZZZ";
-				RamUB <= '0';
-				RamLB <= '0';
-				MemWait <= '0';
-				led <= "00000101";
-					
-				idle <= 15; -- 10ns
-				if idle > 0 then
-					idle <= idle - 1;
-				else
-					STATE <= WRITE6;
-				end if;
-			
-			when WRITE6 =>
-			
-				MemAdv <= '0';
-				RamCE <= '0';
-				RamOE <= '0';
-				MemWR <= '0';             
-				MemAdr <= test2;
-				Data <= "ZZZZZZZZZZZZZZZZ";
-				RamUB <= '0';
-				RamLB <= '0';
-				MemWait <= '0';
-				led <= "00000110";
-					
-				idle <= 10; -- 8ns
-				if idle > 0 then
-					idle <= idle - 1;
-				else
-					STATE <= WRITE7;
-				end if;
-				
-			when WRITE7 =>
-			
-				MemAdv <= '0';
-				RamCE <= '0';
-				RamOE <= '0';
-				MemWR <= '0';             
-				MemAdr <= test2;
-				Data <= test;
-				RamUB <= '0';
-				RamLB <= '0';
-				MemWait <= '0';
-				led <= "00000111";
-					
-				idle <= 25; -- 20ns
-				if idle > 0 then
-					idle <= idle - 1;
-				else
-					STATE <= WRITE8;
-				end if;
-				
-			when WRITE8 =>
-			
-				MemAdv <= '0';
-				RamCE <= '0';
-				RamOE <= '0';
-				MemWR <= '0';             
-				MemAdr <= test2;
-				Data <= test;
-				RamUB <= '1';
-				RamLB <= '1';
-				MemWait <= '0';
-				led <= "00001000";
-					
-				idle <= 5; -- 0ns
-				if idle > 0 then
-					idle <= idle - 1;
-				else
-					STATE <= WRITE9;
-				end if;
-			
-			when WRITE9 =>
-			
-				MemAdv <= '0';
-				RamCE <= '0';
-				RamOE <= '0';
-				MemWR <= '0';             
-				MemAdr <= test2;
-				Data <= "ZZZZZZZZZZZZZZZZ";
-				RamUB <= '1';
-				RamLB <= '1';
-				MemWait <= '0';
-				led <= "00001001";
-					
-				idle <= 100; -- 0ns
-				if idle > 0 then
-					idle <= idle - 1;
-				else
-					STATE <= READ1;
-				end if;
-			
-			when others =>
-				-- others
-		end case;
+			if (MemBusy = '0') then
+				WriteRequest <= '1';
+				led <= "11110000";
+				DataRequest <= "0101010101010101";
+				AdrRequest <= "00000000000000000000000";
+			else
+				WriteRequest <= '1';
+				led <= "11111111";
+				DataRequest <= "0101010101010101";
+				AdrRequest <= "00000000000000000000000";
+			end if;
 		end if;
-		
 	end process;
-
+	
 end Behavioral;
 
