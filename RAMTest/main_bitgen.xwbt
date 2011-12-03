@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=Z:\coding\fpga\RAMTest\main.ncd
-OUTFILE=Z:\coding\fpga\RAMTest\main.bit
-FAMILY=Spartan6
-PART=xc6slx16-3csg324
-WORKINGDIR=Z:\coding\fpga\RAMTest
-LICENSE=WebPack
-USER_INFO=207836452_0_0_931
