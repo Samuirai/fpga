@@ -1,0 +1,292 @@
+--------------------------------------------------------------------------------
+Release 13.2 Trace  (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\13.2\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml TopLayer.twx TopLayer.ncd -o TopLayer.twr TopLayer.pcf
+
+Design file:              TopLayer.ncd
+Physical constraint file: TopLayer.pcf
+Device,package,speed:     xc6slx16,csg324,C,-3 (PRODUCTION 1.19 2011-06-20)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 
+50%;
+
+ 562 paths analyzed, 133 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   4.575ns.
+--------------------------------------------------------------------------------
+
+Paths for end point memory_controller/memcntrl_ram_data_1 (SLICE_X32Y2.D2), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     5.425ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               memory_controller/STATE_3 (FF)
+  Destination:          memory_controller/memcntrl_ram_data_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      4.558ns (Levels of Logic = 1)
+  Clock Path Skew:      0.018ns (0.462 - 0.444)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: memory_controller/STATE_3 to memory_controller/memcntrl_ram_data_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y34.DQ      Tcko                  0.391   memory_controller/STATE<3>
+                                                       memory_controller/STATE_3
+    SLICE_X32Y2.D2       net (fanout=25)       3.826   memory_controller/STATE<3>
+    SLICE_X32Y2.CLK      Tas                   0.341   memory_controller/memcntrl_ram_data<1>
+                                                       memory_controller/Mmux_n022681
+                                                       memory_controller/memcntrl_ram_data_1
+    -------------------------------------------------  ---------------------------
+    Total                                      4.558ns (0.732ns logic, 3.826ns route)
+                                                       (16.1% logic, 83.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point memory_controller/memcntrl_ram_data_1 (SLICE_X32Y2.D1), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     5.515ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               memory_controller/STATE_2 (FF)
+  Destination:          memory_controller/memcntrl_ram_data_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      4.468ns (Levels of Logic = 1)
+  Clock Path Skew:      0.018ns (0.462 - 0.444)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: memory_controller/STATE_2 to memory_controller/memcntrl_ram_data_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y34.DMUX    Tshcko                0.461   memory_controller/STATE<3>
+                                                       memory_controller/STATE_2
+    SLICE_X32Y2.D1       net (fanout=23)       3.666   memory_controller/STATE<2>
+    SLICE_X32Y2.CLK      Tas                   0.341   memory_controller/memcntrl_ram_data<1>
+                                                       memory_controller/Mmux_n022681
+                                                       memory_controller/memcntrl_ram_data_1
+    -------------------------------------------------  ---------------------------
+    Total                                      4.468ns (0.802ns logic, 3.666ns route)
+                                                       (17.9% logic, 82.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point memory_controller/memcntrl_ram_data_0 (SLICE_X32Y2.C4), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     5.612ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               memory_controller/STATE_2 (FF)
+  Destination:          memory_controller/memcntrl_ram_data_0 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      4.371ns (Levels of Logic = 1)
+  Clock Path Skew:      0.018ns (0.462 - 0.444)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: memory_controller/STATE_2 to memory_controller/memcntrl_ram_data_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y34.DMUX    Tshcko                0.461   memory_controller/STATE<3>
+                                                       memory_controller/STATE_2
+    SLICE_X32Y2.C4       net (fanout=23)       3.569   memory_controller/STATE<2>
+    SLICE_X32Y2.CLK      Tas                   0.341   memory_controller/memcntrl_ram_data<1>
+                                                       memory_controller/Mmux_n022611
+                                                       memory_controller/memcntrl_ram_data_0
+    -------------------------------------------------  ---------------------------
+    Total                                      4.371ns (0.802ns logic, 3.569ns route)
+                                                       (18.3% logic, 81.7% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point memory_controller/memcntrl_ram_ce (SLICE_X36Y31.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.416ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               memory_controller/memcntrl_ram_ce (FF)
+  Destination:          memory_controller/memcntrl_ram_ce (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.416ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: memory_controller/memcntrl_ram_ce to memory_controller/memcntrl_ram_ce
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y31.AQ      Tcko                  0.200   memory_controller/memcntrl_ram_ce
+                                                       memory_controller/memcntrl_ram_ce
+    SLICE_X36Y31.A6      net (fanout=2)        0.026   memory_controller/memcntrl_ram_ce
+    SLICE_X36Y31.CLK     Tah         (-Th)    -0.190   memory_controller/memcntrl_ram_ce
+                                                       memory_controller/GND_32_o_PWR_16_o_Select_65_o1
+                                                       memory_controller/memcntrl_ram_ce
+    -------------------------------------------------  ---------------------------
+    Total                                      0.416ns (0.390ns logic, 0.026ns route)
+                                                       (93.8% logic, 6.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point memory_controller/memcntrl_cfg_finish (SLICE_X16Y34.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.460ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               memory_controller/memcntrl_cfg_finish (FF)
+  Destination:          memory_controller/memcntrl_cfg_finish (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.460ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: memory_controller/memcntrl_cfg_finish to memory_controller/memcntrl_cfg_finish
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y34.CQ      Tcko                  0.200   memory_controller/memcntrl_cfg_finish
+                                                       memory_controller/memcntrl_cfg_finish
+    SLICE_X16Y34.C5      net (fanout=3)        0.070   memory_controller/memcntrl_cfg_finish
+    SLICE_X16Y34.CLK     Tah         (-Th)    -0.190   memory_controller/memcntrl_cfg_finish
+                                                       memory_controller/GND_32_o_GND_32_o_Select_84_o1
+                                                       memory_controller/memcntrl_cfg_finish
+    -------------------------------------------------  ---------------------------
+    Total                                      0.460ns (0.390ns logic, 0.070ns route)
+                                                       (84.8% logic, 15.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point memory_controller/GND_32_o_memcntrl_clk_DFF_112 (SLICE_X16Y34.D4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.563ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               memory_controller/STATE_0 (FF)
+  Destination:          memory_controller/GND_32_o_memcntrl_clk_DFF_112 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.568ns (Levels of Logic = 1)
+  Clock Path Skew:      0.005ns (0.041 - 0.036)
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: memory_controller/STATE_0 to memory_controller/GND_32_o_memcntrl_clk_DFF_112
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y36.AQ      Tcko                  0.198   memory_controller/STATE<1>
+                                                       memory_controller/STATE_0
+    SLICE_X16Y34.D4      net (fanout=19)       0.249   memory_controller/STATE<0>
+    SLICE_X16Y34.CLK     Tah         (-Th)    -0.121   memory_controller/memcntrl_cfg_finish
+                                                       memory_controller/GND_32_o_memcntrl_clk_DFF_112_rstpot
+                                                       memory_controller/GND_32_o_memcntrl_clk_DFF_112
+    -------------------------------------------------  ---------------------------
+    Total                                      0.568ns (0.319ns logic, 0.249ns route)
+                                                       (56.2% logic, 43.8% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 8.270ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.730ns (578.035MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X3Y13.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 9.570ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: memory_controller/GND_32_o_memcntrl_clk_DFF_96/CLK
+  Logical resource: memory_controller/GND_32_o_memcntrl_clk_DFF_96/CK
+  Location pin: SLICE_X16Y17.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 9.570ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: memory_controller/memcntrl_cfg_finish/CLK
+  Logical resource: memory_controller/memcntrl_cfg_finish/CK
+  Location pin: SLICE_X16Y34.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.575|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 562 paths, 0 nets, and 210 connections
+
+Design statistics:
+   Minimum period:   4.575ns{1}   (Maximum frequency: 218.579MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sat Dec 03 20:05:35 2011 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 207 MB
+
+
+

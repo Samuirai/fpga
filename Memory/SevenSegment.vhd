@@ -23,25 +23,25 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity sevenSegment is
 	PORT (
-		in1 : in  STD_LOGIC_VECTOR (3 downto 0);
-		in2 : in  STD_LOGIC_VECTOR (3 downto 0);
-		in3 : in  STD_LOGIC_VECTOR (3 downto 0);
-		in4 : in  STD_LOGIC_VECTOR (3 downto 0);
-		out1: out STD_LOGIC_VECTOR (0 to 7);
-		out2: out STD_LOGIC_VECTOR (3 downto 0);
-		clk : in STD_LOGIC
+		in1 : in  STD_ULOGIC_VECTOR (3 downto 0);
+		in2 : in  STD_ULOGIC_VECTOR (3 downto 0);
+		in3 : in  STD_ULOGIC_VECTOR (3 downto 0);
+		in4 : in  STD_ULOGIC_VECTOR (3 downto 0);
+		out1: out STD_ULOGIC_VECTOR (0 to 7);
+		out2: out STD_ULOGIC_VECTOR (3 downto 0);
+		clk : in STD_ULOGIC
 	);
 end sevenSegment;
 
 architecture Behavioral of sevenSegment is
-	signal COUNT1 : integer range 0 to 3;
+	signal STATE : integer range 0 to 3;
 begin
 	-- process counts up from 0-3 to multiplex the digets. Depends on the given Clock.
-	process 
+	process (clk) is
 	begin
 		if (clk'event and clk = '1') then	
 		
-			if COUNT1 = 0 then
+			if STATE = 0 then
 				 out2 <= "0111";
 				 case  in1 is				  --hgfedcba
 						when "0000"=> out1 <="11000000";  -- '0'
@@ -59,7 +59,7 @@ begin
 				 end case;
 			end if;
 			
-			if COUNT1 = 1 then
+			if STATE = 1 then
 				 out2 <= "1011";
 				 case  in2 is
 						when "0000"=> out1 <="11000000";  -- '0'
@@ -77,7 +77,7 @@ begin
 				end case;
 			end if;
 			
-			if COUNT1 = 2 then
+			if STATE = 2 then
 				 out2 <= "1101";
 				 case  in3 is
 						when "0000"=> out1 <="11000000";  -- '0'
@@ -95,7 +95,7 @@ begin
 					end case;
 			end if;
 			
-			if COUNT1 = 3 then
+			if STATE = 3 then
 				 out2 <= "1110";
 				 case  in4 is
 						when "0000"=> out1 <="11000000";  -- '0'
@@ -114,9 +114,9 @@ begin
 			end if;
 			
 			-- counts from 0 to 3 and resets to 0. to multiplex the 4 displays.
-			COUNT1 <= COUNT1+1;
-			if(COUNT1 > 3) then
-				COUNT1 <= 0;
+			STATE <= STATE+1;
+			if(STATE > 3) then
+				STATE <= 0;
 			end if;
 			
 			
