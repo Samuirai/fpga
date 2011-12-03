@@ -43,20 +43,29 @@ entity memctrl is
 			RamUB: out STD_ULOGIC := '0';
 			RamLB: out STD_ULOGIC := '0';
 			clk: in STD_ULOGIC;
-			DataRequest : inout STD_ULOGIC_VECTOR (15 downto 0);
-			AdrRequest : in STD_ULOGIC_VECTOR (23 downto 1);
-			WriteRequest: in STD_ULOGIC;
-			busy: out STD_ULOGIC
+			DataIn : in STD_ULOGIC_VECTOR (15 downto 0);
+			DataOut : out STD_ULOGIC_VECTOR (15 downto 0);
+			AdrIn : in STD_ULOGIC_VECTOR (1 to 23);
+			WriteRequest: in STD_ULOGIC := '0';
+			ReadRequest: in STD_ULOGIC := '0';
+			busy: out STD_ULOGIC := '0';
+			OKIN: in STD_ULOGIC := '0';
+			OKOUT: out STD_ULOGIC := '0'
+			--led: out STD_ULOGIC_VECTOR := "00000000"
 		);
 end memctrl;
 
 architecture Behavioral of memctrl is
 		signal STATE : STATE_MACHINE := INIT;
 		signal idle : integer := 10;
+		signal AdrLatch : STD_ULOGIC_VECTOR (23 downto 1);
+		signal DataLatch : STD_ULOGIC_VECTOR (15 downto 0);
 begin
 
 	process (clk) is
+		variable OK: integer;
 	begin
+		--led <= WriteRequest & ReadRequest & "0" & clk & "0000";
 		if (clk'event and clk = '1') then
 		case STATE is
 			when INIT =>
@@ -71,13 +80,225 @@ begin
 				RamLB <= '1';
 				MemWait <= 'Z';
 				busy <= '0';
-					
-				idle <= 0; -- safe
+				idle <= 2; -- safe
+				OKOUT <= '0';
+				OK := 0;
 				if idle > 0 then
 					idle <= idle - 1;
-				elsif (idle <= 0 or WriteRequest = '1') then
-					STATE <= WRITE2;
+				elsif (idle = 0 and	WriteRequest = '1') then
+					DataLatch <= DataIn;
+					AdrLatch <= AdrIn;
+					STATE <= WRITE1;
+				elsif (idle = 0 and	ReadRequest = '1') then
+					AdrLatch <= AdrIn;
+					STATE <= READ0;
 				end if;
+				
+				
+			when READ0 =>
+			
+				MemAdv <= '0';
+				RamCE <= '0';
+				RamOE <= '1';
+				MemWR <= '1';
+				MemAdr <= "-----------------------";
+				MemData <= "ZZZZZZZZZZZZZZZZ";
+				RamUB <= '1';
+				RamLB <= '1';
+				MemWait <= 'Z';
+				busy <= '1';
+					
+				idle <= 2; -- safe
+				if idle > 0 then
+					idle <= idle - 1;
+				else
+					STATE <= READ1;
+				end if;
+			
+			when READ1 =>
+			
+				MemAdv <= '0';
+				RamCE <= '1';
+				RamOE <= '1';
+				MemWR <= '1';
+				MemAdr <= "-----------------------";
+				MemData <= "ZZZZZZZZZZZZZZZZ";
+				RamUB <= '1';
+				RamLB <= '1';
+				MemWait <= 'Z';
+				busy <= '1';
+					
+				idle <= 2; -- safe
+				if idle > 0 then
+					idle <= idle - 1;
+				else
+					STATE <= READ2;
+				end if;
+				
+			when READ2 =>
+			
+				MemAdv <= '0';
+				RamCE <= '0';
+				RamOE <= '1';
+				MemWR <= '1';
+				MemAdr <= "-----------------------";
+				MemData <= "ZZZZZZZZZZZZZZZZ";
+				RamUB <= '1';
+				RamLB <= '1';
+				MemWait <= 'Z';
+				busy <= '1';
+					
+				idle <= 4; -- safe
+				if idle > 0 then
+					idle <= idle - 1;
+				else
+					STATE <= READ3;
+				end if;
+				
+			when READ3 =>
+			
+				MemAdv <= '0';
+				RamCE <= '0';
+				RamOE <= '1';
+				MemWR <= '1';
+				MemAdr <= AdrLatch;
+				MemData <= "ZZZZZZZZZZZZZZZZ";
+				RamUB <= '0';
+				RamLB <= '0';
+				MemWait <= 'Z';
+				busy <= '1';
+					
+				idle <= 1; -- safe
+				if idle > 0 then
+					idle <= idle - 1;
+				else
+					STATE <= READ4;
+				end if;
+				
+			when READ4 =>
+			
+				MemAdv <= '0';
+				RamCE <= '0';
+				RamOE <= '1';
+				MemWR <= '1';
+				MemAdr <= AdrLatch;
+				MemData <= "ZZZZZZZZZZZZZZZZ";
+				RamUB <= '0';
+				RamLB <= '0';
+				MemWait <= '0';
+				busy <= '1';
+					
+				idle <= 5; -- safe
+				if idle > 0 then
+					idle <= idle - 1;
+				else
+					STATE <= READ5;
+				end if;
+				
+			when READ5 =>
+			
+				MemAdv <= '0';
+				RamCE <= '0';
+				RamOE <= '0';
+				MemWR <= '1';
+				MemAdr <= AdrLatch;
+				MemData <= "ZZZZZZZZZZZZZZZZ";
+				RamUB <= '0';
+				RamLB <= '0';
+				MemWait <= '0';
+				busy <= '1';
+					
+				idle <= 5; -- safe
+				if idle > 0 then
+					idle <= idle - 1;
+				else
+					STATE <= READ6;
+				end if;
+				
+			when READ6 =>
+			
+				MemAdv <= '0';
+				RamCE <= '0';
+				RamOE <= '0';
+				MemWR <= '1';
+				MemAdr <= AdrLatch;
+				MemData <= "UUUUUUUUUUUUUUUU";
+				RamUB <= '0';
+				RamLB <= '0';
+				MemWait <= '0';
+				busy <= '1';
+					
+				idle <= 5; -- safe
+				if idle > 0 then
+					idle <= idle - 1;
+				else
+					STATE <= READ7;
+				end if;
+				
+			when READ7 =>
+			
+				MemAdv <= '0';
+				RamCE <= '0';
+				RamOE <= '0';
+				MemWR <= '1';
+				MemAdr <= AdrLatch;
+				DataOut <= MemData;
+				RamUB <= '0';
+				RamLB <= '0';
+				MemWait <= '0';
+				busy <= '1';
+					
+				idle <= 5; -- safe
+				if idle > 0 then
+					idle <= idle - 1;
+				else
+					STATE <= READ8;
+				end if;
+				
+			when READ8 =>
+			
+				MemAdv <= '0';
+				RamCE <= '1';
+				RamOE <= '1';
+				MemWR <= '1';
+				MemAdr <= AdrLatch;
+				DataOut <= MemData;
+				RamUB <= '1';
+				RamLB <= '1';
+				MemWait <= '0';
+				busy <= '1';
+				idle <= 5; -- safe
+				if idle > 0  then
+					idle <= idle - 1;
+				elsif idle = 0 and OK = 0 then
+					OKOUT <= '1';
+					OK := 1;
+				elsif idle = 0 and OKIN = '1' and OK = 1 then
+					OKOUT <= '0';
+					OK := 0;
+					STATE <= READ9;	
+				end if;
+				
+			when READ9 =>
+			
+				MemAdv <= '0';
+				RamCE <= '1';
+				RamOE <= '1';
+				MemWR <= '1';
+				MemAdr <= AdrLatch;
+				MemData <= "ZZZZZZZZZZZZZZZZ";
+				RamUB <= '1';
+				RamLB <= '1';
+				MemWait <= '0';
+				busy <= '1';
+					
+				idle <= 5; -- safe
+				if idle > 0 then
+					idle <= idle - 1;
+				else
+					STATE <= INIT;
+				end if;
+					
 				
 			when WRITE1 =>
 			
@@ -85,32 +306,33 @@ begin
 				RamCE <= '1';
 				RamOE <= '0';
 				MemWR <= '0';
-				MemAdr <= "-----------------------";
+				MemAdr <= AdrLatch;
 				MemData <= "ZZZZZZZZZZZZZZZZ";
 				RamUB <= '1';
 				RamLB <= '1';
 				MemWait <= 'Z';
-				busy <= '0';
+				busy <= '1';
 					
-				idle <= 0; -- safe
+				idle <= 3; -- safe
 				if idle > 0 then
 					idle <= idle - 1;
 				else
 					STATE <= WRITE2;
 				end if;
-				
+					
+			
 			when WRITE2 =>
 			
 				MemAdv <= '0';
 				RamCE <= '1';
 				RamOE <= '0';
 				MemWR <= '1';             
-				MemAdr <= AdrRequest;
+				MemAdr <= AdrLatch;
 				MemData <= "ZZZZZZZZZZZZZZZZ";
 				RamUB <= '1';
 				RamLB <= '1';
 				MemWait <= 'Z';
-				busy <= '0';
+				busy <= '1';
 					
 				idle <= 10; -- 10ns
 				if idle > 0 then
@@ -125,14 +347,14 @@ begin
 				RamCE <= '0';
 				RamOE <= '0';
 				MemWR <= '1';             
-				MemAdr <= AdrRequest;
+				MemAdr <= AdrLatch;
 				MemData <= "ZZZZZZZZZZZZZZZZ";
 				RamUB <= '1';
 				RamLB <= '1';
 				MemWait <= 'Z';
-				busy <= '0';
+				busy <= '1';
 					
-				idle <= 0; -- 0ns
+				idle <= 2; -- 0ns
 				if idle > 0 then
 					idle <= idle - 1;
 				else
@@ -145,14 +367,14 @@ begin
 				RamCE <= '0';
 				RamOE <= '0';
 				MemWR <= '1';             
-				MemAdr <= AdrRequest;
+				MemAdr <= AdrLatch;
 				MemData <= "ZZZZZZZZZZZZZZZZ";
 				RamUB <= '0';
 				RamLB <= '0';
 				MemWait <= 'Z';
-				busy <= '0';
+				busy <= '1';
 					
-				idle <= 1; -- 1ns
+				idle <= 2; -- 1ns
 				if idle > 0 then
 					idle <= idle - 1;
 				else
@@ -165,12 +387,12 @@ begin
 				RamCE <= '0';
 				RamOE <= '0';
 				MemWR <= '1';             
-				MemAdr <= AdrRequest;
+				MemAdr <= AdrLatch;
 				MemData <= "ZZZZZZZZZZZZZZZZ";
 				RamUB <= '0';
 				RamLB <= '0';
 				MemWait <= '0';
-				busy <= '0';
+				busy <= '1';
 					
 				idle <= 10; -- 10ns
 				if idle > 0 then
@@ -185,12 +407,12 @@ begin
 				RamCE <= '0';
 				RamOE <= '0';
 				MemWR <= '0';             
-				MemAdr <= AdrRequest;
+				MemAdr <= AdrLatch;
 				MemData <= "ZZZZZZZZZZZZZZZZ";
 				RamUB <= '0';
 				RamLB <= '0';
 				MemWait <= '0';
-				busy <= '0';
+				busy <= '1';
 					
 				idle <= 8; -- 8ns
 				if idle > 0 then
@@ -205,12 +427,12 @@ begin
 				RamCE <= '0';
 				RamOE <= '0';
 				MemWR <= '0';             
-				MemAdr <= AdrRequest;
-				MemData <= DataRequest;
+				MemAdr <= AdrLatch;
+				MemData <= DataLatch;
 				RamUB <= '0';
 				RamLB <= '0';
 				MemWait <= '0';
-				busy <= '0';
+				busy <= '1';
 					
 				idle <= 20; -- 20ns
 				if idle > 0 then
@@ -225,14 +447,14 @@ begin
 				RamCE <= '0';
 				RamOE <= '0';
 				MemWR <= '0';             
-				MemAdr <= AdrRequest;
-				MemData <= DataRequest;
+				MemAdr <= AdrLatch;
+				MemData <= DataLatch;
 				RamUB <= '1';
 				RamLB <= '1';
 				MemWait <= '0';
-				busy <= '0';
+				busy <= '1';
 					
-				idle <= 0; -- 0ns
+				idle <= 2; -- 0ns
 				if idle > 0 then
 					idle <= idle - 1;
 				else
@@ -245,13 +467,13 @@ begin
 				RamCE <= '0';
 				RamOE <= '0';
 				MemWR <= '0';             
-				MemAdr <= AdrRequest;
+				MemAdr <= AdrLatch;
 				MemData <= "ZZZZZZZZZZZZZZZZ";
 				RamUB <= '1';
 				RamLB <= '1';
 				MemWait <= '0';
-				busy <= '0';
-				idle <= 0; -- 0ns
+				busy <= '1';
+				idle <= 2; -- 0ns
 				if idle > 0 then
 					idle <= idle - 1;
 				else
@@ -260,6 +482,7 @@ begin
 				
 			when FINISH =>
 				busy <= '0';
+				STATE <= INIT;
 			
 			when others =>
 				-- others

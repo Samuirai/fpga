@@ -44,14 +44,19 @@ entity main is
 			RamCRE: out STD_ULOGIC := '0';
 			RamUB: out STD_ULOGIC := '0';
 			RamLB: out STD_ULOGIC := '0';
+			btnl: in STD_ULOGIC;
+			btnu: in STD_ULOGIC;
+			btns: in STD_ULOGIC;
+			btnr: in STD_ULOGIC;
+			btnd: in STD_ULOGIC;
 			clk: in STD_ULOGIC
 		);
 end main;
 
 architecture Behavioral of main is
 	component memctrl 
-		PORT( MemAdr : out STD_ULOGIC_VECTOR (23 downto 1);
-			MemData : inout STD_ULOGIC_VECTOR (15 downto 0);
+		PORT( MemAdr : out STD_ULOGIC_VECTOR (23 downto 1) := "00000000000000000000000";
+			MemData : inout STD_ULOGIC_VECTOR (15 downto 0) := "0000000000000000";
 			RamOE: out STD_ULOGIC := '0';
 			MemWR: out STD_ULOGIC := '0';
 			MemAdv: out STD_ULOGIC := '0';
@@ -62,24 +67,31 @@ architecture Behavioral of main is
 			RamUB: out STD_ULOGIC := '0';
 			RamLB: out STD_ULOGIC := '0';
 			clk: in STD_ULOGIC;
-			DataRequest : inout STD_ULOGIC_VECTOR (15 downto 0);
-			AdrRequest : in STD_ULOGIC_VECTOR (23 downto 1);
-			WriteRequest: in STD_ULOGIC;
-			busy: out STD_ULOGIC
+			DataIn : in STD_ULOGIC_VECTOR (15 downto 0) := "0000000000000000";
+			DataOut : out STD_ULOGIC_VECTOR (15 downto 0) := "0000000000000000";
+			AdrIn : in STD_ULOGIC_VECTOR (1 to 23);
+			WriteRequest: in STD_ULOGIC := '0';
+			ReadRequest: in STD_ULOGIC := '0';
+			busy: out STD_ULOGIC := '0';
+			OKIN: in STD_ULOGIC := '0';
+			OKOUT: out STD_ULOGIC := '0'
+			--led: out STD_ULOGIC_VECTOR := "00000000"
 		);
 	end component;
 	
 	signal MemBusy: STD_ULOGIC := '0';
-	signal DataRequest: STD_ULOGIC_VECTOR (15 downto 0) := "0000000000000000";
-	signal AdrRequest: STD_ULOGIC_VECTOR (23 downto 1) := "00000000000000000000000";
+	signal DataOut: STD_ULOGIC_VECTOR (15 downto 0) := "0000000000000000";
+	signal DataIn: STD_ULOGIC_VECTOR (15 downto 0) := "0000000000000000";
+	signal Adr: STD_ULOGIC_VECTOR (1 to 23);
 	signal WriteRequest: STD_ULOGIC := '0';
-	
+	signal ReadRequest: STD_ULOGIC := '0';
+	signal OKOUT: STD_ULOGIC := '0';
+	signal OKIN: STD_ULOGIC := '0';
 begin
 	
 	MemoryController: memctrl port map(
 			MemAdr => MemAdr,
 			MemData => Data,
-			DataRequest => DataRequest,
 			RamOE => RamOE,
 			MemWR => MemWR,
 			MemAdv => MemAdv,
@@ -90,24 +102,65 @@ begin
 			RamUB => RamUB,
 			RamLB => RamLB,
 			clk => clk,
+			--led => led,
 			busy => MemBusy,
-			AdrRequest => AdrRequest,
-			WriteRequest => WriteRequest
+			ReadRequest => ReadRequest,
+			WriteRequest => WriteRequest,
+			DataIn => DataIn,
+			DataOut => DataOut,
+			AdrIn => Adr,
+			OKIN => OKIN,
+			OKOUT => OKOUT
 		);
-	process 
 	
+	process 
 	begin
+		
 		if (clk'event and clk = '1') then
 			if (MemBusy = '0') then
-				WriteRequest <= '1';
-				led <= "11110000";
-				DataRequest <= "0101010101010101";
-				AdrRequest <= "00000000000000000000000";
+				if(btnl = '1') then
+					ReadRequest <= '0';
+					WriteRequest <= '1';
+					--led <= sw;
+					DataIn <= "00000000"&sw;
+					Adr <= "00000000000000000000000";
+				elsif(btnu = '1') then
+					ReadRequest <= '0';
+					WriteRequest <= '1';
+					--led <= sw;
+					DataIn <= "00000000"&sw;
+					Adr <= "00000000000000000000011";
+				elsif(btnd = '1') then
+					ReadRequest <= '1';
+					WriteRequest <= '0';
+					Adr <= "00000000000000000000000";
+				elsif(btnr = '1') then
+					ReadRequest <= '1';
+					WriteRequest <= '0';
+					Adr <= "00000000000000000000011";
+				elsif(btns = '1') then
+					ReadRequest <= '0';
+					WriteRequest <= '0';
+					--DataOut <= "0000000000000000";
+					--Data <= "0000000000000000";
+				else
+					ReadRequest <= '0';
+					WriteRequest <= '0';
+					OKIN <= '0';
+					led <= OKOUT & MemBusy &"000001";
+				end if;
 			else
-				WriteRequest <= '1';
-				led <= "11111111";
-				DataRequest <= "0101010101010101";
-				AdrRequest <= "00000000000000000000000";
+				if(OKOUT = '1') then
+					OKIN <= '1';
+				
+			--led <= OKOUT & MemBusy &"100010";
+					led <= DataOut(7 downto 0);
+				else
+					OKIN <= '0';
+					--led <= OKOUT & MemBusy &"000010";
+				end if;
+				ReadRequest <= '0';
+				WriteRequest <= '0';
 			end if;
 		end if;
 	end process;
