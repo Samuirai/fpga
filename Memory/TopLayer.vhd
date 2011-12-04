@@ -31,17 +31,17 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity TopLayer is
 	PORT (
-		MemAdr : out STD_ULOGIC_VECTOR (23 downto 1) := "00000000000000000000000";
+		MemAdr : out STD_ULOGIC_VECTOR (24 downto 1) := "00000000000000000000011";
 		Data : inout STD_ULOGIC_VECTOR (15 downto 0) := "0000000000000000";
 		RamOE: out STD_ULOGIC := '0';
 		MemWE: out STD_ULOGIC := '0';
 		MemAdv: out STD_ULOGIC := '0';
 		MemWait: inout STD_ULOGIC := '0';
 		MemClk: out STD_ULOGIC := '0';
-		RamCE: out STD_ULOGIC := '0';
+		RamCE: out STD_ULOGIC := '1';
 		RamCRE: out STD_ULOGIC := '0';
-		RamUB: out STD_ULOGIC := '0';
-		RamLB: out STD_ULOGIC := '0';
+		RamUB: out STD_ULOGIC := '1';
+		RamLB: out STD_ULOGIC := '1';
 		btnl: in STD_ULOGIC;
 		btnu: in STD_ULOGIC;
 		btns: in STD_ULOGIC;
@@ -80,19 +80,20 @@ architecture Behavioral of TopLayer is
 	
 	component MemoryController
 		PORT( 
-			memcntrl_ram_adr : out STD_ULOGIC_VECTOR (23 downto 1);
+			memcntrl_ram_adr : out STD_ULOGIC_VECTOR (24 downto 1);
 			memcntrl_ram_data : inout STD_ULOGIC_VECTOR (15 downto 0);
-			memcntrl_adr : in STD_ULOGIC_VECTOR (23 downto 1);
-			memcntrl_data : inout STD_ULOGIC_VECTOR (15 downto 0);
+			memcntrl_adr : in STD_ULOGIC_VECTOR (24 downto 1);
+			memcntrl_data_out : out STD_ULOGIC_VECTOR (15 downto 0);
+			memcntrl_data_in : in STD_ULOGIC_VECTOR (15 downto 0);
 			memcntrl_ram_oe: out STD_ULOGIC := '0';
 			memcntrl_ram_we: out STD_ULOGIC := '0';
 			memcntrl_ram_adv: out STD_ULOGIC := '0';
 			memcntrl_ram_wait: inout STD_ULOGIC := '0';
 			memcntrl_ram_clk: out STD_ULOGIC := '0';
-			memcntrl_ram_ce: out STD_ULOGIC := '0';
+			memcntrl_ram_ce: out STD_ULOGIC := '1';
 			memcntrl_ram_cre: out STD_ULOGIC := '0';
-			memcntrl_ram_ub: out STD_ULOGIC := '0';
-			memcntrl_ram_lb: out STD_ULOGIC := '0';
+			memcntrl_ram_ub: out STD_ULOGIC := '1';
+			memcntrl_ram_lb: out STD_ULOGIC := '1';
 			memcntrl_clk: in STD_ULOGIC;
 			memcntrl_cfg_rw: in STD_ULOGIC_VECTOR (0 to 1);
 			memcntrl_cfg_busy: out STD_ULOGIC := '0';
@@ -110,11 +111,12 @@ architecture Behavioral of TopLayer is
 	signal memcntrl_finish : STD_ULOGIC;
 	signal memcntrl_rw : STD_ULOGIC_VECTOR (0 to 1);
 	signal memcntrl_busy : STD_ULOGIC;
-	signal memcntrl_data : STD_ULOGIC_VECTOR (15 downto 0);
-	signal memcntrl_adr : STD_ULOGIC_VECTOR (23 downto 1);
+	signal memcntrl_data_in : STD_ULOGIC_VECTOR (15 downto 0);
+	signal memcntrl_data_out : STD_ULOGIC_VECTOR (15 downto 0);
+	signal memcntrl_adr : STD_ULOGIC_VECTOR (24 downto 1);
 begin
 
-	led <= sw;
+	--led <= memcntrl_rw & memcntrl_busy & memcntrl_finish & memcntrl_thx & clk & "11";
 	number1 <= memcntrl_state(3 downto 0);
 	number2 <= memcntrl_state(7 downto 4);
 	number3 <= "0001";
@@ -122,7 +124,7 @@ begin
 	
 	-- divides the clock. clk2 for the 7segment multiplex
 	divide_clock_by_10000 : clockDivider port map (clk,clk10000,10000);
-	divide_clock_by_100 : clockDivider port map (clk,clk100,100);
+	--divide_clock_by_100 : clockDivider port map (clk,clk100,100);
 	-- map the seven segment display
 	seven_segment_display : sevenSegment port map (number1,number2,number3,number4,seg,an,clk10000);
 	
@@ -130,7 +132,8 @@ begin
 		memcntrl_ram_adr => MemAdr,
 		memcntrl_ram_data => Data,
 		memcntrl_adr => memcntrl_adr,
-		memcntrl_data => memcntrl_data,
+		memcntrl_data_in => memcntrl_data_in,
+		memcntrl_data_out => memcntrl_data_out,
 		memcntrl_ram_oe => RamOE,
 		memcntrl_ram_we => MemWE,
 		memcntrl_ram_adv => MemAdv,
@@ -148,23 +151,31 @@ begin
 		memcntrl_cfg_state => memcntrl_state
 	);
 	
-	process (clk,btnl,btnr) is
+	process (clk,btnl,btnr,btnu,btnd,memcntrl_busy,memcntrl_finish) is
 		
 	begin
-		if btnl = '1' then
+		
+		if btnl = '1' and memcntrl_busy='0' then
 			memcntrl_rw <= "01";
-			memcntrl_adr <= "00000000000000000000000";
-			memcntrl_data <= "0000000000000001";
-		elsif btnr = '1' then
+			memcntrl_adr <= "000000000000000000000001";
+			memcntrl_data_in <= "00000000" & sw;
+		elsif btnr = '1' and memcntrl_busy='0' then
 			memcntrl_rw <= "01";
-			memcntrl_adr <= "00000000000000000000001";
-			memcntrl_data <= "0000000000000010";
+			memcntrl_adr <= "000000000000000000000010";
+			memcntrl_data_in <= "00000000" & sw;
+		elsif btnu = '1' and memcntrl_busy='0' then
+			memcntrl_rw <= "10";
+			memcntrl_adr <= "000000000000000000000001";
+		elsif btnd = '1' and memcntrl_busy='0' then
+			memcntrl_rw <= "10";
+			memcntrl_adr <= "000000000000000000000010";
 		else
-			memcntrl_rw <= "00";
+			--memcntrl_rw <= "00";
 		end if;
 		
 		if memcntrl_finish = '1' then
 			memcntrl_thx <= '1';
+			led <= memcntrl_data_out(7 downto 0);
 		end if;
 	end process;
 	

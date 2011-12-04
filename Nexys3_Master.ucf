@@ -6,7 +6,7 @@
 ##Clock signal
 Net "clk" LOC=V10 | IOSTANDARD=LVCMOS33;
 Net "clk" TNM_NET = sys_clk_pin;
-TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz; #100000
 
 ## onBoard USB controller
 #Net "EppAstb" LOC = H1 | IOSTANDARD = LVCMOS33; #Bank = 3, pin name = IO_L41N_GCLK26_M3DQ5, Sch name = U-FLAGA
@@ -76,7 +76,7 @@ Net "MemAdr<20>" LOC = D17  |  IOSTANDARD = LVCMOS33; #Bank = 1, pin name = IO_L
 Net "MemAdr<21>" LOC = G14  |  IOSTANDARD = LVCMOS33; #Bank = 1, pin name = IO_L30N_A20_M1A11, Sch name = P30-A20
 Net "MemAdr<22>" LOC = F14  |  IOSTANDARD = LVCMOS33; #Bank = 1, pin name = IO_L30P_A21_M1RESET Sch name = P30-A21
 Net "MemAdr<23>" LOC = C18  |  IOSTANDARD = LVCMOS33; #Bank = 1, pin name = IO_L29N_A22_M1A14, Sch name = P30-A22
-#Net "MemAdr<24>" LOC = C17  |  IOSTANDARD = LVCMOS33; #Bank = 1, pin name = IO_L29P_A23_M1A13, Sch name = P30-A23
+Net "MemAdr<24>" LOC = C17  |  IOSTANDARD = LVCMOS33; #Bank = 1, pin name = IO_L29P_A23_M1A13, Sch name = P30-A23
 #Net "MemAdr<25>" LOC = F16  |  IOSTANDARD = LVCMOS33; #Bank = 1, pin name = IO_L1N_A24_VREF, Sch name = P30-A24
 #Net "MemAdr<26>" LOC = F15  |  IOSTANDARD = LVCMOS33; #Bank = 1, pin name = IO_L1P_A25, Sch name = P30-A25
 
