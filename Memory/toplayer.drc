@@ -1,17 +1,14 @@
 Release 13.2 Drc O.61xd (nt64)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-Sun Dec 04 16:14:26 2011
+Sun Dec 04 19:56:23 2011
 
 drc -z TopLayer.ncd TopLayer.pcf
 
-WARNING:PhysDesignRules:372 - Gated clock. Clock net memcntrl_adr_1_G is sourced
-   by a combinatorial pin. This is not good design practice. Use the CE pin to
-   control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net memcntrl_rw_1_D is sourced
-   by a combinatorial pin. This is not good design practice. Use the CE pin to
-   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net btnl_btnr_OR_200_o is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:367 - The signal <btns_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
-DRC detected 0 errors and 3 warnings.  Please see the previously displayed
+DRC detected 0 errors and 2 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

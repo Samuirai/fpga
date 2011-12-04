@@ -295,7 +295,7 @@ begin
 				if idle > 0 then
 					idle := idle - 1;
 				else
-					ide := 3;
+					idle := 3;
 					STATE := "00000000";
 				end if;
 				

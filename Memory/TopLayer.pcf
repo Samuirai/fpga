@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map O.61xd on Sun Dec 04 16:14:01 2011
+// Written by: Map O.61xd on Sun Dec 04 19:55:59 2011
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -121,49 +121,42 @@ TIMEGRP sys_clk_pin = BEL "divide_clock_by_10000/COUNT1_0" BEL
         "memory_controller/memcntrl_data_out_2" BEL
         "memory_controller/memcntrl_data_out_1" BEL
         "memory_controller/memcntrl_data_out_0" BEL
-        "memory_controller/STATE_7" BEL "memory_controller/STATE_6" BEL
-        "memory_controller/STATE_5" BEL "memory_controller/STATE_4" BEL
-        "memory_controller/STATE_3" BEL "memory_controller/STATE_2" BEL
-        "memory_controller/STATE_1" BEL "memory_controller/STATE_0" BEL
-        "memory_controller/idle_4" BEL "memory_controller/idle_3" BEL
-        "memory_controller/idle_2" BEL "memory_controller/idle_1" BEL
-        "memory_controller/idle_0" BEL "memory_controller/DataLatch_15" BEL
-        "memory_controller/DataLatch_14" BEL "memory_controller/DataLatch_13"
-        BEL "memory_controller/DataLatch_12" BEL
-        "memory_controller/DataLatch_11" BEL "memory_controller/DataLatch_10"
-        BEL "memory_controller/DataLatch_9" BEL
-        "memory_controller/DataLatch_8" BEL "memory_controller/DataLatch_7"
-        BEL "memory_controller/DataLatch_6" BEL
-        "memory_controller/DataLatch_5" BEL "memory_controller/DataLatch_4"
-        BEL "memory_controller/DataLatch_3" BEL
-        "memory_controller/DataLatch_2" BEL "memory_controller/DataLatch_1"
-        BEL "memory_controller/DataLatch_0" BEL
-        "memory_controller/memcntrl_ram_lb" BEL
-        "memory_controller/memcntrl_cfg_busy" BEL
+        "memory_controller/DataLatch_15" BEL "memory_controller/DataLatch_14"
+        BEL "memory_controller/DataLatch_13" BEL
+        "memory_controller/DataLatch_12" BEL "memory_controller/DataLatch_11"
+        BEL "memory_controller/DataLatch_10" BEL
+        "memory_controller/DataLatch_9" BEL "memory_controller/DataLatch_8"
+        BEL "memory_controller/DataLatch_7" BEL
+        "memory_controller/DataLatch_6" BEL "memory_controller/DataLatch_5"
+        BEL "memory_controller/DataLatch_4" BEL
+        "memory_controller/DataLatch_3" BEL "memory_controller/DataLatch_2"
+        BEL "memory_controller/DataLatch_1" BEL
+        "memory_controller/DataLatch_0" BEL "memory_controller/idle_4" BEL
+        "memory_controller/idle_3" BEL "memory_controller/idle_2" BEL
+        "memory_controller/idle_1" BEL "memory_controller/idle_0" BEL
+        "memory_controller/memcntrl_cfg_busy" BEL "memory_controller/STATE_7"
+        BEL "memory_controller/STATE_6" BEL "memory_controller/STATE_5" BEL
+        "memory_controller/STATE_4" BEL "memory_controller/STATE_3" BEL
+        "memory_controller/STATE_2" BEL "memory_controller/STATE_1" BEL
+        "memory_controller/STATE_0" BEL "memory_controller/memcntrl_ram_ub"
+        BEL "memory_controller/memcntrl_ram_we" BEL
+        "memory_controller/memcntrl_ram_oe" BEL
         "memory_controller/memcntrl_ram_adr_2" BEL
         "memory_controller/memcntrl_ram_adr_1" BEL
-        "memory_controller/memcntrl_ram_we" BEL
-        "memory_controller/memcntrl_ram_oe" BEL
-        "memory_controller/memcntrl_ram_ce" BEL "memory_controller/AdrLatch_2"
-        BEL "memory_controller/AdrLatch_1" BEL
+        "memory_controller/AdrLatch_2" BEL "memory_controller/AdrLatch_1" BEL
+        "memory_controller/memcntrl_ram_ce" BEL
         "memory_controller/memcntrl_cfg_finish" BEL
-        "memory_controller/GND_19_o_memcntrl_clk_DFF_97" BEL
+        "memory_controller/GND_19_o_memcntrl_clk_DFF_99" BEL
         "divide_clock_by_10000/clk_out" BEL
         "memory_controller/GND_19_o_memcntrl_clk_DFF_113" BEL
         "memory_controller/STATE_6_1" BEL "memory_controller/STATE_2_1" BEL
         "memory_controller/STATE_1_1" BEL "memory_controller/STATE_3_1" BEL
-        "memory_controller/STATE_0_1" BEL "memory_controller/STATE_7_1" BEL
-        "memory_controller/STATE_6_2" BEL "memory_controller/STATE_5_1" BEL
-        "memory_controller/STATE_4_1" BEL "memory_controller/STATE_0_2" BEL
-        "memory_controller/STATE_6_3" BEL "memory_controller/STATE_7_2" BEL
-        "memory_controller/STATE_1_2" BEL "memory_controller/STATE_2_2" BEL
-        "memory_controller/STATE_3_2" BEL "memory_controller/STATE_0_3" BEL
-        "memory_controller/STATE_4_2" BEL "memory_controller/STATE_7_3" BEL
-        "memory_controller/STATE_6_4" BEL "memory_controller/STATE_5_2" BEL
-        "memory_controller/STATE_3_3" BEL "memory_controller/STATE_1_3" BEL
-        "memory_controller/STATE_3_4" BEL "memory_controller/STATE_7_4" BEL
-        "memory_controller/STATE_5_3" BEL "memory_controller/STATE_6_5" BEL
-        "memory_controller/STATE_4_3" BEL "clk_BUFGP/BUFG";
+        "memory_controller/STATE_6_2" BEL "memory_controller/STATE_7_1" BEL
+        "memory_controller/STATE_5_1" BEL "memory_controller/STATE_4_1" BEL
+        "memory_controller/STATE_0_1" BEL "memory_controller/STATE_7_2" BEL
+        "memory_controller/STATE_1_2" BEL "memory_controller/STATE_3_2" BEL
+        "memory_controller/STATE_2_2" BEL "memory_controller/STATE_1_3" BEL
+        "memory_controller/STATE_3_3" BEL "clk_BUFGP/BUFG";
 TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 SCHEMATIC END;
 

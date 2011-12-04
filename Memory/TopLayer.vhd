@@ -170,12 +170,14 @@ begin
 			memcntrl_rw <= "10";
 			memcntrl_adr <= "000000000000000000000010";
 		else
-			--memcntrl_rw <= "00";
+			memcntrl_rw <= "10";
+			memcntrl_adr <= "000000000000000000000001";
 		end if;
 		
 		if memcntrl_finish = '1' then
 			memcntrl_thx <= '1';
 			led <= memcntrl_data_out(7 downto 0);
+			memcntrl_rw <= "00";
 		end if;
 	end process;
 	

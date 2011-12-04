@@ -27,19 +27,19 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 
 50%;
 
- 4536 paths analyzed, 332 endpoints analyzed, 0 failing endpoints
+ 3874 paths analyzed, 320 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   8.661ns.
+ Minimum period is   6.271ns.
 --------------------------------------------------------------------------------
 
-Paths for end point memory_controller/DataLatch_10 (SLICE_X20Y14.A4), 17 paths
+Paths for end point memory_controller/DataLatch_3 (SLICE_X17Y4.C2), 17 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     1.339ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_2_1 (FF)
-  Destination:          memory_controller/DataLatch_10 (FF)
+Slack (setup path):     3.729ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               memory_controller/STATE_5_1 (FF)
+  Destination:          memory_controller/DataLatch_3 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      8.612ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.014ns (0.339 - 0.353)
+  Data Path Delay:      6.202ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.034ns (0.331 - 0.365)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -50,36 +50,36 @@ Slack (setup path):     1.339ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_2_1 to memory_controller/DataLatch_10
+  Maximum Data Path at Slow Process Corner: memory_controller/STATE_5_1 to memory_controller/DataLatch_3
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y29.BQ      Tcko                  0.447   memory_controller/STATE_2_2
-                                                       memory_controller/STATE_2_1
-    SLICE_X19Y29.A2      net (fanout=3)        0.771   memory_controller/STATE_2_1
-    SLICE_X19Y29.A       Tilo                  0.259   N19
-                                                       memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>111
-    SLICE_X14Y7.B5       net (fanout=18)       2.619   memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>11
-    SLICE_X14Y7.B        Tilo                  0.203   N153
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>1_SW0
-    SLICE_X19Y28.D6      net (fanout=32)       2.391   N11
-    SLICE_X19Y28.D       Tilo                  0.259   memory_controller/AdrLatch<2>
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>1_SW11
-    SLICE_X20Y14.A4      net (fanout=1)        1.322   N147
-    SLICE_X20Y14.CLK     Tas                   0.341   memory_controller/DataLatch<11>
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<10>1
-                                                       memory_controller/DataLatch_10
+    SLICE_X23Y16.AQ      Tcko                  0.391   memory_controller/STATE_4_1
+                                                       memory_controller/STATE_5_1
+    SLICE_X26Y19.B3      net (fanout=2)        0.779   memory_controller/STATE_5_1
+    SLICE_X26Y19.B       Tilo                  0.203   memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+                                                       memory_controller/GND_19_o_STATE[7]_equal_100_o<7>11
+    SLICE_X18Y19.A1      net (fanout=14)       1.025   memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+    SLICE_X18Y19.A       Tilo                  0.203   N64
+                                                       memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+    SLICE_X15Y3.B6       net (fanout=42)       2.383   memory_controller/GND_19_o_STATE[7]_equal_100_o
+    SLICE_X15Y3.B        Tilo                  0.259   N108
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<3>1_SW1
+    SLICE_X17Y4.C2       net (fanout=1)        0.637   N108
+    SLICE_X17Y4.CLK      Tas                   0.322   memory_controller/DataLatch<3>
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<3>1
+                                                       memory_controller/DataLatch_3
     -------------------------------------------------  ---------------------------
-    Total                                      8.612ns (1.509ns logic, 7.103ns route)
-                                                       (17.5% logic, 82.5% route)
+    Total                                      6.202ns (1.378ns logic, 4.824ns route)
+                                                       (22.2% logic, 77.8% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     1.383ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_3_1 (FF)
-  Destination:          memory_controller/DataLatch_10 (FF)
+Slack (setup path):     3.821ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               memory_controller/STATE_4_1 (FF)
+  Destination:          memory_controller/DataLatch_3 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      8.567ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.015ns (0.339 - 0.354)
+  Data Path Delay:      6.110ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.034ns (0.331 - 0.365)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -90,36 +90,36 @@ Slack (setup path):     1.383ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_3_1 to memory_controller/DataLatch_10
+  Maximum Data Path at Slow Process Corner: memory_controller/STATE_4_1 to memory_controller/DataLatch_3
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y29.AQ      Tcko                  0.391   memory_controller/STATE_3_4
-                                                       memory_controller/STATE_3_1
-    SLICE_X19Y29.A6      net (fanout=3)        0.782   memory_controller/STATE_3_1
-    SLICE_X19Y29.A       Tilo                  0.259   N19
-                                                       memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>111
-    SLICE_X14Y7.B5       net (fanout=18)       2.619   memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>11
-    SLICE_X14Y7.B        Tilo                  0.203   N153
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>1_SW0
-    SLICE_X19Y28.D6      net (fanout=32)       2.391   N11
-    SLICE_X19Y28.D       Tilo                  0.259   memory_controller/AdrLatch<2>
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>1_SW11
-    SLICE_X20Y14.A4      net (fanout=1)        1.322   N147
-    SLICE_X20Y14.CLK     Tas                   0.341   memory_controller/DataLatch<11>
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<10>1
-                                                       memory_controller/DataLatch_10
+    SLICE_X23Y16.DQ      Tcko                  0.391   memory_controller/STATE_4_1
+                                                       memory_controller/STATE_4_1
+    SLICE_X26Y19.B4      net (fanout=2)        0.687   memory_controller/STATE_4_1
+    SLICE_X26Y19.B       Tilo                  0.203   memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+                                                       memory_controller/GND_19_o_STATE[7]_equal_100_o<7>11
+    SLICE_X18Y19.A1      net (fanout=14)       1.025   memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+    SLICE_X18Y19.A       Tilo                  0.203   N64
+                                                       memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+    SLICE_X15Y3.B6       net (fanout=42)       2.383   memory_controller/GND_19_o_STATE[7]_equal_100_o
+    SLICE_X15Y3.B        Tilo                  0.259   N108
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<3>1_SW1
+    SLICE_X17Y4.C2       net (fanout=1)        0.637   N108
+    SLICE_X17Y4.CLK      Tas                   0.322   memory_controller/DataLatch<3>
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<3>1
+                                                       memory_controller/DataLatch_3
     -------------------------------------------------  ---------------------------
-    Total                                      8.567ns (1.453ns logic, 7.114ns route)
-                                                       (17.0% logic, 83.0% route)
+    Total                                      6.110ns (1.378ns logic, 4.732ns route)
+                                                       (22.6% logic, 77.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     1.646ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_0_1 (FF)
-  Destination:          memory_controller/DataLatch_10 (FF)
+Slack (setup path):     3.905ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               memory_controller/STATE_6_1 (FF)
+  Destination:          memory_controller/DataLatch_3 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      8.307ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.012ns (0.339 - 0.351)
+  Data Path Delay:      6.028ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.032ns (0.331 - 0.363)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -130,39 +130,39 @@ Slack (setup path):     1.646ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_0_1 to memory_controller/DataLatch_10
+  Maximum Data Path at Slow Process Corner: memory_controller/STATE_6_1 to memory_controller/DataLatch_3
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y28.AQ      Tcko                  0.447   memory_controller/STATE_0_3
-                                                       memory_controller/STATE_0_1
-    SLICE_X19Y29.A3      net (fanout=3)        0.466   memory_controller/STATE_0_1
-    SLICE_X19Y29.A       Tilo                  0.259   N19
-                                                       memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>111
-    SLICE_X14Y7.B5       net (fanout=18)       2.619   memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>11
-    SLICE_X14Y7.B        Tilo                  0.203   N153
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>1_SW0
-    SLICE_X19Y28.D6      net (fanout=32)       2.391   N11
-    SLICE_X19Y28.D       Tilo                  0.259   memory_controller/AdrLatch<2>
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>1_SW11
-    SLICE_X20Y14.A4      net (fanout=1)        1.322   N147
-    SLICE_X20Y14.CLK     Tas                   0.341   memory_controller/DataLatch<11>
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<10>1
-                                                       memory_controller/DataLatch_10
+    SLICE_X22Y18.AQ      Tcko                  0.447   memory_controller/STATE_6_2
+                                                       memory_controller/STATE_6_1
+    SLICE_X26Y19.B6      net (fanout=1)        0.549   memory_controller/STATE_6_1
+    SLICE_X26Y19.B       Tilo                  0.203   memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+                                                       memory_controller/GND_19_o_STATE[7]_equal_100_o<7>11
+    SLICE_X18Y19.A1      net (fanout=14)       1.025   memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+    SLICE_X18Y19.A       Tilo                  0.203   N64
+                                                       memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+    SLICE_X15Y3.B6       net (fanout=42)       2.383   memory_controller/GND_19_o_STATE[7]_equal_100_o
+    SLICE_X15Y3.B        Tilo                  0.259   N108
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<3>1_SW1
+    SLICE_X17Y4.C2       net (fanout=1)        0.637   N108
+    SLICE_X17Y4.CLK      Tas                   0.322   memory_controller/DataLatch<3>
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<3>1
+                                                       memory_controller/DataLatch_3
     -------------------------------------------------  ---------------------------
-    Total                                      8.307ns (1.509ns logic, 6.798ns route)
-                                                       (18.2% logic, 81.8% route)
+    Total                                      6.028ns (1.434ns logic, 4.594ns route)
+                                                       (23.8% logic, 76.2% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point memory_controller/DataLatch_0 (SLICE_X18Y3.A2), 17 paths
+Paths for end point memory_controller/DataLatch_0 (SLICE_X19Y5.A3), 17 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     3.175ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_2_1 (FF)
+Slack (setup path):     3.934ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               memory_controller/STATE_5_1 (FF)
   Destination:          memory_controller/DataLatch_0 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      6.768ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.022ns (0.331 - 0.353)
+  Data Path Delay:      5.993ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.038ns (0.327 - 0.365)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -173,36 +173,36 @@ Slack (setup path):     3.175ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_2_1 to memory_controller/DataLatch_0
+  Maximum Data Path at Slow Process Corner: memory_controller/STATE_5_1 to memory_controller/DataLatch_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y29.BQ      Tcko                  0.447   memory_controller/STATE_2_2
-                                                       memory_controller/STATE_2_1
-    SLICE_X19Y29.A2      net (fanout=3)        0.771   memory_controller/STATE_2_1
-    SLICE_X19Y29.A       Tilo                  0.259   N19
-                                                       memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>111
-    SLICE_X14Y7.B5       net (fanout=18)       2.619   memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>11
-    SLICE_X14Y7.B        Tilo                  0.203   N153
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>1_SW0
-    SLICE_X19Y3.D5       net (fanout=32)       1.325   N11
-    SLICE_X19Y3.D        Tilo                  0.259   N122
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>2_SW0
-    SLICE_X18Y3.A2       net (fanout=1)        0.596   N122
-    SLICE_X18Y3.CLK      Tas                   0.289   memory_controller/DataLatch<1>
+    SLICE_X23Y16.AQ      Tcko                  0.391   memory_controller/STATE_4_1
+                                                       memory_controller/STATE_5_1
+    SLICE_X26Y19.B3      net (fanout=2)        0.779   memory_controller/STATE_5_1
+    SLICE_X26Y19.B       Tilo                  0.203   memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+                                                       memory_controller/GND_19_o_STATE[7]_equal_100_o<7>11
+    SLICE_X18Y19.A1      net (fanout=14)       1.025   memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+    SLICE_X18Y19.A       Tilo                  0.203   N64
+                                                       memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+    SLICE_X19Y4.D4       net (fanout=42)       2.359   memory_controller/GND_19_o_STATE[7]_equal_100_o
+    SLICE_X19Y4.D        Tilo                  0.259   N99
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>2_SW1
+    SLICE_X19Y5.A3       net (fanout=1)        0.452   N99
+    SLICE_X19Y5.CLK      Tas                   0.322   memory_controller/DataLatch<1>
                                                        memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>2
                                                        memory_controller/DataLatch_0
     -------------------------------------------------  ---------------------------
-    Total                                      6.768ns (1.457ns logic, 5.311ns route)
-                                                       (21.5% logic, 78.5% route)
+    Total                                      5.993ns (1.378ns logic, 4.615ns route)
+                                                       (23.0% logic, 77.0% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.219ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_3_1 (FF)
+Slack (setup path):     4.026ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               memory_controller/STATE_4_1 (FF)
   Destination:          memory_controller/DataLatch_0 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      6.723ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.023ns (0.331 - 0.354)
+  Data Path Delay:      5.901ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.038ns (0.327 - 0.365)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -213,36 +213,36 @@ Slack (setup path):     3.219ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_3_1 to memory_controller/DataLatch_0
+  Maximum Data Path at Slow Process Corner: memory_controller/STATE_4_1 to memory_controller/DataLatch_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y29.AQ      Tcko                  0.391   memory_controller/STATE_3_4
-                                                       memory_controller/STATE_3_1
-    SLICE_X19Y29.A6      net (fanout=3)        0.782   memory_controller/STATE_3_1
-    SLICE_X19Y29.A       Tilo                  0.259   N19
-                                                       memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>111
-    SLICE_X14Y7.B5       net (fanout=18)       2.619   memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>11
-    SLICE_X14Y7.B        Tilo                  0.203   N153
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>1_SW0
-    SLICE_X19Y3.D5       net (fanout=32)       1.325   N11
-    SLICE_X19Y3.D        Tilo                  0.259   N122
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>2_SW0
-    SLICE_X18Y3.A2       net (fanout=1)        0.596   N122
-    SLICE_X18Y3.CLK      Tas                   0.289   memory_controller/DataLatch<1>
+    SLICE_X23Y16.DQ      Tcko                  0.391   memory_controller/STATE_4_1
+                                                       memory_controller/STATE_4_1
+    SLICE_X26Y19.B4      net (fanout=2)        0.687   memory_controller/STATE_4_1
+    SLICE_X26Y19.B       Tilo                  0.203   memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+                                                       memory_controller/GND_19_o_STATE[7]_equal_100_o<7>11
+    SLICE_X18Y19.A1      net (fanout=14)       1.025   memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+    SLICE_X18Y19.A       Tilo                  0.203   N64
+                                                       memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+    SLICE_X19Y4.D4       net (fanout=42)       2.359   memory_controller/GND_19_o_STATE[7]_equal_100_o
+    SLICE_X19Y4.D        Tilo                  0.259   N99
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>2_SW1
+    SLICE_X19Y5.A3       net (fanout=1)        0.452   N99
+    SLICE_X19Y5.CLK      Tas                   0.322   memory_controller/DataLatch<1>
                                                        memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>2
                                                        memory_controller/DataLatch_0
     -------------------------------------------------  ---------------------------
-    Total                                      6.723ns (1.401ns logic, 5.322ns route)
-                                                       (20.8% logic, 79.2% route)
+    Total                                      5.901ns (1.378ns logic, 4.523ns route)
+                                                       (23.4% logic, 76.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.482ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_0_1 (FF)
+Slack (setup path):     4.110ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               memory_controller/STATE_6_1 (FF)
   Destination:          memory_controller/DataLatch_0 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      6.463ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.020ns (0.331 - 0.351)
+  Data Path Delay:      5.819ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.036ns (0.327 - 0.363)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -253,39 +253,39 @@ Slack (setup path):     3.482ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_0_1 to memory_controller/DataLatch_0
+  Maximum Data Path at Slow Process Corner: memory_controller/STATE_6_1 to memory_controller/DataLatch_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y28.AQ      Tcko                  0.447   memory_controller/STATE_0_3
-                                                       memory_controller/STATE_0_1
-    SLICE_X19Y29.A3      net (fanout=3)        0.466   memory_controller/STATE_0_1
-    SLICE_X19Y29.A       Tilo                  0.259   N19
-                                                       memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>111
-    SLICE_X14Y7.B5       net (fanout=18)       2.619   memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>11
-    SLICE_X14Y7.B        Tilo                  0.203   N153
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>1_SW0
-    SLICE_X19Y3.D5       net (fanout=32)       1.325   N11
-    SLICE_X19Y3.D        Tilo                  0.259   N122
-                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>2_SW0
-    SLICE_X18Y3.A2       net (fanout=1)        0.596   N122
-    SLICE_X18Y3.CLK      Tas                   0.289   memory_controller/DataLatch<1>
+    SLICE_X22Y18.AQ      Tcko                  0.447   memory_controller/STATE_6_2
+                                                       memory_controller/STATE_6_1
+    SLICE_X26Y19.B6      net (fanout=1)        0.549   memory_controller/STATE_6_1
+    SLICE_X26Y19.B       Tilo                  0.203   memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+                                                       memory_controller/GND_19_o_STATE[7]_equal_100_o<7>11
+    SLICE_X18Y19.A1      net (fanout=14)       1.025   memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+    SLICE_X18Y19.A       Tilo                  0.203   N64
+                                                       memory_controller/GND_19_o_STATE[7]_equal_100_o<7>1
+    SLICE_X19Y4.D4       net (fanout=42)       2.359   memory_controller/GND_19_o_STATE[7]_equal_100_o
+    SLICE_X19Y4.D        Tilo                  0.259   N99
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>2_SW1
+    SLICE_X19Y5.A3       net (fanout=1)        0.452   N99
+    SLICE_X19Y5.CLK      Tas                   0.322   memory_controller/DataLatch<1>
                                                        memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>2
                                                        memory_controller/DataLatch_0
     -------------------------------------------------  ---------------------------
-    Total                                      6.463ns (1.457ns logic, 5.006ns route)
-                                                       (22.5% logic, 77.5% route)
+    Total                                      5.819ns (1.434ns logic, 4.385ns route)
+                                                       (24.6% logic, 75.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point memory_controller/memcntrl_data_out_0 (SLICE_X32Y2.CE), 8 paths
+Paths for end point memory_controller/DataLatch_8 (SLICE_X14Y6.A5), 24 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     3.202ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_3_1 (FF)
-  Destination:          memory_controller/memcntrl_data_out_0 (FF)
+Slack (setup path):     3.972ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               memory_controller/idle_3 (FF)
+  Destination:          memory_controller/DataLatch_8 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      6.784ns (Levels of Logic = 2)
-  Clock Path Skew:      0.021ns (0.375 - 0.354)
+  Data Path Delay:      5.961ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.032ns (0.331 - 0.363)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -296,32 +296,36 @@ Slack (setup path):     3.202ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_3_1 to memory_controller/memcntrl_data_out_0
+  Maximum Data Path at Slow Process Corner: memory_controller/idle_3 to memory_controller/DataLatch_8
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y29.AQ      Tcko                  0.391   memory_controller/STATE_3_4
-                                                       memory_controller/STATE_3_1
-    SLICE_X17Y29.D4      net (fanout=3)        1.286   memory_controller/STATE_3_1
-    SLICE_X17Y29.D       Tilo                  0.259   memory_controller/STATE_3_4
-                                                       memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>111_1
-    SLICE_X14Y25.A2      net (fanout=3)        1.003   memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>111
-    SLICE_X14Y25.A       Tilo                  0.203   memory_controller/GND_19_o_idle[31]_select_145_OUT<3>2
-                                                       memory_controller/PWR_13_o_STATE[7]_equal_108_o<7>1
-    SLICE_X32Y2.CE       net (fanout=19)       3.307   memory_controller/PWR_13_o_STATE[7]_equal_108_o
-    SLICE_X32Y2.CLK      Tceck                 0.335   memory_controller/memcntrl_data_out<3>
-                                                       memory_controller/memcntrl_data_out_0
+    SLICE_X23Y18.CQ      Tcko                  0.391   memory_controller/idle<3>
+                                                       memory_controller/idle_3
+    SLICE_X16Y18.A1      net (fanout=5)        1.124   memory_controller/idle<3>
+    SLICE_X16Y18.A       Tilo                  0.205   memory_controller/Mcompar_idle[31]_GND_19_o_LessThan_46_o_cy<3>
+                                                       memory_controller/Mcompar_idle[31]_GND_19_o_LessThan_46_o_lut<0>
+    SLICE_X18Y21.C3      net (fanout=2)        0.946   memory_controller/Mcompar_idle[31]_GND_19_o_LessThan_46_o_lut<0>
+    SLICE_X18Y21.CMUX    Tilo                  0.261   memory_controller/AdrLatch<2>
+                                                       memory_controller/GND_19_o_GND_19_o_AND_1_o1
+    SLICE_X14Y6.B5       net (fanout=22)       2.320   memory_controller/GND_19_o_GND_19_o_AND_1_o
+    SLICE_X14Y6.B        Tilo                  0.203   memory_controller/DataLatch<9>
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>1_SW2
+    SLICE_X14Y6.A5       net (fanout=1)        0.222   N130
+    SLICE_X14Y6.CLK      Tas                   0.289   memory_controller/DataLatch<9>
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<8>1
+                                                       memory_controller/DataLatch_8
     -------------------------------------------------  ---------------------------
-    Total                                      6.784ns (1.188ns logic, 5.596ns route)
-                                                       (17.5% logic, 82.5% route)
+    Total                                      5.961ns (1.349ns logic, 4.612ns route)
+                                                       (22.6% logic, 77.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.557ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_0_1 (FF)
-  Destination:          memory_controller/memcntrl_data_out_0 (FF)
+Slack (setup path):     4.020ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               memory_controller/idle_4 (FF)
+  Destination:          memory_controller/DataLatch_8 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      6.432ns (Levels of Logic = 2)
-  Clock Path Skew:      0.024ns (0.375 - 0.351)
+  Data Path Delay:      5.911ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.034ns (0.331 - 0.365)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -332,32 +336,36 @@ Slack (setup path):     3.557ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_0_1 to memory_controller/memcntrl_data_out_0
+  Maximum Data Path at Slow Process Corner: memory_controller/idle_4 to memory_controller/DataLatch_8
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y28.AQ      Tcko                  0.447   memory_controller/STATE_0_3
-                                                       memory_controller/STATE_0_1
-    SLICE_X17Y29.D3      net (fanout=3)        0.878   memory_controller/STATE_0_1
-    SLICE_X17Y29.D       Tilo                  0.259   memory_controller/STATE_3_4
-                                                       memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>111_1
-    SLICE_X14Y25.A2      net (fanout=3)        1.003   memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>111
-    SLICE_X14Y25.A       Tilo                  0.203   memory_controller/GND_19_o_idle[31]_select_145_OUT<3>2
-                                                       memory_controller/PWR_13_o_STATE[7]_equal_108_o<7>1
-    SLICE_X32Y2.CE       net (fanout=19)       3.307   memory_controller/PWR_13_o_STATE[7]_equal_108_o
-    SLICE_X32Y2.CLK      Tceck                 0.335   memory_controller/memcntrl_data_out<3>
-                                                       memory_controller/memcntrl_data_out_0
+    SLICE_X25Y19.AQ      Tcko                  0.391   memory_controller/idle<4>
+                                                       memory_controller/idle_4
+    SLICE_X16Y18.A5      net (fanout=4)        1.074   memory_controller/idle<4>
+    SLICE_X16Y18.A       Tilo                  0.205   memory_controller/Mcompar_idle[31]_GND_19_o_LessThan_46_o_cy<3>
+                                                       memory_controller/Mcompar_idle[31]_GND_19_o_LessThan_46_o_lut<0>
+    SLICE_X18Y21.C3      net (fanout=2)        0.946   memory_controller/Mcompar_idle[31]_GND_19_o_LessThan_46_o_lut<0>
+    SLICE_X18Y21.CMUX    Tilo                  0.261   memory_controller/AdrLatch<2>
+                                                       memory_controller/GND_19_o_GND_19_o_AND_1_o1
+    SLICE_X14Y6.B5       net (fanout=22)       2.320   memory_controller/GND_19_o_GND_19_o_AND_1_o
+    SLICE_X14Y6.B        Tilo                  0.203   memory_controller/DataLatch<9>
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>1_SW2
+    SLICE_X14Y6.A5       net (fanout=1)        0.222   N130
+    SLICE_X14Y6.CLK      Tas                   0.289   memory_controller/DataLatch<9>
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<8>1
+                                                       memory_controller/DataLatch_8
     -------------------------------------------------  ---------------------------
-    Total                                      6.432ns (1.244ns logic, 5.188ns route)
-                                                       (19.3% logic, 80.7% route)
+    Total                                      5.911ns (1.349ns logic, 4.562ns route)
+                                                       (22.8% logic, 77.2% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.615ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_1_1 (FF)
-  Destination:          memory_controller/memcntrl_data_out_0 (FF)
+Slack (setup path):     4.128ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               memory_controller/idle_2 (FF)
+  Destination:          memory_controller/DataLatch_8 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      6.369ns (Levels of Logic = 2)
-  Clock Path Skew:      0.019ns (0.375 - 0.356)
+  Data Path Delay:      5.805ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.032ns (0.331 - 0.363)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -368,111 +376,115 @@ Slack (setup path):     3.615ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_1_1 to memory_controller/memcntrl_data_out_0
+  Maximum Data Path at Slow Process Corner: memory_controller/idle_2 to memory_controller/DataLatch_8
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y28.BQ      Tcko                  0.408   memory_controller/STATE_1_3
-                                                       memory_controller/STATE_1_1
-    SLICE_X17Y29.D5      net (fanout=3)        0.854   memory_controller/STATE_1_1
-    SLICE_X17Y29.D       Tilo                  0.259   memory_controller/STATE_3_4
-                                                       memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>111_1
-    SLICE_X14Y25.A2      net (fanout=3)        1.003   memory_controller/GND_19_o_STATE[7]_select_146_OUT<5>111
-    SLICE_X14Y25.A       Tilo                  0.203   memory_controller/GND_19_o_idle[31]_select_145_OUT<3>2
-                                                       memory_controller/PWR_13_o_STATE[7]_equal_108_o<7>1
-    SLICE_X32Y2.CE       net (fanout=19)       3.307   memory_controller/PWR_13_o_STATE[7]_equal_108_o
-    SLICE_X32Y2.CLK      Tceck                 0.335   memory_controller/memcntrl_data_out<3>
-                                                       memory_controller/memcntrl_data_out_0
+    SLICE_X23Y18.AQ      Tcko                  0.391   memory_controller/idle<3>
+                                                       memory_controller/idle_2
+    SLICE_X16Y18.A3      net (fanout=5)        0.968   memory_controller/idle<2>
+    SLICE_X16Y18.A       Tilo                  0.205   memory_controller/Mcompar_idle[31]_GND_19_o_LessThan_46_o_cy<3>
+                                                       memory_controller/Mcompar_idle[31]_GND_19_o_LessThan_46_o_lut<0>
+    SLICE_X18Y21.C3      net (fanout=2)        0.946   memory_controller/Mcompar_idle[31]_GND_19_o_LessThan_46_o_lut<0>
+    SLICE_X18Y21.CMUX    Tilo                  0.261   memory_controller/AdrLatch<2>
+                                                       memory_controller/GND_19_o_GND_19_o_AND_1_o1
+    SLICE_X14Y6.B5       net (fanout=22)       2.320   memory_controller/GND_19_o_GND_19_o_AND_1_o
+    SLICE_X14Y6.B        Tilo                  0.203   memory_controller/DataLatch<9>
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<0>1_SW2
+    SLICE_X14Y6.A5       net (fanout=1)        0.222   N130
+    SLICE_X14Y6.CLK      Tas                   0.289   memory_controller/DataLatch<9>
+                                                       memory_controller/GND_19_o_DataLatch[15]_select_148_OUT<8>1
+                                                       memory_controller/DataLatch_8
     -------------------------------------------------  ---------------------------
-    Total                                      6.369ns (1.205ns logic, 5.164ns route)
-                                                       (18.9% logic, 81.1% route)
+    Total                                      5.805ns (1.349ns logic, 4.456ns route)
+                                                       (23.2% logic, 76.8% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point memory_controller/GND_19_o_memcntrl_clk_DFF_97 (SLICE_X16Y26.A6), 1 path
+Paths for end point memory_controller/memcntrl_ram_data_7 (SLICE_X14Y4.D5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.416ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               memory_controller/GND_19_o_memcntrl_clk_DFF_97 (FF)
-  Destination:          memory_controller/GND_19_o_memcntrl_clk_DFF_97 (FF)
+Slack (hold path):      0.413ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               memory_controller/DataLatch_7 (FF)
+  Destination:          memory_controller/memcntrl_ram_data_7 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.416ns (Levels of Logic = 1)
+  Data Path Delay:      0.415ns (Levels of Logic = 1)
+  Clock Path Skew:      0.002ns (0.039 - 0.037)
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: memory_controller/DataLatch_7 to memory_controller/memcntrl_ram_data_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y4.CQ       Tcko                  0.198   memory_controller/DataLatch<7>
+                                                       memory_controller/DataLatch_7
+    SLICE_X14Y4.D5       net (fanout=3)        0.086   memory_controller/DataLatch<7>
+    SLICE_X14Y4.CLK      Tah         (-Th)    -0.131   memory_controller/memcntrl_ram_data<6>
+                                                       memory_controller/Mmux_n0287141
+                                                       memory_controller/memcntrl_ram_data_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.415ns (0.329ns logic, 0.086ns route)
+                                                       (79.3% logic, 20.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point memory_controller/idle_2 (SLICE_X23Y18.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.451ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               memory_controller/idle_2 (FF)
+  Destination:          memory_controller/idle_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.451ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 10.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: memory_controller/GND_19_o_memcntrl_clk_DFF_97 to memory_controller/GND_19_o_memcntrl_clk_DFF_97
+  Minimum Data Path at Fast Process Corner: memory_controller/idle_2 to memory_controller/idle_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X16Y26.AQ      Tcko                  0.200   memory_controller/GND_19_o_memcntrl_clk_DFF_113
-                                                       memory_controller/GND_19_o_memcntrl_clk_DFF_97
-    SLICE_X16Y26.A6      net (fanout=2)        0.026   memory_controller/GND_19_o_memcntrl_clk_DFF_97
-    SLICE_X16Y26.CLK     Tah         (-Th)    -0.190   memory_controller/GND_19_o_memcntrl_clk_DFF_113
-                                                       memory_controller/GND_19_o_memcntrl_clk_DFF_97_rstpot
-                                                       memory_controller/GND_19_o_memcntrl_clk_DFF_97
+    SLICE_X23Y18.AQ      Tcko                  0.198   memory_controller/idle<3>
+                                                       memory_controller/idle_2
+    SLICE_X23Y18.A6      net (fanout=5)        0.038   memory_controller/idle<2>
+    SLICE_X23Y18.CLK     Tah         (-Th)    -0.215   memory_controller/idle<3>
+                                                       memory_controller/GND_19_o_idle[31]_select_145_OUT<2>4
+                                                       memory_controller/idle_2
     -------------------------------------------------  ---------------------------
-    Total                                      0.416ns (0.390ns logic, 0.026ns route)
-                                                       (93.8% logic, 6.3% route)
+    Total                                      0.451ns (0.413ns logic, 0.038ns route)
+                                                       (91.6% logic, 8.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point memory_controller/memcntrl_ram_lb (SLICE_X21Y27.D6), 1 path
+Paths for end point memory_controller/memcntrl_ram_adr_2 (SLICE_X24Y22.C5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.440ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               memory_controller/memcntrl_ram_lb (FF)
-  Destination:          memory_controller/memcntrl_ram_lb (FF)
+Slack (hold path):      0.460ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               memory_controller/memcntrl_ram_adr_2 (FF)
+  Destination:          memory_controller/memcntrl_ram_adr_2 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.440ns (Levels of Logic = 1)
+  Data Path Delay:      0.460ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 10.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: memory_controller/memcntrl_ram_lb to memory_controller/memcntrl_ram_lb
+  Minimum Data Path at Fast Process Corner: memory_controller/memcntrl_ram_adr_2 to memory_controller/memcntrl_ram_adr_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y27.DQ      Tcko                  0.198   memory_controller/memcntrl_ram_lb
-                                                       memory_controller/memcntrl_ram_lb
-    SLICE_X21Y27.D6      net (fanout=3)        0.027   memory_controller/memcntrl_ram_lb
-    SLICE_X21Y27.CLK     Tah         (-Th)    -0.215   memory_controller/memcntrl_ram_lb
-                                                       memory_controller/GND_19_o_PWR_13_o_Select_137_o1
-                                                       memory_controller/memcntrl_ram_lb
+    SLICE_X24Y22.CQ      Tcko                  0.200   memory_controller/memcntrl_ram_adr<2>
+                                                       memory_controller/memcntrl_ram_adr_2
+    SLICE_X24Y22.C5      net (fanout=2)        0.070   memory_controller/memcntrl_ram_adr<2>
+    SLICE_X24Y22.CLK     Tah         (-Th)    -0.190   memory_controller/memcntrl_ram_adr<2>
+                                                       memory_controller/GND_19_o_X_8_o_select_130_OUT<23>1
+                                                       memory_controller/memcntrl_ram_adr_2
     -------------------------------------------------  ---------------------------
-    Total                                      0.440ns (0.413ns logic, 0.027ns route)
-                                                       (93.9% logic, 6.1% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point memory_controller/memcntrl_cfg_finish (SLICE_X19Y22.A6), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.449ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               memory_controller/memcntrl_cfg_finish (FF)
-  Destination:          memory_controller/memcntrl_cfg_finish (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.449ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
-  Source Clock:         clk_BUFGP rising at 10.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: memory_controller/memcntrl_cfg_finish to memory_controller/memcntrl_cfg_finish
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X19Y22.AQ      Tcko                  0.198   memory_controller/memcntrl_cfg_finish
-                                                       memory_controller/memcntrl_cfg_finish
-    SLICE_X19Y22.A6      net (fanout=11)       0.036   memory_controller/memcntrl_cfg_finish
-    SLICE_X19Y22.CLK     Tah         (-Th)    -0.215   memory_controller/memcntrl_cfg_finish
-                                                       memory_controller/memcntrl_cfg_finish_rstpot
-                                                       memory_controller/memcntrl_cfg_finish
-    -------------------------------------------------  ---------------------------
-    Total                                      0.449ns (0.413ns logic, 0.036ns route)
-                                                       (92.0% logic, 8.0% route)
+    Total                                      0.460ns (0.390ns logic, 0.070ns route)
+                                                       (84.8% logic, 15.2% route)
 
 --------------------------------------------------------------------------------
 
@@ -489,17 +501,17 @@ Slack: 8.270ns (period - min period limit)
 Slack: 9.570ns (period - min period limit)
   Period: 10.000ns
   Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: memory_controller/memcntrl_ram_data<8>/CLK
-  Logical resource: memory_controller/memcntrl_ram_data_15/CK
-  Location pin: SLICE_X12Y2.CLK
+  Physical resource: divide_clock_by_10000/COUNT1<3>/CLK
+  Logical resource: divide_clock_by_10000/COUNT1_0/CK
+  Location pin: SLICE_X36Y12.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.570ns (period - min period limit)
   Period: 10.000ns
   Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: memory_controller/memcntrl_ram_data<8>/CLK
-  Logical resource: memory_controller/memcntrl_ram_data_1/CK
-  Location pin: SLICE_X12Y2.CLK
+  Physical resource: divide_clock_by_10000/COUNT1<3>/CLK
+  Logical resource: divide_clock_by_10000/COUNT1_1/CK
+  Location pin: SLICE_X36Y12.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -516,7 +528,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    8.661|         |         |         |
+clk            |    6.271|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -525,16 +537,16 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 4536 paths, 0 nets, and 942 connections
+Constraints cover 3874 paths, 0 nets, and 960 connections
 
 Design statistics:
-   Minimum period:   8.661ns{1}   (Maximum frequency: 115.460MHz)
+   Minimum period:   6.271ns{1}   (Maximum frequency: 159.464MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Sun Dec 04 16:14:20 2011 
+Analysis completed Sun Dec 04 19:56:17 2011 
 --------------------------------------------------------------------------------
 
 Trace Settings:
