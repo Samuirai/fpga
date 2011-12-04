@@ -1,0 +1,6 @@
+vhdl work "samuirai.vhd"
+vhdl work "VGAController.vhd"
+vhdl work "SevenSegment.vhd"
+vhdl work "MemoryController.vhd"
+vhdl work "clockDivider.vhd"
+vhdl work "TopLayer.vhd"
