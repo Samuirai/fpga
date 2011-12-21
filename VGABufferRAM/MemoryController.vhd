@@ -81,7 +81,7 @@ begin
 				elsif (idle = 0 and	memcntrl_cfg_rw = "10") then -- when read request
 					AdrLatch <= memcntrl_adr;
 					STATE := "00010000";
-					idle := 0; 
+					idle := 2; 
 				end if;
 				
 				
@@ -103,7 +103,7 @@ begin
 					idle := idle - 1;
 				else
 					STATE := "00100000";
-					idle := 0;
+					idle := 2;
 				end if;
 				
 			when "00100000" => -- READ
@@ -124,7 +124,7 @@ begin
 					idle := idle - 1;
 				else
 					STATE := "00110000";
-					idle := 0;
+					idle := 4;
 				end if;
 				
 			when "00110000" => -- READ
@@ -144,7 +144,7 @@ begin
 				if idle > 0 then
 					idle := idle - 1;
 				else
-					idle := 0;
+					idle := 1;
 					STATE := "01000000";
 				end if;
 				
@@ -166,7 +166,7 @@ begin
 				if idle > 0 then
 					idle := idle - 1;
 				else
-					idle := 0;
+					idle := 5;
 					STATE := "01010000";
 				end if;
 				
@@ -187,7 +187,7 @@ begin
 				if idle > 0 then
 					idle := idle - 1;
 				else
-					idle := 0; 
+					idle := 5; 
 					STATE := "01100000";
 				end if;
 				
@@ -208,7 +208,7 @@ begin
 				if idle > 0 then
 					idle := idle - 1;
 				else
-					idle := 0; 
+					idle := 5; 
 					STATE := "01110000";
 				end if;
 				
@@ -229,7 +229,7 @@ begin
 				if idle > 0 then
 					idle := idle - 1;
 				else
-					idle := 0;
+					idle := 5;
 					STATE := "10000000";
 				end if;
 				
@@ -252,7 +252,7 @@ begin
 				if idle > 0 then
 					idle := idle - 1;
 				elsif idle = 0 and memcntrl_cfg_thx = '1' then
-					idle := 0;
+					idle := 3;
 					memcntrl_cfg_finish <= '0';
 					STATE := "10010000";
 				end if;

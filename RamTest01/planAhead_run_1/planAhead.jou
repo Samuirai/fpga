@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# PlanAhead v13.2 (64-bit)
+# Build 131561 by hdbuild on Thu Jun 16 17:14:12 PDT 2011
+# Start of session at: Fri Dec 02 23:24:54 2011
+# Process ID: 788
+# Log file: Z:/coding/fpga/RamTest01/planAhead_run_1/planAhead.log
+# Journal file: Z:/coding/fpga/RamTest01/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source Z:/coding/fpga/RamTest01/pa.fromNcd.tcl
+exit
+stop_gui

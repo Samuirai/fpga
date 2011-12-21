@@ -1,0 +1,19 @@
+#:C0     
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   NT M2.1 O.61xd
+#Current Working Directory:
+#:D   Z:\coding\fpga\RamTest01
+#Date/Time:
+#:T   Fri Dec 02 23:22:53 2011
+#------------------------------
+	#Reading main_map.ncd...
+	#Loading device for application Rf_Device from file '6slx16.nph' in environment C:\Xilinx\13.2\ISE_DS\ISE\.
+	#   "main" is an NCD, version 3.2, device xc6slx16, package csg324, speed -3
+	#Design creation date: 2011.12.02.00.57.33
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+unselect -all

@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.25 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.25 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: TopLayer.prj
 
@@ -118,6 +118,9 @@ Parsing architecture <Behavioral> of entity <sevensegment>.
 Parsing VHDL file "\\psf\home\coding\fpga\VGABufferRAM\MemoryController.vhd" into library work
 Parsing entity <MemoryController>.
 Parsing architecture <Behavioral> of entity <memorycontroller>.
+Parsing VHDL file "\\psf\home\coding\fpga\VGABufferRAM\FIFO.vhd" into library work
+Parsing entity <FIFO>.
+Parsing architecture <Behavioral> of entity <fifo>.
 Parsing VHDL file "\\psf\home\coding\fpga\VGABufferRAM\clockDivider.vhd" into library work
 Parsing entity <clockDivider>.
 Parsing architecture <Behavioral> of entity <clockdivider>.
@@ -130,6 +133,7 @@ Parsing architecture <Behavioral> of entity <toplayer>.
 =========================================================================
 
 Elaborating entity <TopLayer> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 143: Using initial value "1110001110001110" for memcntrl_data_in since it is never assigned
 
 Elaborating entity <clockDivider> (architecture <Behavioral>) from library <work>.
 
@@ -137,13 +141,18 @@ Elaborating entity <sevenSegment> (architecture <Behavioral>) from library <work
 
 Elaborating entity <VGAController> (architecture <Behavioral>) from library <work>.
 
+Elaborating entity <FIFO> (architecture <Behavioral>) from library <work>.
+
 Elaborating entity <MemoryController> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 184: color should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 185: color should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 186: color should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 202: sw should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 206: sw should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 221: memcntrl_data_out should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 212: bw should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 250: rega should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 259: latch should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 263: latch should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 265: rega should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 275: thx should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 279: memcntrl_thx should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 280: sw should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line 281: memcntrl_data_out should be on the sensitivity list of the process
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -151,40 +160,55 @@ WARNING:HDLCompiler:92 - "\\psf\home\coding\fpga\VGABufferRAM\TopLayer.vhd" Line
 
 Synthesizing Unit <TopLayer>.
     Related source file is "//psf/home/coding/fpga/vgabufferram/toplayer.vhd".
+WARNING:Xst:647 - Input <sw<7:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <btn<4:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:737 - Found 1-bit latch for signal <memcntrl_data_in<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <memcntrl_data_in<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <memcntrl_data_in<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <memcntrl_data_in<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <memcntrl_data_in<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <memcntrl_data_in<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <memcntrl_data_in<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <memcntrl_data_in<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <color<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <color<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <color<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <color<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <color<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <color<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <color<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <color<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <memcntrl_data_in<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:647 - Input <btns> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "//psf/home/coding/fpga/vgabufferram/toplayer.vhd" line 166: Output port <hcount> of the instance <vga_controller> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "//psf/home/coding/fpga/vgabufferram/toplayer.vhd" line 166: Output port <vcount> of the instance <vga_controller> is unconnected or connected to loadless signal.
+WARNING:Xst:737 - Found 1-bit latch for signal <led<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <led<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <led<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <led<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <led<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <led<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <led<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <memcntrl_adr<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <thx>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <latch<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <led<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <memcntrl_rw<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <memcntrl_rw<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <memcntrl_thx>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
-	inferred  18 Latch(s).
-	inferred   9 Multiplexer(s).
+	inferred  29 Latch(s).
+	inferred  42 Multiplexer(s).
 Unit <TopLayer> synthesized.
 
 Synthesizing Unit <clockDivider>.
     Related source file is "//psf/home/coding/fpga/vgabufferram/clockdivider.vhd".
     Found 1-bit register for signal <clk_out>.
-    Found 16-bit register for signal <COUNT1>.
-    Found 16-bit adder for signal <COUNT1[15]_GND_4_o_add_0_OUT> created at line 46.
-    Found 16-bit comparator greater for signal <COUNT1[15]_GND_4_o_LessThan_2_o> created at line 47
-    Found 16-bit comparator greater for signal <n0006> created at line 52
+    Found 24-bit register for signal <COUNT1>.
+    Found 24-bit adder for signal <COUNT1[23]_GND_5_o_add_0_OUT> created at line 46.
+    Found 24-bit comparator greater for signal <COUNT1[23]_GND_5_o_LessThan_2_o> created at line 47
+    Found 24-bit comparator greater for signal <n0006> created at line 52
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  17 D-type flip-flop(s).
+	inferred  25 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 Unit <clockDivider> synthesized.
 
@@ -193,8 +217,8 @@ Synthesizing Unit <sevenSegment>.
     Found 8-bit register for signal <out1>.
     Found 2-bit register for signal <STATE>.
     Found 4-bit register for signal <out2>.
-    Found 2-bit adder for signal <STATE[1]_GND_31_o_add_16_OUT> created at line 117.
-    Found 4x4-bit Read Only RAM for signal <out2[3]_PWR_13_o_mux_14_OUT>
+    Found 2-bit adder for signal <STATE[1]_GND_80_o_add_16_OUT> created at line 117.
+    Found 4x4-bit Read Only RAM for signal <out2[3]_PWR_28_o_mux_14_OUT>
     Found 8-bit 4-to-1 multiplexer for signal <out1[0]_in4[3]_mux_15_OUT> created at line 98.
     Summary:
 	inferred   1 RAM(s).
@@ -210,20 +234,36 @@ Synthesizing Unit <VGAController>.
     Found 1-bit register for signal <HS>.
     Found 1-bit register for signal <VS>.
     Found 1-bit register for signal <blank>.
-    Found 11-bit adder for signal <hcounter[10]_GND_32_o_add_3_OUT> created at line 1241.
-    Found 11-bit adder for signal <vcounter[10]_GND_32_o_add_9_OUT> created at line 1241.
+    Found 11-bit adder for signal <hcounter[10]_GND_81_o_add_3_OUT> created at line 1241.
+    Found 11-bit adder for signal <vcounter[10]_GND_81_o_add_9_OUT> created at line 1241.
     Found 11-bit comparator lessequal for signal <n0015> created at line 135
-    Found 11-bit comparator greater for signal <hcounter[10]_GND_32_o_LessThan_16_o> created at line 135
+    Found 11-bit comparator greater for signal <hcounter[10]_GND_81_o_LessThan_16_o> created at line 135
     Found 11-bit comparator lessequal for signal <n0021> created at line 151
-    Found 11-bit comparator greater for signal <vcounter[10]_GND_32_o_LessThan_18_o> created at line 151
-    Found 11-bit comparator greater for signal <hcounter[10]_GND_32_o_LessThan_19_o> created at line 160
-    Found 11-bit comparator greater for signal <vcounter[10]_GND_32_o_LessThan_20_o> created at line 160
+    Found 11-bit comparator greater for signal <vcounter[10]_GND_81_o_LessThan_18_o> created at line 151
+    Found 11-bit comparator greater for signal <hcounter[10]_GND_81_o_LessThan_19_o> created at line 160
+    Found 11-bit comparator greater for signal <vcounter[10]_GND_81_o_LessThan_20_o> created at line 160
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  25 D-type flip-flop(s).
 	inferred   6 Comparator(s).
 	inferred   2 Multiplexer(s).
 Unit <VGAController> synthesized.
+
+Synthesizing Unit <FIFO>.
+    Related source file is "//psf/home/coding/fpga/vgabufferram/fifo.vhd".
+    Found 32-bit register for signal <count>.
+    Found 16-bit register for signal <regA>.
+    Found 16-bit register for signal <regB>.
+    Found 1-bit register for signal <fifo_empty>.
+    Found 16-bit register for signal <regC>.
+    Found 1-bit register for signal <fifo_out>.
+    Found 32-bit adder for signal <count[31]_GND_82_o_add_2_OUT> created at line 60.
+    Found 1-bit 16-to-1 multiplexer for signal <count[3]_regA[15]_Mux_1_o> created at line 58.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  82 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <FIFO> synthesized.
 
 Synthesizing Unit <MemoryController>.
     Related source file is "//psf/home/coding/fpga/vgabufferram/memorycontroller.vhd".
@@ -233,10 +273,10 @@ WARNING:Xst:2935 - Signal 'memcntrl_ram_cre', unconnected in block 'MemoryContro
     Found 1-bit register for signal <memcntrl_ram_oe>.
     Found 1-bit register for signal <memcntrl_ram_we>.
     Found 24-bit register for signal <memcntrl_ram_adr>.
-    Found 16-bit register for signal <GND_34_o_dff_151_OUT>.
+    Found 16-bit register for signal <GND_84_o_dff_151_OUT>.
     Found 1-bit register for signal <memcntrl_ram_ub>.
     Found 1-bit register for signal <memcntrl_ram_lb>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_76_q>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_110_q>.
     Found 1-bit register for signal <memcntrl_cfg_busy>.
     Found 1-bit register for signal <memcntrl_cfg_finish>.
     Found 32-bit register for signal <idle>.
@@ -244,25 +284,25 @@ WARNING:Xst:2935 - Signal 'memcntrl_ram_cre', unconnected in block 'MemoryContro
     Found 24-bit register for signal <AdrLatch>.
     Found 16-bit register for signal <DataLatch>.
     Found 16-bit register for signal <memcntrl_data_out>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_111>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_112>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_113>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_114>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_115>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_116>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_117>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_118>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_119>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_120>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_121>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_122>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_123>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_124>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_125>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_126>.
-    Found 1-bit register for signal <GND_34_o_memcntrl_clk_DFF_127>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_113>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_114>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_115>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_116>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_117>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_118>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_119>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_120>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_121>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_122>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_123>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_124>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_125>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_126>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_127>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_128>.
+    Found 1-bit register for signal <GND_84_o_memcntrl_clk_DFF_129>.
     Found 1-bit register for signal <memcntrl_ram_adv>.
-    Found 32-bit subtractor for signal <idle[31]_GND_34_o_sub_2_OUT<31:0>> created at line 75.
+    Found 32-bit subtractor for signal <idle[31]_GND_84_o_sub_2_OUT<31:0>> created at line 75.
     Found 1-bit tristate buffer for signal <memcntrl_ram_data<15>> created at line 53
     Found 1-bit tristate buffer for signal <memcntrl_ram_data<14>> created at line 53
     Found 1-bit tristate buffer for signal <memcntrl_ram_data<13>> created at line 53
@@ -280,13 +320,13 @@ WARNING:Xst:2935 - Signal 'memcntrl_ram_cre', unconnected in block 'MemoryContro
     Found 1-bit tristate buffer for signal <memcntrl_ram_data<1>> created at line 53
     Found 1-bit tristate buffer for signal <memcntrl_ram_data<0>> created at line 53
     Found 1-bit tristate buffer for signal <memcntrl_ram_wait> created at line 53
-    Found 32-bit comparator greater for signal <idle[31]_GND_34_o_LessThan_46_o> created at line 252
+    Found 32-bit comparator greater for signal <idle[31]_GND_84_o_LessThan_46_o> created at line 252
     HDL ADVISOR - Describing an operational reset or an explicit power-up state for register <STATE> would allow inference of a finite state machine and as consequence better performance and smaller area.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 162 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred  42 Multiplexer(s).
+	inferred  45 Multiplexer(s).
 	inferred  17 Tristate(s).
 Unit <MemoryController> synthesized.
 
@@ -296,35 +336,34 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  4x4-bit single-port Read Only RAM                     : 1
-# Adders/Subtractors                                   : 6
+# Adders/Subtractors                                   : 9
  11-bit adder                                          : 2
- 16-bit adder                                          : 2
  2-bit adder                                           : 1
+ 24-bit adder                                          : 4
+ 32-bit adder                                          : 1
  32-bit subtractor                                     : 1
-# Registers                                            : 45
- 1-bit register                                        : 31
+# Registers                                            : 55
+ 1-bit register                                        : 35
  11-bit register                                       : 2
- 16-bit register                                       : 5
+ 16-bit register                                       : 6
  2-bit register                                        : 1
- 24-bit register                                       : 2
- 32-bit register                                       : 1
+ 24-bit register                                       : 6
+ 32-bit register                                       : 2
  4-bit register                                        : 1
  8-bit register                                        : 2
-# Latches                                              : 18
- 1-bit latch                                           : 18
-# Comparators                                          : 11
+# Latches                                              : 29
+ 1-bit latch                                           : 29
+# Comparators                                          : 15
  11-bit comparator greater                             : 4
  11-bit comparator lessequal                           : 2
- 16-bit comparator greater                             : 4
+ 24-bit comparator greater                             : 8
  32-bit comparator greater                             : 1
-# Multiplexers                                         : 54
- 1-bit 2-to-1 multiplexer                              : 3
+# Multiplexers                                         : 91
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 45
  11-bit 2-to-1 multiplexer                             : 2
  16-bit 2-to-1 multiplexer                             : 3
- 2-bit 2-to-1 multiplexer                              : 3
- 24-bit 2-to-1 multiplexer                             : 4
- 3-bit 2-to-1 multiplexer                              : 2
- 32-bit 2-to-1 multiplexer                             : 13
+ 32-bit 2-to-1 multiplexer                             : 16
  8-bit 2-to-1 multiplexer                              : 23
  8-bit 4-to-1 multiplexer                              : 1
 # Tristates                                            : 17
@@ -336,17 +375,62 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-INFO:Xst:2261 - The FF/Latch <GND_34_o_memcntrl_clk_DFF_113> in Unit <memory_controller> is equivalent to the following 15 FFs/Latches, which will be removed : <GND_34_o_memcntrl_clk_DFF_111> <GND_34_o_memcntrl_clk_DFF_112> <GND_34_o_memcntrl_clk_DFF_116> <GND_34_o_memcntrl_clk_DFF_114> <GND_34_o_memcntrl_clk_DFF_115> <GND_34_o_memcntrl_clk_DFF_119> <GND_34_o_memcntrl_clk_DFF_117> <GND_34_o_memcntrl_clk_DFF_118> <GND_34_o_memcntrl_clk_DFF_122> <GND_34_o_memcntrl_clk_DFF_120> <GND_34_o_memcntrl_clk_DFF_121> <GND_34_o_memcntrl_clk_DFF_125> <GND_34_o_memcntrl_clk_DFF_123> <GND_34_o_memcntrl_clk_DFF_124> <GND_34_o_memcntrl_clk_DFF_126> 
+INFO:Xst:2261 - The FF/Latch <GND_84_o_memcntrl_clk_DFF_114> in Unit <memory_controller> is equivalent to the following 15 FFs/Latches, which will be removed : <GND_84_o_memcntrl_clk_DFF_113> <GND_84_o_memcntrl_clk_DFF_117> <GND_84_o_memcntrl_clk_DFF_115> <GND_84_o_memcntrl_clk_DFF_116> <GND_84_o_memcntrl_clk_DFF_120> <GND_84_o_memcntrl_clk_DFF_118> <GND_84_o_memcntrl_clk_DFF_119> <GND_84_o_memcntrl_clk_DFF_123> <GND_84_o_memcntrl_clk_DFF_121> <GND_84_o_memcntrl_clk_DFF_122> <GND_84_o_memcntrl_clk_DFF_126> <GND_84_o_memcntrl_clk_DFF_124> <GND_84_o_memcntrl_clk_DFF_125> <GND_84_o_memcntrl_clk_DFF_127> <GND_84_o_memcntrl_clk_DFF_128> 
+WARNING:Xst:1710 - FF/Latch <memcntrl_rw_1> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_adr_24> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <memcntrl_ram_adv> has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <memcntrl_data_in_15> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <memcntrl_data_out_8> of sequential type is unconnected in block <memory_controller>.
-WARNING:Xst:2677 - Node <memcntrl_data_out_9> of sequential type is unconnected in block <memory_controller>.
-WARNING:Xst:2677 - Node <memcntrl_data_out_10> of sequential type is unconnected in block <memory_controller>.
-WARNING:Xst:2677 - Node <memcntrl_data_out_11> of sequential type is unconnected in block <memory_controller>.
-WARNING:Xst:2677 - Node <memcntrl_data_out_12> of sequential type is unconnected in block <memory_controller>.
-WARNING:Xst:2677 - Node <memcntrl_data_out_13> of sequential type is unconnected in block <memory_controller>.
-WARNING:Xst:2677 - Node <memcntrl_data_out_14> of sequential type is unconnected in block <memory_controller>.
-WARNING:Xst:2677 - Node <memcntrl_data_out_15> of sequential type is unconnected in block <memory_controller>.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_24> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_23> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_22> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_21> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_20> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_19> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_18> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_17> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_16> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_15> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_14> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_13> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_12> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_11> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_10> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_9> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_8> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_7> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_6> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_5> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_4> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_3> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_2> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AdrLatch_1> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_24> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_23> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_22> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_21> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_20> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_19> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_18> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_17> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_16> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_15> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_14> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_13> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_12> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_11> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_10> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_9> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_8> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_7> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_6> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_5> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_4> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_3> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_2> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_1> (without init value) has a constant value of 0 in block <memory_controller>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <FIFO>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <FIFO> synthesized (advanced).
 
 Synthesizing (advanced) Unit <VGAController>.
 The following registers are absorbed into counter <hcounter>: 1 register on signal <hcounter>.
@@ -359,7 +443,7 @@ Unit <clockDivider> synthesized (advanced).
 
 Synthesizing (advanced) Unit <sevenSegment>.
 The following registers are absorbed into counter <STATE>: 1 register on signal <STATE>.
-INFO:Xst:3231 - The small RAM <Mram_out2[3]_PWR_13_o_mux_14_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+INFO:Xst:3231 - The small RAM <Mram_out2[3]_PWR_28_o_mux_14_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -378,26 +462,26 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  4x4-bit single-port distributed Read Only RAM         : 1
-# Adders/Subtractors                                   : 1
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 1
  32-bit subtractor                                     : 1
-# Counters                                             : 5
+# Counters                                             : 8
  11-bit up counter                                     : 2
- 16-bit up counter                                     : 2
  2-bit up counter                                      : 1
-# Registers                                            : 179
- Flip-Flops                                            : 179
-# Comparators                                          : 11
+ 24-bit up counter                                     : 4
+ 32-bit up counter                                     : 1
+# Registers                                            : 231
+ Flip-Flops                                            : 231
+# Comparators                                          : 15
  11-bit comparator greater                             : 4
  11-bit comparator lessequal                           : 2
- 16-bit comparator greater                             : 4
+ 24-bit comparator greater                             : 8
  32-bit comparator greater                             : 1
-# Multiplexers                                         : 52
- 1-bit 2-to-1 multiplexer                              : 3
+# Multiplexers                                         : 89
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 45
  16-bit 2-to-1 multiplexer                             : 3
- 2-bit 2-to-1 multiplexer                              : 3
- 24-bit 2-to-1 multiplexer                             : 4
- 3-bit 2-to-1 multiplexer                              : 2
- 32-bit 2-to-1 multiplexer                             : 13
+ 32-bit 2-to-1 multiplexer                             : 16
  8-bit 2-to-1 multiplexer                              : 23
  8-bit 4-to-1 multiplexer                              : 1
 
@@ -407,20 +491,35 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 WARNING:Xst:1293 - FF/Latch <memcntrl_ram_adv> has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <memcntrl_data_in_15> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <GND_34_o_memcntrl_clk_DFF_113> in Unit <MemoryController> is equivalent to the following 15 FFs/Latches, which will be removed : <GND_34_o_memcntrl_clk_DFF_111> <GND_34_o_memcntrl_clk_DFF_112> <GND_34_o_memcntrl_clk_DFF_116> <GND_34_o_memcntrl_clk_DFF_114> <GND_34_o_memcntrl_clk_DFF_115> <GND_34_o_memcntrl_clk_DFF_119> <GND_34_o_memcntrl_clk_DFF_117> <GND_34_o_memcntrl_clk_DFF_118> <GND_34_o_memcntrl_clk_DFF_122> <GND_34_o_memcntrl_clk_DFF_120> <GND_34_o_memcntrl_clk_DFF_121> <GND_34_o_memcntrl_clk_DFF_125> <GND_34_o_memcntrl_clk_DFF_123> <GND_34_o_memcntrl_clk_DFF_124> <GND_34_o_memcntrl_clk_DFF_126> 
-WARNING:Xst:1710 - FF/Latch <memory_controller/memcntrl_ram_adr_24> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memory_controller/memcntrl_ram_adr_23> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memory_controller/AdrLatch_24> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memory_controller/AdrLatch_23> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <memory_controller/memcntrl_data_out_15> of sequential type is unconnected in block <TopLayer>.
-WARNING:Xst:2677 - Node <memory_controller/memcntrl_data_out_14> of sequential type is unconnected in block <TopLayer>.
-WARNING:Xst:2677 - Node <memory_controller/memcntrl_data_out_13> of sequential type is unconnected in block <TopLayer>.
-WARNING:Xst:2677 - Node <memory_controller/memcntrl_data_out_12> of sequential type is unconnected in block <TopLayer>.
-WARNING:Xst:2677 - Node <memory_controller/memcntrl_data_out_11> of sequential type is unconnected in block <TopLayer>.
-WARNING:Xst:2677 - Node <memory_controller/memcntrl_data_out_10> of sequential type is unconnected in block <TopLayer>.
-WARNING:Xst:2677 - Node <memory_controller/memcntrl_data_out_9> of sequential type is unconnected in block <TopLayer>.
-WARNING:Xst:2677 - Node <memory_controller/memcntrl_data_out_8> of sequential type is unconnected in block <TopLayer>.
+WARNING:Xst:1710 - FF/Latch <memcntrl_adr_24> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_rw_1> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <GND_84_o_memcntrl_clk_DFF_114> in Unit <MemoryController> is equivalent to the following 15 FFs/Latches, which will be removed : <GND_84_o_memcntrl_clk_DFF_113> <GND_84_o_memcntrl_clk_DFF_117> <GND_84_o_memcntrl_clk_DFF_115> <GND_84_o_memcntrl_clk_DFF_116> <GND_84_o_memcntrl_clk_DFF_120> <GND_84_o_memcntrl_clk_DFF_118> <GND_84_o_memcntrl_clk_DFF_119> <GND_84_o_memcntrl_clk_DFF_123> <GND_84_o_memcntrl_clk_DFF_121> <GND_84_o_memcntrl_clk_DFF_122> <GND_84_o_memcntrl_clk_DFF_126> <GND_84_o_memcntrl_clk_DFF_124> <GND_84_o_memcntrl_clk_DFF_125> <GND_84_o_memcntrl_clk_DFF_127> <GND_84_o_memcntrl_clk_DFF_128> 
+INFO:Xst:2261 - The FF/Latch <AdrLatch_1> in Unit <MemoryController> is equivalent to the following 23 FFs/Latches, which will be removed : <AdrLatch_2> <AdrLatch_3> <AdrLatch_4> <AdrLatch_5> <AdrLatch_6> <AdrLatch_7> <AdrLatch_8> <AdrLatch_9> <AdrLatch_10> <AdrLatch_11> <AdrLatch_12> <AdrLatch_13> <AdrLatch_14> <AdrLatch_15> <AdrLatch_16> <AdrLatch_17> <AdrLatch_18> <AdrLatch_19> <AdrLatch_20> <AdrLatch_21> <AdrLatch_22> <AdrLatch_23> <AdrLatch_24> 
+WARNING:Xst:1710 - FF/Latch <AdrLatch_1> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcntrl_ram_adr_24> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_23> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_22> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_21> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_20> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_19> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_18> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_17> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_16> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_15> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_14> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_13> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_12> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_11> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_10> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_9> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_8> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_7> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_6> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_5> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_4> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_3> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_2> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memcntrl_ram_adr_1> (without init value) has a constant value of 0 in block <MemoryController>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
    incompatible with the Spartan6 architecture. The two primary causes of this is
    either a register or latch described with both an asynchronous set and
@@ -443,10 +542,14 @@ WARNING:Xst:3002 - This design contains one or more registers/latches that are d
 
   Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
 
+  List of register instances with asynchronous set and reset:
+    memcntrl_rw_0 in unit <TopLayer>
+
+
   List of register instances with asynchronous set or reset and opposite initialization value:
     memcntrl_thx in unit <TopLayer>
 
-WARNING:Xst:2016 - Found a loop when searching source clock on port 'btnl_btnr_OR_210_o:btnl_btnr_OR_210_o'
+WARNING:Xst:2016 - Found a loop when searching source clock on port 'btnl_btnr_AND_49_o:btnl_btnr_AND_49_o'
 Last warning will be issued only once.
 
 Optimizing unit <TopLayer> ...
@@ -454,63 +557,82 @@ Optimizing unit <TopLayer> ...
 Optimizing unit <VGAController> ...
 
 Optimizing unit <sevenSegment> ...
+
+Optimizing unit <FIFO> ...
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_5> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_4> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_3> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_31> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_30> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_29> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_28> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_27> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_26> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_25> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_24> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_23> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_22> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_21> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_20> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_19> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_18> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_17> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_16> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_15> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_14> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_13> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_12> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_11> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_10> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_9> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_8> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_7> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_6> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_5> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <fifo161/count_4> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memory_controller/memcntrl_ram_wait> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memory_controller/GND_84_o_memcntrl_clk_DFF_114> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memory_controller/STATE_3> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memory_controller/STATE_2> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memory_controller/STATE_1> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memory_controller/STATE_0> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_31> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_30> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_29> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_28> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_27> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <memory_controller/idle_26> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_25> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_24> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_23> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_22> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_21> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_20> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_19> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_18> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_17> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_16> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_15> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_14> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_13> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_12> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_11> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_10> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_9> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_8> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_7> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_6> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_5> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_2> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_3> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_4> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_5> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_6> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_7> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_8> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_9> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_10> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_11> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_12> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_13> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_14> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_3/COUNT1_15> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_10000/COUNT1_14> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <divide_clock_by_10000/COUNT1_15> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <memory_controller/memcntrl_ram_wait> (without init value) has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_31> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_30> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_29> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_28> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <memory_controller/idle_27> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <memory_controller/memcntrl_ram_ub> in Unit <TopLayer> is equivalent to the following FF/Latch, which will be removed : <memory_controller/memcntrl_ram_lb> 
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_25> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_24> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_23> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_22> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_6> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_7> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_8> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_9> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_10> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_11> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_12> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_13> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_14> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_15> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_16> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_17> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_18> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_19> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_20> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <memory_controller/idle_21> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <vga_controller/vcounter_10> has a constant value of 0 in block <TopLayer>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <memory_controller/memcntrl_ram_lb> in Unit <TopLayer> is equivalent to the following FF/Latch, which will be removed : <memory_controller/memcntrl_ram_ub> 
+INFO:Xst:2261 - The FF/Latch <memory_controller/memcntrl_cfg_busy> in Unit <TopLayer> is equivalent to the following FF/Latch, which will be removed : <memory_controller/memcntrl_ram_we> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block TopLayer, actual ratio is 3.
-FlipFlop memory_controller/STATE_0 has been replicated 1 time(s)
-FlipFlop memory_controller/STATE_1 has been replicated 2 time(s)
-FlipFlop memory_controller/STATE_2 has been replicated 2 time(s)
-FlipFlop memory_controller/STATE_3 has been replicated 2 time(s)
+Found area constraint ratio of 100 (+ 5) on block TopLayer, actual ratio is 4.
 FlipFlop memory_controller/STATE_4 has been replicated 1 time(s)
 FlipFlop memory_controller/STATE_5 has been replicated 1 time(s)
-FlipFlop memory_controller/STATE_6 has been replicated 2 time(s)
-FlipFlop memory_controller/STATE_7 has been replicated 2 time(s)
+FlipFlop memory_controller/STATE_6 has been replicated 1 time(s)
+FlipFlop memory_controller/STATE_7 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -518,8 +640,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 175
- Flip-Flops                                            : 175
+# Registers                                            : 257
+ Flip-Flops                                            : 257
 
 =========================================================================
 
@@ -542,30 +664,32 @@ Top Level Output File Name         : TopLayer.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 414
+# BELS                             : 685
 #      GND                         : 1
-#      INV                         : 9
-#      LUT1                        : 16
-#      LUT2                        : 17
-#      LUT3                        : 48
-#      LUT4                        : 52
-#      LUT5                        : 47
-#      LUT6                        : 130
-#      MUXCY                       : 47
+#      INV                         : 14
+#      LUT1                        : 104
+#      LUT2                        : 54
+#      LUT3                        : 29
+#      LUT4                        : 29
+#      LUT5                        : 63
+#      LUT6                        : 106
+#      MUXCY                       : 151
 #      MUXF7                       : 3
+#      MUXF8                       : 1
 #      VCC                         : 1
-#      XORCY                       : 43
-# FlipFlops/Latches                : 192
-#      FD                          : 107
-#      FDE                         : 30
-#      FDR                         : 27
-#      FDRE                        : 11
-#      LD                          : 17
-# Clock Buffers                    : 2
-#      BUFG                        : 1
+#      XORCY                       : 129
+# FlipFlops/Latches                : 284
+#      FD                          : 100
+#      FDE                         : 64
+#      FDR                         : 83
+#      FDRE                        : 10
+#      LD                          : 11
+#      LDE_1                       : 16
+# Clock Buffers                    : 4
+#      BUFG                        : 3
 #      BUFGP                       : 1
-# IO Buffers                       : 92
-#      IBUF                        : 13
+# IO Buffers                       : 84
+#      IBUF                        : 5
 #      IOBUF                       : 16
 #      OBUF                        : 62
 #      OBUFT                       : 1
@@ -577,24 +701,24 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             184  out of  18224     1%  
- Number of Slice LUTs:                  319  out of   9112     3%  
-    Number used as Logic:               319  out of   9112     3%  
+ Number of Slice Registers:             276  out of  18224     1%  
+ Number of Slice LUTs:                  399  out of   9112     4%  
+    Number used as Logic:               399  out of   9112     4%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    336
-   Number with an unused Flip Flop:     152  out of    336    45%  
-   Number with an unused LUT:            17  out of    336     5%  
-   Number of fully used LUT-FF pairs:   167  out of    336    49%  
-   Number of unique control sets:        11
+ Number of LUT Flip Flop pairs used:    424
+   Number with an unused Flip Flop:     148  out of    424    34%  
+   Number with an unused LUT:            25  out of    424     5%  
+   Number of fully used LUT-FF pairs:   251  out of    424    59%  
+   Number of unique control sets:        19
 
 IO Utilization: 
  Number of IOs:                          98
- Number of bonded IOBs:                  93  out of    232    40%  
+ Number of bonded IOBs:                  85  out of    232    36%  
     IOB Flip Flops/Latches:               8
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of BUFG/BUFGCTRLs:                4  out of     16    25%  
 
 ---------------------------
 Partition Resource Summary:
@@ -614,16 +738,21 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------------+------------------------------------+-------+
-Clock Signal                             | Clock buffer(FF name)              | Load  |
------------------------------------------+------------------------------------+-------+
-btnl_btnr_OR_210_o(btnl_btnr_OR_210_o1:O)| NONE(*)(memcntrl_data_in_7)        | 8     |
-memory_controller/memcntrl_cfg_finish    | NONE(color_7)                      | 9     |
-clk                                      | BUFGP                              | 136   |
-divide_clock_by_3/clk_out                | BUFG                               | 25    |
-divide_clock_by_10000/clk_out            | NONE(seven_segment_display/STATE_1)| 14    |
------------------------------------------+------------------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
+--------------------------------------------------------+------------------------------------+-------+
+Clock Signal                                            | Clock buffer(FF name)              | Load  |
+--------------------------------------------------------+------------------------------------+-------+
+empty_empty_MUX_327_o(Mmux_empty_empty_MUX_327_o11:O)   | NONE(*)(thx)                       | 1     |
+memcntrl_thx                                            | NONE(latch_15)                     | 16    |
+btnl_btnr_OR_202_o(btnl_btnr_OR_202_o1:O)               | NONE(*)(led_4)                     | 8     |
+clk                                                     | BUFGP                              | 100   |
+sekunde2/clk_out                                        | BUFG                               | 65    |
+divide_clock_by_3/clk_out                               | BUFG                               | 24    |
+divide_clock_by_10000/clk_out                           | NONE(seven_segment_display/STATE_1)| 14    |
+sekunde1/clk_out                                        | BUFG                               | 54    |
+memcntrl_rw_0_G(memcntrl_rw_0_G:O)                      | NONE(*)(memcntrl_rw_0)             | 1     |
+memcntrl_thx_G(memcntrl_finish_memcntrl_thx_AND_43_o1:O)| NONE(*)(memcntrl_thx)              | 1     |
+--------------------------------------------------------+------------------------------------+-------+
+(*) These 4 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -636,9 +765,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 5.955ns (Maximum Frequency: 167.923MHz)
-   Minimum input arrival time before clock: 5.796ns
-   Maximum output required time after clock: 4.844ns
+   Minimum period: 4.902ns (Maximum Frequency: 203.996MHz)
+   Minimum input arrival time before clock: 3.523ns
+   Maximum output required time after clock: 4.604ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -647,49 +776,72 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.955ns (frequency: 167.923MHz)
-  Total number of paths / destination ports: 6420 / 174
+  Clock period: 4.513ns (frequency: 221.592MHz)
+  Total number of paths / destination ports: 4330 / 172
 -------------------------------------------------------------------------
-Delay:               5.955ns (Levels of Logic = 5)
-  Source:            memory_controller/STATE_6_2 (FF)
-  Destination:       memory_controller/memcntrl_ram_adr_12 (FF)
+Delay:               4.513ns (Levels of Logic = 4)
+  Source:            sekunde1/COUNT1_12 (FF)
+  Destination:       sekunde1/COUNT1_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: memory_controller/STATE_6_2 to memory_controller/memcntrl_ram_adr_12
+  Data Path: sekunde1/COUNT1_12 to sekunde1/COUNT1_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               1   0.447   0.924  memory_controller/STATE_6_2 (memory_controller/STATE_6_2)
-     LUT5:I0->O           18   0.203   1.050  memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>111 (memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>11)
-     LUT4:I3->O           11   0.205   0.883  memory_controller/GND_34_o_STATE[7]_equal_111_o<7>1 (memory_controller/GND_34_o_STATE[7]_equal_111_o)
-     LUT6:I5->O            2   0.205   0.617  memory_controller/_n03711 (memory_controller/_n03711)
-     LUT6:I5->O           12   0.205   0.909  memory_controller/_n03714 (memory_controller/_n0371)
-     LUT4:I3->O            1   0.205   0.000  memory_controller/GND_34_o_X_9_o_select_130_OUT<24>1 (memory_controller/GND_34_o_X_9_o_select_130_OUT<0>)
-     FD:D                      0.102          memory_controller/memcntrl_ram_adr_1
+     FD:C->Q               3   0.447   1.015  sekunde1/COUNT1_12 (sekunde1/COUNT1_12)
+     LUT6:I0->O            1   0.203   0.580  sekunde1/n0006_inv2 (sekunde1/n0006_inv2)
+     LUT6:I5->O            2   0.205   0.617  sekunde1/n0006_inv3 (sekunde1/n0006_inv3)
+     LUT6:I5->O           13   0.205   0.933  sekunde1/n0006_inv4 (sekunde1/n0006_inv)
+     LUT2:I1->O            1   0.205   0.000  sekunde1/COUNT1_0_rstpot (sekunde1/COUNT1_0_rstpot)
+     FD:D                      0.102          sekunde1/COUNT1_0
     ----------------------------------------
-    Total                      5.955ns (1.572ns logic, 4.383ns route)
-                                       (26.4% logic, 73.6% route)
+    Total                      4.513ns (1.367ns logic, 3.146ns route)
+                                       (30.3% logic, 69.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sekunde2/clk_out'
+  Clock period: 4.015ns (frequency: 249.089MHz)
+  Total number of paths / destination ports: 455 / 65
+-------------------------------------------------------------------------
+Delay:               4.015ns (Levels of Logic = 3)
+  Source:            memory_controller/STATE_6 (FF)
+  Destination:       memory_controller/idle_0 (FF)
+  Source Clock:      sekunde2/clk_out rising
+  Destination Clock: sekunde2/clk_out rising
+
+  Data Path: memory_controller/STATE_6 to memory_controller/idle_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              66   0.447   1.654  memory_controller/STATE_6 (memory_controller/STATE_6)
+     LUT3:I2->O            2   0.205   0.617  memory_controller/out21 (memory_controller/out2)
+     LUT6:I5->O            1   0.205   0.580  memory_controller/GND_84_o_idle[31]_select_145_OUT<0>5_SW2 (N77)
+     LUT6:I5->O            1   0.205   0.000  memory_controller/GND_84_o_idle[31]_select_145_OUT<0>5_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy (memory_controller/GND_84_o_idle[31]_select_145_OUT<0>)
+     FD:D                      0.102          memory_controller/idle_0
+    ----------------------------------------
+    Total                      4.015ns (1.164ns logic, 2.851ns route)
+                                       (29.0% logic, 71.0% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'divide_clock_by_3/clk_out'
-  Clock period: 4.691ns (frequency: 213.154MHz)
-  Total number of paths / destination ports: 1859 / 36
+  Clock period: 4.386ns (frequency: 227.993MHz)
+  Total number of paths / destination ports: 1524 / 34
 -------------------------------------------------------------------------
-Delay:               4.691ns (Levels of Logic = 14)
-  Source:            vga_controller/hcounter_3 (FF)
+Delay:               4.386ns (Levels of Logic = 14)
+  Source:            vga_controller/hcounter_0 (FF)
   Destination:       vga_controller/hcounter_10 (FF)
   Source Clock:      divide_clock_by_3/clk_out rising
   Destination Clock: divide_clock_by_3/clk_out rising
 
-  Data Path: vga_controller/hcounter_3 to vga_controller/hcounter_10
+  Data Path: vga_controller/hcounter_0 to vga_controller/hcounter_10
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              4   0.447   1.048  vga_controller/hcounter_3 (vga_controller/hcounter_3)
-     LUT6:I0->O            2   0.203   0.617  vga_controller/GND_32_o_hcounter[10]_equal_3_o<10>_SW0 (N25)
-     LUT6:I5->O           21   0.205   1.342  vga_controller/GND_32_o_hcounter[10]_equal_3_o<10> (vga_controller/GND_32_o_hcounter[10]_equal_3_o)
-     LUT3:I0->O            1   0.205   0.000  vga_controller/Mcount_hcounter_lut<0> (vga_controller/Mcount_hcounter_lut<0>)
+     FDR:C->Q              2   0.447   0.981  vga_controller/hcounter_0 (vga_controller/hcounter_0)
+     LUT6:I0->O            5   0.203   0.715  vga_controller/GND_81_o_hcounter[10]_equal_3_o<10>_SW0 (N14)
+     LUT6:I5->O           16   0.205   1.005  vga_controller/GND_81_o_hcounter[10]_equal_3_o<10> (vga_controller/GND_81_o_hcounter[10]_equal_3_o)
+     LUT3:I2->O            1   0.205   0.000  vga_controller/Mcount_hcounter_lut<0> (vga_controller/Mcount_hcounter_lut<0>)
      MUXCY:S->O            1   0.172   0.000  vga_controller/Mcount_hcounter_cy<0> (vga_controller/Mcount_hcounter_cy<0>)
      MUXCY:CI->O           1   0.019   0.000  vga_controller/Mcount_hcounter_cy<1> (vga_controller/Mcount_hcounter_cy<1>)
      MUXCY:CI->O           1   0.019   0.000  vga_controller/Mcount_hcounter_cy<2> (vga_controller/Mcount_hcounter_cy<2>)
@@ -703,96 +855,164 @@ Delay:               4.691ns (Levels of Logic = 14)
      XORCY:CI->O           1   0.180   0.000  vga_controller/Mcount_hcounter_xor<10> (vga_controller/Mcount_hcounter10)
      FDR:D                     0.102          vga_controller/hcounter_10
     ----------------------------------------
-    Total                      4.691ns (1.685ns logic, 3.006ns route)
-                                       (35.9% logic, 64.1% route)
+    Total                      4.386ns (1.685ns logic, 2.701ns route)
+                                       (38.4% logic, 61.6% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'divide_clock_by_10000/clk_out'
-  Clock period: 2.929ns (frequency: 341.454MHz)
-  Total number of paths / destination ports: 30 / 14
+  Clock period: 3.238ns (frequency: 308.799MHz)
+  Total number of paths / destination ports: 29 / 14
 -------------------------------------------------------------------------
-Delay:               2.929ns (Levels of Logic = 2)
+Delay:               3.238ns (Levels of Logic = 2)
   Source:            seven_segment_display/STATE_0 (FF)
-  Destination:       seven_segment_display/out1_3 (FF)
+  Destination:       seven_segment_display/out1_4 (FF)
   Source Clock:      divide_clock_by_10000/clk_out rising
   Destination Clock: divide_clock_by_10000/clk_out rising
 
-  Data Path: seven_segment_display/STATE_0 to seven_segment_display/out1_3
+  Data Path: seven_segment_display/STATE_0 to seven_segment_display/out1_4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              17   0.447   1.392  seven_segment_display/STATE_0 (seven_segment_display/STATE_0)
-     LUT6:I0->O            1   0.203   0.580  seven_segment_display/Mmux_out1[0]_in4[3]_mux_15_OUT41 (seven_segment_display/Mmux_out1[0]_in4[3]_mux_15_OUT4)
-     LUT6:I5->O            1   0.205   0.000  seven_segment_display/Mmux_out1[0]_in4[3]_mux_15_OUT42 (seven_segment_display/out1[0]_in4[3]_mux_15_OUT<3>)
+     FD:C->Q              14   0.447   1.302  seven_segment_display/STATE_0 (seven_segment_display/STATE_0)
+     LUT6:I1->O            2   0.203   0.981  seven_segment_display/Mmux_out1[0]_in4[3]_mux_15_OUT1 (seven_segment_display/out1[0]_in4[3]_mux_15_OUT<0>)
+     LUT6:I0->O            1   0.203   0.000  seven_segment_display/Mmux_out1[0]_in4[3]_mux_15_OUT41 (seven_segment_display/out1[0]_in4[3]_mux_15_OUT<3>)
      FD:D                      0.102          seven_segment_display/out1_4
     ----------------------------------------
-    Total                      2.929ns (0.957ns logic, 1.972ns route)
-                                       (32.7% logic, 67.3% route)
+    Total                      3.238ns (0.955ns logic, 2.283ns route)
+                                       (29.5% logic, 70.5% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'btnl_btnr_OR_210_o'
-  Total number of paths / destination ports: 8 / 8
+Timing constraint: Default period analysis for Clock 'sekunde1/clk_out'
+  Clock period: 4.902ns (frequency: 203.996MHz)
+  Total number of paths / destination ports: 844 / 86
 -------------------------------------------------------------------------
-Offset:              1.838ns (Levels of Logic = 1)
-  Source:            sw<7> (PAD)
-  Destination:       memcntrl_data_in_7 (LATCH)
-  Destination Clock: btnl_btnr_OR_210_o falling
+Delay:               4.902ns (Levels of Logic = 4)
+  Source:            fifo161/count_0 (FF)
+  Destination:       fifo161/regC_15 (FF)
+  Source Clock:      sekunde1/clk_out rising
+  Destination Clock: sekunde1/clk_out rising
 
-  Data Path: sw<7> to memcntrl_data_in_7
+  Data Path: fifo161/count_0 to fifo161/regC_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.222   0.579  sw_7_IBUF (sw_7_IBUF)
-     LD:D                      0.037          memcntrl_data_in_7
+     FD:C->Q               6   0.447   0.744  fifo161/count_0 (fifo161/count_0)
+     INV:I->O              1   0.206   0.000  fifo161/Madd_count[31]_GND_82_o_add_2_OUT_lut<0>_INV_0 (fifo161/Madd_count[31]_GND_82_o_add_2_OUT_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  fifo161/Madd_count[31]_GND_82_o_add_2_OUT_cy<0> (fifo161/Madd_count[31]_GND_82_o_add_2_OUT_cy<0>)
+     XORCY:CI->O          38   0.180   1.624  fifo161/Madd_count[31]_GND_82_o_add_2_OUT_xor<1> (fifo161/count[31]_GND_82_o_add_2_OUT<1>)
+     LUT6:I2->O           16   0.203   1.004  fifo161/_n00321 (fifo161/_n0032)
+     FDE:CE                    0.322          fifo161/regC_0
     ----------------------------------------
-    Total                      1.838ns (1.259ns logic, 0.579ns route)
-                                       (68.5% logic, 31.5% route)
+    Total                      4.902ns (1.530ns logic, 3.372ns route)
+                                       (31.2% logic, 68.8% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 264 / 88
+Timing constraint: Default period analysis for Clock 'memcntrl_thx_G'
+  Clock period: 1.933ns (frequency: 517.411MHz)
+  Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              5.796ns (Levels of Logic = 3)
-  Source:            btnr (PAD)
-  Destination:       memory_controller/AdrLatch_22 (FF)
-  Destination Clock: clk rising
+Delay:               1.933ns (Levels of Logic = 1)
+  Source:            memcntrl_thx (LATCH)
+  Destination:       memcntrl_thx (LATCH)
+  Source Clock:      memcntrl_thx_G falling
+  Destination Clock: memcntrl_thx_G falling
 
-  Data Path: btnr to memory_controller/AdrLatch_22
+  Data Path: memcntrl_thx to memcntrl_thx
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            25   1.222   1.537  btnr_IBUF (btnr_IBUF)
-     LUT5:I0->O           19   0.203   1.176  memory_controller/GND_34_o_GND_34_o_AND_9_o1 (memory_controller/GND_34_o_GND_34_o_AND_9_o)
-     LUT4:I2->O           22   0.203   1.133  memory_controller/_n0337_inv1 (memory_controller/_n0337_inv)
-     FDE:CE                    0.322          memory_controller/AdrLatch_1
+     LD:G->Q              25   0.498   1.193  memcntrl_thx (memcntrl_thx)
+     LUT2:I1->O            3   0.205   0.000  memcntrl_finish_memcntrl_thx_AND_43_o1 (memcntrl_thx_G)
+     LD:D                      0.037          memcntrl_thx
     ----------------------------------------
-    Total                      5.796ns (1.950ns logic, 3.846ns route)
-                                       (33.6% logic, 66.4% route)
+    Total                      1.933ns (0.740ns logic, 1.193ns route)
+                                       (38.3% logic, 61.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'memcntrl_thx'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              2.929ns (Levels of Logic = 2)
+  Source:            sw<0> (PAD)
+  Destination:       latch_15 (LATCH)
+  Destination Clock: memcntrl_thx rising
+
+  Data Path: sw<0> to latch_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            37   1.222   1.467  sw_0_IBUF (sw_0_IBUF)
+     LUT2:I0->O            1   0.203   0.000  Mmux_PWR_4_o_memcntrl_data_out[15]_mux_19_OUT<15>11 (PWR_4_o_memcntrl_data_out[15]_mux_19_OUT<15>)
+     LDE_1:D                   0.037          latch_15
+    ----------------------------------------
+    Total                      2.929ns (1.462ns logic, 1.467ns route)
+                                       (49.9% logic, 50.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'btnl_btnr_OR_202_o'
+  Total number of paths / destination ports: 24 / 8
+-------------------------------------------------------------------------
+Offset:              3.523ns (Levels of Logic = 3)
+  Source:            btnu (PAD)
+  Destination:       led_4 (LATCH)
+  Destination Clock: btnl_btnr_OR_202_o falling
+
+  Data Path: btnu to led_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             9   1.222   1.174  btnu_IBUF (btnu_IBUF)
+     LUT5:I0->O            1   0.203   0.684  Mmux_regA[15]_regA[0]_MUX_243_o11 (Mmux_regA[15]_regA[0]_MUX_243_o1)
+     LUT3:I1->O            1   0.203   0.000  Mmux_regA[15]_regA[0]_MUX_243_o12 (regA[15]_regA[0]_MUX_243_o)
+     LD:D                      0.037          led_0
+    ----------------------------------------
+    Total                      3.523ns (1.665ns logic, 1.858ns route)
+                                       (47.3% logic, 52.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sekunde2/clk_out'
+  Total number of paths / destination ports: 48 / 48
+-------------------------------------------------------------------------
+Offset:              2.180ns (Levels of Logic = 2)
+  Source:            Data<15> (PAD)
+  Destination:       memory_controller/memcntrl_ram_data_15 (FF)
+  Destination Clock: sekunde2/clk_out rising
+
+  Data Path: Data<15> to memory_controller/memcntrl_ram_data_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O           3   1.222   0.651  Data_15_IOBUF (N30)
+     LUT6:I5->O            1   0.205   0.000  memory_controller/Mmux_n028971 (memory_controller/n0289<15>)
+     FD:D                      0.102          memory_controller/memcntrl_ram_data_15
+    ----------------------------------------
+    Total                      2.180ns (1.529ns logic, 0.651ns route)
+                                       (70.1% logic, 29.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'divide_clock_by_3/clk_out'
-  Total number of paths / destination ports: 22 / 22
+  Total number of paths / destination ports: 21 / 21
 -------------------------------------------------------------------------
-Offset:              2.785ns (Levels of Logic = 1)
-  Source:            btns (PAD)
-  Destination:       vga_controller/vcounter_10 (FF)
+Offset:              3.014ns (Levels of Logic = 1)
+  Source:            sw<0> (PAD)
+  Destination:       vga_controller/vcounter_9 (FF)
   Destination Clock: divide_clock_by_3/clk_out rising
 
-  Data Path: btns to vga_controller/vcounter_10
+  Data Path: sw<0> to vga_controller/vcounter_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            22   1.222   1.133  btns_IBUF (btns_IBUF)
+     IBUF:I->O            37   1.222   1.362  sw_0_IBUF (sw_0_IBUF)
      FDR:R                     0.430          vga_controller/hcounter_0
     ----------------------------------------
-    Total                      2.785ns (1.652ns logic, 1.133ns route)
-                                       (59.3% logic, 40.7% route)
+    Total                      3.014ns (1.652ns logic, 1.362ns route)
+                                       (54.8% logic, 45.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'divide_clock_by_3/clk_out'
-  Total number of paths / destination ports: 18 / 18
+  Total number of paths / destination ports: 10 / 10
 -------------------------------------------------------------------------
-Offset:              4.706ns (Levels of Logic = 2)
+Offset:              4.604ns (Levels of Logic = 2)
   Source:            vga_controller/blank (FF)
   Destination:       vgaRed<2> (PAD)
   Source Clock:      divide_clock_by_3/clk_out rising
@@ -801,52 +1021,51 @@ Offset:              4.706ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               8   0.447   0.907  vga_controller/blank (vga_controller/blank)
-     LUT2:I0->O            1   0.203   0.579  Mmux_vgaBlue21 (vgaBlue_1_OBUF)
-     OBUF:I->O                 2.571          vgaBlue_1_OBUF (vgaBlue<1>)
-    ----------------------------------------
-    Total                      4.706ns (3.221ns logic, 1.485ns route)
-                                       (68.4% logic, 31.6% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'memory_controller/memcntrl_cfg_finish'
-  Total number of paths / destination ports: 8 / 8
--------------------------------------------------------------------------
-Offset:              4.433ns (Levels of Logic = 2)
-  Source:            color_2 (LATCH)
-  Destination:       vgaRed<2> (PAD)
-  Source Clock:      memory_controller/memcntrl_cfg_finish falling
-
-  Data Path: color_2 to vgaRed<2>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               1   0.498   0.580  color_2 (color_2)
-     LUT2:I1->O            1   0.205   0.579  Mmux_vgaRed31 (vgaRed_2_OBUF)
+     FD:C->Q               1   0.447   0.579  vga_controller/blank (vga_controller/blank)
+     INV:I->O              8   0.206   0.802  blank_INV_54_o1_INV_0 (vgaBlue_0_OBUF)
      OBUF:I->O                 2.571          vgaRed_2_OBUF (vgaRed<2>)
     ----------------------------------------
-    Total                      4.433ns (3.274ns logic, 1.159ns route)
-                                       (73.9% logic, 26.1% route)
+    Total                      4.604ns (3.224ns logic, 1.380ns route)
+                                       (70.0% logic, 30.0% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 60 / 44
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sekunde2/clk_out'
+  Total number of paths / destination ports: 22 / 22
 -------------------------------------------------------------------------
-Offset:              4.844ns (Levels of Logic = 2)
-  Source:            memory_controller/GND_34_o_memcntrl_clk_DFF_113 (FF)
-  Destination:       Data<15> (PAD)
-  Source Clock:      clk rising
+Offset:              4.419ns (Levels of Logic = 2)
+  Source:            memory_controller/GND_84_o_memcntrl_clk_DFF_129 (FF)
+  Destination:       MemWait (PAD)
+  Source Clock:      sekunde2/clk_out rising
 
-  Data Path: memory_controller/GND_34_o_memcntrl_clk_DFF_113 to Data<15>
+  Data Path: memory_controller/GND_84_o_memcntrl_clk_DFF_129 to MemWait
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.616  memory_controller/GND_34_o_memcntrl_clk_DFF_113 (memory_controller/GND_34_o_memcntrl_clk_DFF_113)
-     INV:I->O             16   0.206   1.004  memory_controller/GND_34_o_memcntrl_clk_DFF_111_inv1_INV_0 (memory_controller/GND_34_o_memcntrl_clk_DFF_111_inv)
-     IOBUF:T->IO               2.571          Data_15_IOBUF (Data<15>)
+     FD:C->Q               2   0.447   0.616  memory_controller/GND_84_o_memcntrl_clk_DFF_129 (memory_controller/GND_84_o_memcntrl_clk_DFF_129)
+     INV:I->O              1   0.206   0.579  memory_controller/GND_84_o_memcntrl_clk_DFF_129_inv1_INV_0 (memory_controller/GND_84_o_memcntrl_clk_DFF_129_inv)
+     OBUFT:T->O                2.571          MemWait_OBUFT (MemWait)
     ----------------------------------------
-    Total                      4.844ns (3.224ns logic, 1.620ns route)
-                                       (66.6% logic, 33.4% route)
+    Total                      4.419ns (3.224ns logic, 1.195ns route)
+                                       (73.0% logic, 27.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'btnl_btnr_OR_202_o'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              3.648ns (Levels of Logic = 1)
+  Source:            led_7 (LATCH)
+  Destination:       led<7> (PAD)
+  Source Clock:      btnl_btnr_OR_202_o falling
+
+  Data Path: led_7 to led<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.498   0.579  led_7 (led_7)
+     OBUF:I->O                 2.571          led_7_OBUF (led<7>)
+    ----------------------------------------
+    Total                      3.648ns (3.069ns logic, 0.579ns route)
+                                       (84.1% logic, 15.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'divide_clock_by_10000/clk_out'
@@ -872,24 +1091,32 @@ Offset:              3.597ns (Levels of Logic = 1)
 Cross Clock Domains Report:
 --------------------------
 
+Clock to Setup on destination clock btnl_btnr_OR_202_o
+----------------+---------+---------+---------+---------+
+                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------+---------+---------+---------+---------+
+memcntrl_thx    |         |         |    2.472|         |
+sekunde1/clk_out|         |         |    2.329|         |
+----------------+---------+---------+---------+---------+
+
 Clock to Setup on destination clock clk
--------------------------------------+---------+---------+---------+---------+
-                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
--------------------------------------+---------+---------+---------+---------+
-btnl_btnr_OR_210_o                   |         |    2.760|         |         |
-clk                                  |    5.955|         |         |         |
-divide_clock_by_3/clk_out            |    1.946|         |         |         |
-memory_controller/memcntrl_cfg_finish|         |    3.790|         |         |
--------------------------------------+---------+---------+---------+---------+
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.513|         |         |         |
+---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock divide_clock_by_10000/clk_out
 -----------------------------+---------+---------+---------+---------+
                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
-clk                          |    3.464|         |         |         |
-divide_clock_by_10000/clk_out|    2.929|         |         |         |
+divide_clock_by_10000/clk_out|    3.238|         |         |         |
+memcntrl_thx_G               |         |    3.182|         |         |
+sekunde1/clk_out             |    2.692|         |         |         |
+sekunde2/clk_out             |    4.836|         |         |         |
 -----------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock divide_clock_by_3/clk_out
@@ -897,28 +1124,76 @@ Clock to Setup on destination clock divide_clock_by_3/clk_out
                          | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -------------------------+---------+---------+---------+---------+
-divide_clock_by_3/clk_out|    4.691|         |         |         |
+divide_clock_by_3/clk_out|    4.386|         |         |         |
 -------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock memory_controller/memcntrl_cfg_finish
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |         |         |    1.465|         |
----------------+---------+---------+---------+---------+
+Clock to Setup on destination clock empty_empty_MUX_327_o
+----------------+---------+---------+---------+---------+
+                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------+---------+---------+---------+---------+
+memcntrl_thx_G  |         |         |    1.933|         |
+sekunde1/clk_out|         |         |    1.601|         |
+sekunde2/clk_out|         |         |    1.905|         |
+----------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock memcntrl_rw_0_G
+----------------+---------+---------+---------+---------+
+                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------+---------+---------+---------+---------+
+memcntrl_thx_G  |         |         |    1.933|         |
+sekunde2/clk_out|         |         |    1.905|         |
+----------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock memcntrl_thx
+----------------+---------+---------+---------+---------+
+                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------+---------+---------+---------+---------+
+sekunde2/clk_out|    1.882|         |         |         |
+----------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock memcntrl_thx_G
+----------------+---------+---------+---------+---------+
+                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------+---------+---------+---------+---------+
+memcntrl_thx_G  |         |         |    1.933|         |
+sekunde2/clk_out|         |         |    1.905|         |
+----------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sekunde1/clk_out
+---------------------+---------+---------+---------+---------+
+                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------+---------+---------+---------+---------+
+empty_empty_MUX_327_o|         |    3.042|         |         |
+memcntrl_thx         |    1.216|         |         |         |
+sekunde1/clk_out     |    4.902|         |         |         |
+---------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sekunde2/clk_out
+----------------+---------+---------+---------+---------+
+                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------+---------+---------+---------+---------+
+memcntrl_rw_0_G |         |    3.179|         |         |
+memcntrl_thx_G  |         |    4.158|         |         |
+sekunde2/clk_out|    4.015|         |         |         |
+----------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 15.00 secs
-Total CPU time to Xst completion: 15.19 secs
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 15.66 secs
  
 --> 
 
-Total memory usage is 249392 kilobytes
+Total memory usage is 250800 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   96 (   0 filtered)
-Number of infos    :    5 (   0 filtered)
+Number of warnings :  188 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
 

@@ -32,11 +32,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity clockDivider is
 		PORT (clk_in  : in STD_ULOGIC;
 				clk_out : out STD_ULOGIC;
-				divide_by : in integer range 0 to 50000);
+				divide_by : in integer range 0 to 10000000);
 end clockDivider;
 
 architecture Behavioral of clockDivider is
-	signal COUNT1 : integer range 0 to 50000;
+	signal COUNT1 : integer range 0 to 10000000;
 begin
 	-- counts up to by/2 and toggles the clk_out.
 	-- this process divides the clock through the given integer "by"

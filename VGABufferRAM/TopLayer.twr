@@ -27,19 +27,19 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 
 50%;
 
- 6420 paths analyzed, 452 endpoints analyzed, 0 failing endpoints
+ 4330 paths analyzed, 376 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   7.145ns.
+ Minimum period is   3.874ns.
 --------------------------------------------------------------------------------
 
-Paths for end point memory_controller/memcntrl_ram_adr_15 (SLICE_X26Y47.A2), 93 paths
+Paths for end point sekunde1/COUNT1_10 (SLICE_X19Y30.D2), 17 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     2.855ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_6_2 (FF)
-  Destination:          memory_controller/memcntrl_ram_adr_15 (FF)
+Slack (setup path):     6.126ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sekunde1/COUNT1_14 (FF)
+  Destination:          sekunde1/COUNT1_10 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      7.115ns (Levels of Logic = 5)
-  Clock Path Skew:      0.005ns (0.443 - 0.438)
+  Data Path Delay:      3.829ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.010ns (0.154 - 0.164)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -50,39 +50,36 @@ Slack (setup path):     2.855ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_6_2 to memory_controller/memcntrl_ram_adr_15
+  Maximum Data Path at Slow Process Corner: sekunde1/COUNT1_14 to sekunde1/COUNT1_10
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y23.BQ      Tcko                  0.391   memory_controller/STATE_6_2
-                                                       memory_controller/STATE_6_2
-    SLICE_X21Y23.B2      net (fanout=1)        1.086   memory_controller/STATE_6_2
-    SLICE_X21Y23.B       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>111
-    SLICE_X21Y23.D2      net (fanout=16)       0.461   memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>11
-    SLICE_X21Y23.D       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_equal_111_o<7>1
-    SLICE_X21Y23.C1      net (fanout=11)       0.884   memory_controller/GND_34_o_STATE[7]_equal_111_o
-    SLICE_X21Y23.C       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/_n03711
-    SLICE_X27Y40.B5      net (fanout=2)        1.916   memory_controller/_n03711
-    SLICE_X27Y40.B       Tilo                  0.259   memory_controller/memcntrl_ram_adr<14>
-                                                       memory_controller/_n03714_1
-    SLICE_X26Y47.A2      net (fanout=10)       1.052   memory_controller/_n03714
-    SLICE_X26Y47.CLK     Tas                   0.289   memory_controller/memcntrl_ram_adr<18>
-                                                       memory_controller/GND_34_o_X_9_o_select_130_OUT<10>1
-                                                       memory_controller/memcntrl_ram_adr_15
+    SLICE_X19Y31.AQ      Tcko                  0.391   sekunde1/COUNT1<17>
+                                                       sekunde1/COUNT1_14
+    SLICE_X20Y30.C1      net (fanout=3)        0.663   sekunde1/COUNT1<14>
+    SLICE_X20Y30.C       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv1
+    SLICE_X20Y30.A1      net (fanout=1)        0.451   sekunde1/n0006_inv1
+    SLICE_X20Y30.A       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv3
+    SLICE_X20Y28.B6      net (fanout=2)        0.313   sekunde1/n0006_inv3
+    SLICE_X20Y28.B       Tilo                  0.205   sekunde1/COUNT1<2>
+                                                       sekunde1/n0006_inv4
+    SLICE_X19Y30.D2      net (fanout=13)       1.074   sekunde1/n0006_inv
+    SLICE_X19Y30.CLK     Tas                   0.322   sekunde1/COUNT1<10>
+                                                       sekunde1/COUNT1_10_rstpot
+                                                       sekunde1/COUNT1_10
     -------------------------------------------------  ---------------------------
-    Total                                      7.115ns (1.716ns logic, 5.399ns route)
-                                                       (24.1% logic, 75.9% route)
+    Total                                      3.829ns (1.328ns logic, 2.501ns route)
+                                                       (34.7% logic, 65.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     2.869ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_4_1 (FF)
-  Destination:          memory_controller/memcntrl_ram_adr_15 (FF)
+Slack (setup path):     6.276ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sekunde1/COUNT1_13 (FF)
+  Destination:          sekunde1/COUNT1_10 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      7.097ns (Levels of Logic = 5)
-  Clock Path Skew:      0.001ns (0.443 - 0.442)
+  Data Path Delay:      3.669ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.020ns (0.244 - 0.264)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -93,39 +90,36 @@ Slack (setup path):     2.869ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_4_1 to memory_controller/memcntrl_ram_adr_15
+  Maximum Data Path at Slow Process Corner: sekunde1/COUNT1_13 to sekunde1/COUNT1_10
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y19.AQ      Tcko                  0.447   memory_controller/STATE_4_1
-                                                       memory_controller/STATE_4_1
-    SLICE_X21Y23.B3      net (fanout=2)        1.012   memory_controller/STATE_4_1
-    SLICE_X21Y23.B       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>111
-    SLICE_X21Y23.D2      net (fanout=16)       0.461   memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>11
-    SLICE_X21Y23.D       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_equal_111_o<7>1
-    SLICE_X21Y23.C1      net (fanout=11)       0.884   memory_controller/GND_34_o_STATE[7]_equal_111_o
-    SLICE_X21Y23.C       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/_n03711
-    SLICE_X27Y40.B5      net (fanout=2)        1.916   memory_controller/_n03711
-    SLICE_X27Y40.B       Tilo                  0.259   memory_controller/memcntrl_ram_adr<14>
-                                                       memory_controller/_n03714_1
-    SLICE_X26Y47.A2      net (fanout=10)       1.052   memory_controller/_n03714
-    SLICE_X26Y47.CLK     Tas                   0.289   memory_controller/memcntrl_ram_adr<18>
-                                                       memory_controller/GND_34_o_X_9_o_select_130_OUT<10>1
-                                                       memory_controller/memcntrl_ram_adr_15
+    SLICE_X20Y31.DQ      Tcko                  0.408   sekunde1/COUNT1<13>
+                                                       sekunde1/COUNT1_13
+    SLICE_X20Y30.C3      net (fanout=3)        0.486   sekunde1/COUNT1<13>
+    SLICE_X20Y30.C       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv1
+    SLICE_X20Y30.A1      net (fanout=1)        0.451   sekunde1/n0006_inv1
+    SLICE_X20Y30.A       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv3
+    SLICE_X20Y28.B6      net (fanout=2)        0.313   sekunde1/n0006_inv3
+    SLICE_X20Y28.B       Tilo                  0.205   sekunde1/COUNT1<2>
+                                                       sekunde1/n0006_inv4
+    SLICE_X19Y30.D2      net (fanout=13)       1.074   sekunde1/n0006_inv
+    SLICE_X19Y30.CLK     Tas                   0.322   sekunde1/COUNT1<10>
+                                                       sekunde1/COUNT1_10_rstpot
+                                                       sekunde1/COUNT1_10
     -------------------------------------------------  ---------------------------
-    Total                                      7.097ns (1.772ns logic, 5.325ns route)
-                                                       (25.0% logic, 75.0% route)
+    Total                                      3.669ns (1.345ns logic, 2.324ns route)
+                                                       (36.7% logic, 63.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.079ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_0_1 (FF)
-  Destination:          memory_controller/memcntrl_ram_adr_15 (FF)
+Slack (setup path):     6.429ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sekunde1/COUNT1_7 (FF)
+  Destination:          sekunde1/COUNT1_10 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      6.881ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.005ns (0.443 - 0.448)
+  Data Path Delay:      3.536ns (Levels of Logic = 4)
+  Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -136,42 +130,39 @@ Slack (setup path):     3.079ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_0_1 to memory_controller/memcntrl_ram_adr_15
+  Maximum Data Path at Slow Process Corner: sekunde1/COUNT1_7 to sekunde1/COUNT1_10
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X22Y21.AQ      Tcko                  0.447   memory_controller/STATE_0_1
-                                                       memory_controller/STATE_0_1
-    SLICE_X21Y23.B1      net (fanout=3)        0.796   memory_controller/STATE_0_1
-    SLICE_X21Y23.B       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>111
-    SLICE_X21Y23.D2      net (fanout=16)       0.461   memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>11
-    SLICE_X21Y23.D       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_equal_111_o<7>1
-    SLICE_X21Y23.C1      net (fanout=11)       0.884   memory_controller/GND_34_o_STATE[7]_equal_111_o
-    SLICE_X21Y23.C       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/_n03711
-    SLICE_X27Y40.B5      net (fanout=2)        1.916   memory_controller/_n03711
-    SLICE_X27Y40.B       Tilo                  0.259   memory_controller/memcntrl_ram_adr<14>
-                                                       memory_controller/_n03714_1
-    SLICE_X26Y47.A2      net (fanout=10)       1.052   memory_controller/_n03714
-    SLICE_X26Y47.CLK     Tas                   0.289   memory_controller/memcntrl_ram_adr<18>
-                                                       memory_controller/GND_34_o_X_9_o_select_130_OUT<10>1
-                                                       memory_controller/memcntrl_ram_adr_15
+    SLICE_X19Y30.AQ      Tcko                  0.391   sekunde1/COUNT1<10>
+                                                       sekunde1/COUNT1_7
+    SLICE_X20Y30.B1      net (fanout=3)        0.652   sekunde1/COUNT1<7>
+    SLICE_X20Y30.B       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv2
+    SLICE_X20Y30.A5      net (fanout=1)        0.169   sekunde1/n0006_inv2
+    SLICE_X20Y30.A       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv3
+    SLICE_X20Y28.B6      net (fanout=2)        0.313   sekunde1/n0006_inv3
+    SLICE_X20Y28.B       Tilo                  0.205   sekunde1/COUNT1<2>
+                                                       sekunde1/n0006_inv4
+    SLICE_X19Y30.D2      net (fanout=13)       1.074   sekunde1/n0006_inv
+    SLICE_X19Y30.CLK     Tas                   0.322   sekunde1/COUNT1<10>
+                                                       sekunde1/COUNT1_10_rstpot
+                                                       sekunde1/COUNT1_10
     -------------------------------------------------  ---------------------------
-    Total                                      6.881ns (1.772ns logic, 5.109ns route)
-                                                       (25.8% logic, 74.2% route)
+    Total                                      3.536ns (1.328ns logic, 2.208ns route)
+                                                       (37.6% logic, 62.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point memory_controller/memcntrl_ram_adr_21 (SLICE_X27Y47.C4), 93 paths
+Paths for end point sekunde1/COUNT1_8 (SLICE_X19Y30.B1), 17 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     2.956ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_6_2 (FF)
-  Destination:          memory_controller/memcntrl_ram_adr_21 (FF)
+Slack (setup path):     6.299ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sekunde1/COUNT1_14 (FF)
+  Destination:          sekunde1/COUNT1_8 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      7.014ns (Levels of Logic = 5)
-  Clock Path Skew:      0.005ns (0.443 - 0.438)
+  Data Path Delay:      3.656ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.010ns (0.154 - 0.164)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -182,39 +173,36 @@ Slack (setup path):     2.956ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_6_2 to memory_controller/memcntrl_ram_adr_21
+  Maximum Data Path at Slow Process Corner: sekunde1/COUNT1_14 to sekunde1/COUNT1_8
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y23.BQ      Tcko                  0.391   memory_controller/STATE_6_2
-                                                       memory_controller/STATE_6_2
-    SLICE_X21Y23.B2      net (fanout=1)        1.086   memory_controller/STATE_6_2
-    SLICE_X21Y23.B       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>111
-    SLICE_X21Y23.D2      net (fanout=16)       0.461   memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>11
-    SLICE_X21Y23.D       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_equal_111_o<7>1
-    SLICE_X21Y23.C1      net (fanout=11)       0.884   memory_controller/GND_34_o_STATE[7]_equal_111_o
-    SLICE_X21Y23.C       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/_n03711
-    SLICE_X27Y40.B5      net (fanout=2)        1.916   memory_controller/_n03711
-    SLICE_X27Y40.B       Tilo                  0.259   memory_controller/memcntrl_ram_adr<14>
-                                                       memory_controller/_n03714_1
-    SLICE_X27Y47.C4      net (fanout=10)       0.918   memory_controller/_n03714
-    SLICE_X27Y47.CLK     Tas                   0.322   memory_controller/memcntrl_ram_adr<22>
-                                                       memory_controller/GND_34_o_X_9_o_select_130_OUT<4>1
-                                                       memory_controller/memcntrl_ram_adr_21
+    SLICE_X19Y31.AQ      Tcko                  0.391   sekunde1/COUNT1<17>
+                                                       sekunde1/COUNT1_14
+    SLICE_X20Y30.C1      net (fanout=3)        0.663   sekunde1/COUNT1<14>
+    SLICE_X20Y30.C       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv1
+    SLICE_X20Y30.A1      net (fanout=1)        0.451   sekunde1/n0006_inv1
+    SLICE_X20Y30.A       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv3
+    SLICE_X20Y28.B6      net (fanout=2)        0.313   sekunde1/n0006_inv3
+    SLICE_X20Y28.B       Tilo                  0.205   sekunde1/COUNT1<2>
+                                                       sekunde1/n0006_inv4
+    SLICE_X19Y30.B1      net (fanout=13)       0.901   sekunde1/n0006_inv
+    SLICE_X19Y30.CLK     Tas                   0.322   sekunde1/COUNT1<10>
+                                                       sekunde1/COUNT1_8_rstpot
+                                                       sekunde1/COUNT1_8
     -------------------------------------------------  ---------------------------
-    Total                                      7.014ns (1.749ns logic, 5.265ns route)
-                                                       (24.9% logic, 75.1% route)
+    Total                                      3.656ns (1.328ns logic, 2.328ns route)
+                                                       (36.3% logic, 63.7% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     2.970ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_4_1 (FF)
-  Destination:          memory_controller/memcntrl_ram_adr_21 (FF)
+Slack (setup path):     6.449ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sekunde1/COUNT1_13 (FF)
+  Destination:          sekunde1/COUNT1_8 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      6.996ns (Levels of Logic = 5)
-  Clock Path Skew:      0.001ns (0.443 - 0.442)
+  Data Path Delay:      3.496ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.020ns (0.244 - 0.264)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -225,39 +213,36 @@ Slack (setup path):     2.970ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_4_1 to memory_controller/memcntrl_ram_adr_21
+  Maximum Data Path at Slow Process Corner: sekunde1/COUNT1_13 to sekunde1/COUNT1_8
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y19.AQ      Tcko                  0.447   memory_controller/STATE_4_1
-                                                       memory_controller/STATE_4_1
-    SLICE_X21Y23.B3      net (fanout=2)        1.012   memory_controller/STATE_4_1
-    SLICE_X21Y23.B       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>111
-    SLICE_X21Y23.D2      net (fanout=16)       0.461   memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>11
-    SLICE_X21Y23.D       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_equal_111_o<7>1
-    SLICE_X21Y23.C1      net (fanout=11)       0.884   memory_controller/GND_34_o_STATE[7]_equal_111_o
-    SLICE_X21Y23.C       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/_n03711
-    SLICE_X27Y40.B5      net (fanout=2)        1.916   memory_controller/_n03711
-    SLICE_X27Y40.B       Tilo                  0.259   memory_controller/memcntrl_ram_adr<14>
-                                                       memory_controller/_n03714_1
-    SLICE_X27Y47.C4      net (fanout=10)       0.918   memory_controller/_n03714
-    SLICE_X27Y47.CLK     Tas                   0.322   memory_controller/memcntrl_ram_adr<22>
-                                                       memory_controller/GND_34_o_X_9_o_select_130_OUT<4>1
-                                                       memory_controller/memcntrl_ram_adr_21
+    SLICE_X20Y31.DQ      Tcko                  0.408   sekunde1/COUNT1<13>
+                                                       sekunde1/COUNT1_13
+    SLICE_X20Y30.C3      net (fanout=3)        0.486   sekunde1/COUNT1<13>
+    SLICE_X20Y30.C       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv1
+    SLICE_X20Y30.A1      net (fanout=1)        0.451   sekunde1/n0006_inv1
+    SLICE_X20Y30.A       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv3
+    SLICE_X20Y28.B6      net (fanout=2)        0.313   sekunde1/n0006_inv3
+    SLICE_X20Y28.B       Tilo                  0.205   sekunde1/COUNT1<2>
+                                                       sekunde1/n0006_inv4
+    SLICE_X19Y30.B1      net (fanout=13)       0.901   sekunde1/n0006_inv
+    SLICE_X19Y30.CLK     Tas                   0.322   sekunde1/COUNT1<10>
+                                                       sekunde1/COUNT1_8_rstpot
+                                                       sekunde1/COUNT1_8
     -------------------------------------------------  ---------------------------
-    Total                                      6.996ns (1.805ns logic, 5.191ns route)
-                                                       (25.8% logic, 74.2% route)
+    Total                                      3.496ns (1.345ns logic, 2.151ns route)
+                                                       (38.5% logic, 61.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.180ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_0_1 (FF)
-  Destination:          memory_controller/memcntrl_ram_adr_21 (FF)
+Slack (setup path):     6.602ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sekunde1/COUNT1_7 (FF)
+  Destination:          sekunde1/COUNT1_8 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      6.780ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.005ns (0.443 - 0.448)
+  Data Path Delay:      3.363ns (Levels of Logic = 4)
+  Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -268,42 +253,39 @@ Slack (setup path):     3.180ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_0_1 to memory_controller/memcntrl_ram_adr_21
+  Maximum Data Path at Slow Process Corner: sekunde1/COUNT1_7 to sekunde1/COUNT1_8
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X22Y21.AQ      Tcko                  0.447   memory_controller/STATE_0_1
-                                                       memory_controller/STATE_0_1
-    SLICE_X21Y23.B1      net (fanout=3)        0.796   memory_controller/STATE_0_1
-    SLICE_X21Y23.B       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>111
-    SLICE_X21Y23.D2      net (fanout=16)       0.461   memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>11
-    SLICE_X21Y23.D       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_equal_111_o<7>1
-    SLICE_X21Y23.C1      net (fanout=11)       0.884   memory_controller/GND_34_o_STATE[7]_equal_111_o
-    SLICE_X21Y23.C       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/_n03711
-    SLICE_X27Y40.B5      net (fanout=2)        1.916   memory_controller/_n03711
-    SLICE_X27Y40.B       Tilo                  0.259   memory_controller/memcntrl_ram_adr<14>
-                                                       memory_controller/_n03714_1
-    SLICE_X27Y47.C4      net (fanout=10)       0.918   memory_controller/_n03714
-    SLICE_X27Y47.CLK     Tas                   0.322   memory_controller/memcntrl_ram_adr<22>
-                                                       memory_controller/GND_34_o_X_9_o_select_130_OUT<4>1
-                                                       memory_controller/memcntrl_ram_adr_21
+    SLICE_X19Y30.AQ      Tcko                  0.391   sekunde1/COUNT1<10>
+                                                       sekunde1/COUNT1_7
+    SLICE_X20Y30.B1      net (fanout=3)        0.652   sekunde1/COUNT1<7>
+    SLICE_X20Y30.B       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv2
+    SLICE_X20Y30.A5      net (fanout=1)        0.169   sekunde1/n0006_inv2
+    SLICE_X20Y30.A       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv3
+    SLICE_X20Y28.B6      net (fanout=2)        0.313   sekunde1/n0006_inv3
+    SLICE_X20Y28.B       Tilo                  0.205   sekunde1/COUNT1<2>
+                                                       sekunde1/n0006_inv4
+    SLICE_X19Y30.B1      net (fanout=13)       0.901   sekunde1/n0006_inv
+    SLICE_X19Y30.CLK     Tas                   0.322   sekunde1/COUNT1<10>
+                                                       sekunde1/COUNT1_8_rstpot
+                                                       sekunde1/COUNT1_8
     -------------------------------------------------  ---------------------------
-    Total                                      6.780ns (1.805ns logic, 4.975ns route)
-                                                       (26.6% logic, 73.4% route)
+    Total                                      3.363ns (1.328ns logic, 2.035ns route)
+                                                       (39.5% logic, 60.5% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point memory_controller/memcntrl_ram_adr_22 (SLICE_X27Y47.D4), 93 paths
+Paths for end point sekunde1/COUNT1_22 (SLICE_X19Y33.A5), 17 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     3.016ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_6_2 (FF)
-  Destination:          memory_controller/memcntrl_ram_adr_22 (FF)
+Slack (setup path):     6.352ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sekunde1/COUNT1_14 (FF)
+  Destination:          sekunde1/COUNT1_22 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      6.954ns (Levels of Logic = 5)
-  Clock Path Skew:      0.005ns (0.443 - 0.438)
+  Data Path Delay:      3.588ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.025ns (0.421 - 0.446)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -314,39 +296,36 @@ Slack (setup path):     3.016ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_6_2 to memory_controller/memcntrl_ram_adr_22
+  Maximum Data Path at Slow Process Corner: sekunde1/COUNT1_14 to sekunde1/COUNT1_22
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y23.BQ      Tcko                  0.391   memory_controller/STATE_6_2
-                                                       memory_controller/STATE_6_2
-    SLICE_X21Y23.B2      net (fanout=1)        1.086   memory_controller/STATE_6_2
-    SLICE_X21Y23.B       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>111
-    SLICE_X21Y23.D2      net (fanout=16)       0.461   memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>11
-    SLICE_X21Y23.D       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_equal_111_o<7>1
-    SLICE_X21Y23.C1      net (fanout=11)       0.884   memory_controller/GND_34_o_STATE[7]_equal_111_o
-    SLICE_X21Y23.C       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/_n03711
-    SLICE_X27Y40.B5      net (fanout=2)        1.916   memory_controller/_n03711
-    SLICE_X27Y40.B       Tilo                  0.259   memory_controller/memcntrl_ram_adr<14>
-                                                       memory_controller/_n03714_1
-    SLICE_X27Y47.D4      net (fanout=10)       0.858   memory_controller/_n03714
-    SLICE_X27Y47.CLK     Tas                   0.322   memory_controller/memcntrl_ram_adr<22>
-                                                       memory_controller/GND_34_o_X_9_o_select_130_OUT<3>1
-                                                       memory_controller/memcntrl_ram_adr_22
+    SLICE_X19Y31.AQ      Tcko                  0.391   sekunde1/COUNT1<17>
+                                                       sekunde1/COUNT1_14
+    SLICE_X20Y30.C1      net (fanout=3)        0.663   sekunde1/COUNT1<14>
+    SLICE_X20Y30.C       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv1
+    SLICE_X20Y30.A1      net (fanout=1)        0.451   sekunde1/n0006_inv1
+    SLICE_X20Y30.A       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv3
+    SLICE_X20Y31.C3      net (fanout=2)        0.483   sekunde1/n0006_inv3
+    SLICE_X20Y31.C       Tilo                  0.205   sekunde1/COUNT1<13>
+                                                       sekunde1/n0006_inv4_1
+    SLICE_X19Y33.A5      net (fanout=11)       0.663   sekunde1/n0006_inv4
+    SLICE_X19Y33.CLK     Tas                   0.322   sekunde1/COUNT1<22>
+                                                       sekunde1/COUNT1_22_rstpot
+                                                       sekunde1/COUNT1_22
     -------------------------------------------------  ---------------------------
-    Total                                      6.954ns (1.749ns logic, 5.205ns route)
-                                                       (25.2% logic, 74.8% route)
+    Total                                      3.588ns (1.328ns logic, 2.260ns route)
+                                                       (37.0% logic, 63.0% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.030ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_4_1 (FF)
-  Destination:          memory_controller/memcntrl_ram_adr_22 (FF)
+Slack (setup path):     6.507ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sekunde1/COUNT1_13 (FF)
+  Destination:          sekunde1/COUNT1_22 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      6.936ns (Levels of Logic = 5)
-  Clock Path Skew:      0.001ns (0.443 - 0.442)
+  Data Path Delay:      3.428ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.030ns (0.421 - 0.451)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -357,39 +336,36 @@ Slack (setup path):     3.030ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_4_1 to memory_controller/memcntrl_ram_adr_22
+  Maximum Data Path at Slow Process Corner: sekunde1/COUNT1_13 to sekunde1/COUNT1_22
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y19.AQ      Tcko                  0.447   memory_controller/STATE_4_1
-                                                       memory_controller/STATE_4_1
-    SLICE_X21Y23.B3      net (fanout=2)        1.012   memory_controller/STATE_4_1
-    SLICE_X21Y23.B       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>111
-    SLICE_X21Y23.D2      net (fanout=16)       0.461   memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>11
-    SLICE_X21Y23.D       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_equal_111_o<7>1
-    SLICE_X21Y23.C1      net (fanout=11)       0.884   memory_controller/GND_34_o_STATE[7]_equal_111_o
-    SLICE_X21Y23.C       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/_n03711
-    SLICE_X27Y40.B5      net (fanout=2)        1.916   memory_controller/_n03711
-    SLICE_X27Y40.B       Tilo                  0.259   memory_controller/memcntrl_ram_adr<14>
-                                                       memory_controller/_n03714_1
-    SLICE_X27Y47.D4      net (fanout=10)       0.858   memory_controller/_n03714
-    SLICE_X27Y47.CLK     Tas                   0.322   memory_controller/memcntrl_ram_adr<22>
-                                                       memory_controller/GND_34_o_X_9_o_select_130_OUT<3>1
-                                                       memory_controller/memcntrl_ram_adr_22
+    SLICE_X20Y31.DQ      Tcko                  0.408   sekunde1/COUNT1<13>
+                                                       sekunde1/COUNT1_13
+    SLICE_X20Y30.C3      net (fanout=3)        0.486   sekunde1/COUNT1<13>
+    SLICE_X20Y30.C       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv1
+    SLICE_X20Y30.A1      net (fanout=1)        0.451   sekunde1/n0006_inv1
+    SLICE_X20Y30.A       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv3
+    SLICE_X20Y31.C3      net (fanout=2)        0.483   sekunde1/n0006_inv3
+    SLICE_X20Y31.C       Tilo                  0.205   sekunde1/COUNT1<13>
+                                                       sekunde1/n0006_inv4_1
+    SLICE_X19Y33.A5      net (fanout=11)       0.663   sekunde1/n0006_inv4
+    SLICE_X19Y33.CLK     Tas                   0.322   sekunde1/COUNT1<22>
+                                                       sekunde1/COUNT1_22_rstpot
+                                                       sekunde1/COUNT1_22
     -------------------------------------------------  ---------------------------
-    Total                                      6.936ns (1.805ns logic, 5.131ns route)
-                                                       (26.0% logic, 74.0% route)
+    Total                                      3.428ns (1.345ns logic, 2.083ns route)
+                                                       (39.2% logic, 60.8% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.240ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               memory_controller/STATE_0_1 (FF)
-  Destination:          memory_controller/memcntrl_ram_adr_22 (FF)
+Slack (setup path):     6.646ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sekunde1/COUNT1_7 (FF)
+  Destination:          sekunde1/COUNT1_22 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      6.720ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.005ns (0.443 - 0.448)
+  Data Path Delay:      3.295ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.024ns (0.421 - 0.445)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -400,118 +376,118 @@ Slack (setup path):     3.240ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: memory_controller/STATE_0_1 to memory_controller/memcntrl_ram_adr_22
+  Maximum Data Path at Slow Process Corner: sekunde1/COUNT1_7 to sekunde1/COUNT1_22
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X22Y21.AQ      Tcko                  0.447   memory_controller/STATE_0_1
-                                                       memory_controller/STATE_0_1
-    SLICE_X21Y23.B1      net (fanout=3)        0.796   memory_controller/STATE_0_1
-    SLICE_X21Y23.B       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>111
-    SLICE_X21Y23.D2      net (fanout=16)       0.461   memory_controller/GND_34_o_STATE[7]_select_146_OUT<3>11
-    SLICE_X21Y23.D       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/GND_34_o_STATE[7]_equal_111_o<7>1
-    SLICE_X21Y23.C1      net (fanout=11)       0.884   memory_controller/GND_34_o_STATE[7]_equal_111_o
-    SLICE_X21Y23.C       Tilo                  0.259   memory_controller/STATE_6_2
-                                                       memory_controller/_n03711
-    SLICE_X27Y40.B5      net (fanout=2)        1.916   memory_controller/_n03711
-    SLICE_X27Y40.B       Tilo                  0.259   memory_controller/memcntrl_ram_adr<14>
-                                                       memory_controller/_n03714_1
-    SLICE_X27Y47.D4      net (fanout=10)       0.858   memory_controller/_n03714
-    SLICE_X27Y47.CLK     Tas                   0.322   memory_controller/memcntrl_ram_adr<22>
-                                                       memory_controller/GND_34_o_X_9_o_select_130_OUT<3>1
-                                                       memory_controller/memcntrl_ram_adr_22
+    SLICE_X19Y30.AQ      Tcko                  0.391   sekunde1/COUNT1<10>
+                                                       sekunde1/COUNT1_7
+    SLICE_X20Y30.B1      net (fanout=3)        0.652   sekunde1/COUNT1<7>
+    SLICE_X20Y30.B       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv2
+    SLICE_X20Y30.A5      net (fanout=1)        0.169   sekunde1/n0006_inv2
+    SLICE_X20Y30.A       Tilo                  0.205   sekunde1/n0006_inv1
+                                                       sekunde1/n0006_inv3
+    SLICE_X20Y31.C3      net (fanout=2)        0.483   sekunde1/n0006_inv3
+    SLICE_X20Y31.C       Tilo                  0.205   sekunde1/COUNT1<13>
+                                                       sekunde1/n0006_inv4_1
+    SLICE_X19Y33.A5      net (fanout=11)       0.663   sekunde1/n0006_inv4
+    SLICE_X19Y33.CLK     Tas                   0.322   sekunde1/COUNT1<22>
+                                                       sekunde1/COUNT1_22_rstpot
+                                                       sekunde1/COUNT1_22
     -------------------------------------------------  ---------------------------
-    Total                                      6.720ns (1.805ns logic, 4.915ns route)
-                                                       (26.9% logic, 73.1% route)
+    Total                                      3.295ns (1.328ns logic, 1.967ns route)
+                                                       (40.3% logic, 59.7% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point memory_controller/memcntrl_ram_data_1 (SLICE_X18Y4.D5), 1 path
+Paths for end point divide_clock_by_3/COUNT1_23 (SLICE_X12Y41.D6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.415ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               memory_controller/DataLatch_1 (FF)
-  Destination:          memory_controller/memcntrl_ram_data_1 (FF)
+Slack (hold path):      0.463ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               divide_clock_by_3/COUNT1_23 (FF)
+  Destination:          divide_clock_by_3/COUNT1_23 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.417ns (Levels of Logic = 1)
-  Clock Path Skew:      0.002ns (0.039 - 0.037)
-  Source Clock:         clk_BUFGP rising at 10.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: memory_controller/DataLatch_1 to memory_controller/memcntrl_ram_data_1
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X19Y4.CQ       Tcko                  0.198   memory_controller/DataLatch<2>
-                                                       memory_controller/DataLatch_1
-    SLICE_X18Y4.D5       net (fanout=3)        0.088   memory_controller/DataLatch<1>
-    SLICE_X18Y4.CLK      Tah         (-Th)    -0.131   memory_controller/memcntrl_ram_data<15>
-                                                       memory_controller/Mmux_n028381
-                                                       memory_controller/memcntrl_ram_data_1
-    -------------------------------------------------  ---------------------------
-    Total                                      0.417ns (0.329ns logic, 0.088ns route)
-                                                       (78.9% logic, 21.1% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point memory_controller/memcntrl_ram_ub (SLICE_X25Y23.A6), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.438ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               memory_controller/memcntrl_ram_ub (FF)
-  Destination:          memory_controller/memcntrl_ram_ub (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.438ns (Levels of Logic = 1)
+  Data Path Delay:      0.463ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 10.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: memory_controller/memcntrl_ram_ub to memory_controller/memcntrl_ram_ub
+  Minimum Data Path at Fast Process Corner: divide_clock_by_3/COUNT1_23 to divide_clock_by_3/COUNT1_23
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X25Y23.AQ      Tcko                  0.198   memory_controller/memcntrl_ram_ub
-                                                       memory_controller/memcntrl_ram_ub
-    SLICE_X25Y23.A6      net (fanout=3)        0.025   memory_controller/memcntrl_ram_ub
-    SLICE_X25Y23.CLK     Tah         (-Th)    -0.215   memory_controller/memcntrl_ram_ub
-                                                       memory_controller/GND_34_o_PWR_16_o_Select_134_o1
-                                                       memory_controller/memcntrl_ram_ub
+    SLICE_X12Y41.DQ      Tcko                  0.200   divide_clock_by_3/COUNT1<23>
+                                                       divide_clock_by_3/COUNT1_23
+    SLICE_X12Y41.D6      net (fanout=3)        0.026   divide_clock_by_3/COUNT1<23>
+    SLICE_X12Y41.CLK     Tah         (-Th)    -0.237   divide_clock_by_3/COUNT1<23>
+                                                       divide_clock_by_3/COUNT1<23>_rt
+                                                       divide_clock_by_3/Mcount_COUNT1_xor<23>
+                                                       divide_clock_by_3/COUNT1_23
     -------------------------------------------------  ---------------------------
-    Total                                      0.438ns (0.413ns logic, 0.025ns route)
-                                                       (94.3% logic, 5.7% route)
+    Total                                      0.463ns (0.437ns logic, 0.026ns route)
+                                                       (94.4% logic, 5.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point memory_controller/memcntrl_ram_adr_19 (SLICE_X27Y47.A6), 1 path
+Paths for end point divide_clock_by_3/COUNT1_9 (SLICE_X12Y38.B5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.438ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               memory_controller/memcntrl_ram_adr_19 (FF)
-  Destination:          memory_controller/memcntrl_ram_adr_19 (FF)
+Slack (hold path):      0.509ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               divide_clock_by_3/COUNT1_9 (FF)
+  Destination:          divide_clock_by_3/COUNT1_9 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.438ns (Levels of Logic = 1)
+  Data Path Delay:      0.509ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 10.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: memory_controller/memcntrl_ram_adr_19 to memory_controller/memcntrl_ram_adr_19
+  Minimum Data Path at Fast Process Corner: divide_clock_by_3/COUNT1_9 to divide_clock_by_3/COUNT1_9
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X27Y47.AQ      Tcko                  0.198   memory_controller/memcntrl_ram_adr<22>
-                                                       memory_controller/memcntrl_ram_adr_19
-    SLICE_X27Y47.A6      net (fanout=2)        0.025   memory_controller/memcntrl_ram_adr<19>
-    SLICE_X27Y47.CLK     Tah         (-Th)    -0.215   memory_controller/memcntrl_ram_adr<22>
-                                                       memory_controller/GND_34_o_X_9_o_select_130_OUT<6>1
-                                                       memory_controller/memcntrl_ram_adr_19
+    SLICE_X12Y38.BQ      Tcko                  0.200   divide_clock_by_3/COUNT1<11>
+                                                       divide_clock_by_3/COUNT1_9
+    SLICE_X12Y38.B5      net (fanout=3)        0.075   divide_clock_by_3/COUNT1<9>
+    SLICE_X12Y38.CLK     Tah         (-Th)    -0.234   divide_clock_by_3/COUNT1<11>
+                                                       divide_clock_by_3/COUNT1<9>_rt
+                                                       divide_clock_by_3/Mcount_COUNT1_cy<11>
+                                                       divide_clock_by_3/COUNT1_9
     -------------------------------------------------  ---------------------------
-    Total                                      0.438ns (0.413ns logic, 0.025ns route)
-                                                       (94.3% logic, 5.7% route)
+    Total                                      0.509ns (0.434ns logic, 0.075ns route)
+                                                       (85.3% logic, 14.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point divide_clock_by_3/COUNT1_13 (SLICE_X12Y39.B5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.513ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               divide_clock_by_3/COUNT1_13 (FF)
+  Destination:          divide_clock_by_3/COUNT1_13 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.513ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: divide_clock_by_3/COUNT1_13 to divide_clock_by_3/COUNT1_13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y39.BQ      Tcko                  0.200   divide_clock_by_3/COUNT1<15>
+                                                       divide_clock_by_3/COUNT1_13
+    SLICE_X12Y39.B5      net (fanout=3)        0.079   divide_clock_by_3/COUNT1<13>
+    SLICE_X12Y39.CLK     Tah         (-Th)    -0.234   divide_clock_by_3/COUNT1<15>
+                                                       divide_clock_by_3/COUNT1<13>_rt
+                                                       divide_clock_by_3/Mcount_COUNT1_cy<15>
+                                                       divide_clock_by_3/COUNT1_13
+    -------------------------------------------------  ---------------------------
+    Total                                      0.513ns (0.434ns logic, 0.079ns route)
+                                                       (84.6% logic, 15.4% route)
 
 --------------------------------------------------------------------------------
 
@@ -528,17 +504,17 @@ Slack: 8.270ns (period - min period limit)
 Slack: 9.570ns (period - min period limit)
   Period: 10.000ns
   Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: divide_clock_by_10000/COUNT1<3>/CLK
-  Logical resource: divide_clock_by_10000/COUNT1_0/CK
-  Location pin: SLICE_X28Y11.CLK
+  Physical resource: divide_clock_by_3/COUNT1<3>/CLK
+  Logical resource: divide_clock_by_3/COUNT1_0/CK
+  Location pin: SLICE_X12Y36.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.570ns (period - min period limit)
   Period: 10.000ns
   Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: divide_clock_by_10000/COUNT1<3>/CLK
-  Logical resource: divide_clock_by_10000/COUNT1_1/CK
-  Location pin: SLICE_X28Y11.CLK
+  Physical resource: divide_clock_by_3/COUNT1<3>/CLK
+  Logical resource: divide_clock_by_3/COUNT1_1/CK
+  Location pin: SLICE_X12Y36.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -555,7 +531,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    7.145|         |         |         |
+clk            |    3.874|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -564,23 +540,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 6420 paths, 0 nets, and 1044 connections
+Constraints cover 4330 paths, 0 nets, and 414 connections
 
 Design statistics:
-   Minimum period:   7.145ns{1}   (Maximum frequency: 139.958MHz)
+   Minimum period:   3.874ns{1}   (Maximum frequency: 258.131MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Sun Dec 04 23:14:06 2011 
+Analysis completed Thu Dec 08 00:17:57 2011 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 211 MB
+Peak Memory Usage: 210 MB
 
 
 

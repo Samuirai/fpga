@@ -1,0 +1,15 @@
+Running: C:\Xilinx\13.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o Z:/coding/fpga/VGABufferRAM/TopLayer_isim_beh.exe -prj Z:/coding/fpga/VGABufferRAM/TopLayer_beh.prj work.TopLayer 
+ISim O.61xd (signature 0x1cce1bb2)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Determining compilation order of HDL files
+Parsing VHDL file "Z:/coding/fpga/VGABufferRAM/samuirai.vhd" into library work
+Parsing VHDL file "Z:/coding/fpga/VGABufferRAM/VGAController.vhd" into library work
+Parsing VHDL file "Z:/coding/fpga/VGABufferRAM/SevenSegment.vhd" into library work
+Parsing VHDL file "Z:/coding/fpga/VGABufferRAM/MemoryController.vhd" into library work
+Parsing VHDL file "Z:/coding/fpga/VGABufferRAM/FIFO.vhd" into library work
+Parsing VHDL file "Z:/coding/fpga/VGABufferRAM/clockDivider.vhd" into library work
+Parsing VHDL file "Z:/coding/fpga/VGABufferRAM/TopLayer.vhd" into library work
+Starting static elaboration
+ERROR:HDLCompiler:410 - "Z:/coding/fpga/VGABufferRAM/TopLayer.vhd" Line 41: Expression has 23 elements ; expected 24
+ERROR:Simulator:777 - Static elaboration of top level VHDL design unit toplayer in library work failed

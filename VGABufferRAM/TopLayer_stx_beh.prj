@@ -1,0 +1,7 @@
+vhdl isim_temp "samuirai.vhd"
+vhdl isim_temp "VGAController.vhd"
+vhdl isim_temp "SevenSegment.vhd"
+vhdl isim_temp "MemoryController.vhd"
+vhdl isim_temp "FIFO.vhd"
+vhdl isim_temp "clockDivider.vhd"
+vhdl isim_temp "TopLayer.vhd"

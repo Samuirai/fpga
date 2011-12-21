@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map O.61xd on Sun Dec 04 23:13:42 2011
+// Written by: Map O.61xd on Thu Dec 08 00:17:36 2011
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -96,109 +96,60 @@ COMP "MemAdr<18>" LOCATE = SITE "H12" LEVEL 1;
 COMP "MemAdr<19>" LOCATE = SITE "D18" LEVEL 1;
 COMP "vgaBlue<0>" LOCATE = SITE "R7" LEVEL 1;
 COMP "vgaBlue<1>" LOCATE = SITE "T7" LEVEL 1;
-TIMEGRP sys_clk_pin = BEL "divide_clock_by_3/COUNT1_0" BEL
-        "divide_clock_by_3/COUNT1_1" BEL "divide_clock_by_10000/COUNT1_0" BEL
-        "divide_clock_by_10000/COUNT1_1" BEL "divide_clock_by_10000/COUNT1_2"
-        BEL "divide_clock_by_10000/COUNT1_3" BEL
-        "divide_clock_by_10000/COUNT1_4" BEL "divide_clock_by_10000/COUNT1_5"
-        BEL "divide_clock_by_10000/COUNT1_6" BEL
-        "divide_clock_by_10000/COUNT1_7" BEL "divide_clock_by_10000/COUNT1_8"
-        BEL "divide_clock_by_10000/COUNT1_9" BEL
-        "divide_clock_by_10000/COUNT1_10" BEL
-        "divide_clock_by_10000/COUNT1_11" BEL
+TIMEGRP sys_clk_pin = BEL "sekunde2/COUNT1_0" BEL "sekunde2/COUNT1_1" BEL
+        "sekunde2/COUNT1_2" BEL "sekunde2/COUNT1_3" BEL "sekunde2/COUNT1_4"
+        BEL "sekunde2/COUNT1_5" BEL "sekunde2/COUNT1_6" BEL
+        "sekunde2/COUNT1_7" BEL "sekunde2/COUNT1_8" BEL "sekunde2/COUNT1_9"
+        BEL "sekunde2/COUNT1_10" BEL "sekunde2/COUNT1_11" BEL
+        "sekunde2/COUNT1_12" BEL "sekunde2/COUNT1_13" BEL "sekunde2/COUNT1_14"
+        BEL "sekunde2/COUNT1_15" BEL "sekunde2/COUNT1_16" BEL
+        "sekunde2/COUNT1_17" BEL "sekunde2/COUNT1_18" BEL "sekunde2/COUNT1_19"
+        BEL "sekunde2/COUNT1_20" BEL "sekunde2/COUNT1_21" BEL
+        "sekunde2/COUNT1_22" BEL "sekunde2/COUNT1_23" BEL
+        "divide_clock_by_3/COUNT1_0" BEL "divide_clock_by_3/COUNT1_1" BEL
+        "divide_clock_by_3/COUNT1_2" BEL "divide_clock_by_3/COUNT1_3" BEL
+        "divide_clock_by_3/COUNT1_4" BEL "divide_clock_by_3/COUNT1_5" BEL
+        "divide_clock_by_3/COUNT1_6" BEL "divide_clock_by_3/COUNT1_7" BEL
+        "divide_clock_by_3/COUNT1_8" BEL "divide_clock_by_3/COUNT1_9" BEL
+        "divide_clock_by_3/COUNT1_10" BEL "divide_clock_by_3/COUNT1_11" BEL
+        "divide_clock_by_3/COUNT1_12" BEL "divide_clock_by_3/COUNT1_13" BEL
+        "divide_clock_by_3/COUNT1_14" BEL "divide_clock_by_3/COUNT1_15" BEL
+        "divide_clock_by_3/COUNT1_16" BEL "divide_clock_by_3/COUNT1_17" BEL
+        "divide_clock_by_3/COUNT1_18" BEL "divide_clock_by_3/COUNT1_19" BEL
+        "divide_clock_by_3/COUNT1_20" BEL "divide_clock_by_3/COUNT1_21" BEL
+        "divide_clock_by_3/COUNT1_22" BEL "divide_clock_by_3/COUNT1_23" BEL
+        "divide_clock_by_10000/COUNT1_0" BEL "divide_clock_by_10000/COUNT1_1"
+        BEL "divide_clock_by_10000/COUNT1_2" BEL
+        "divide_clock_by_10000/COUNT1_3" BEL "divide_clock_by_10000/COUNT1_4"
+        BEL "divide_clock_by_10000/COUNT1_5" BEL
+        "divide_clock_by_10000/COUNT1_6" BEL "divide_clock_by_10000/COUNT1_7"
+        BEL "divide_clock_by_10000/COUNT1_8" BEL
+        "divide_clock_by_10000/COUNT1_9" BEL "divide_clock_by_10000/COUNT1_10"
+        BEL "divide_clock_by_10000/COUNT1_11" BEL
         "divide_clock_by_10000/COUNT1_12" BEL
         "divide_clock_by_10000/COUNT1_13" BEL
-        "memory_controller/memcntrl_ram_data_15" BEL
-        "memory_controller/memcntrl_ram_data_14" BEL
-        "memory_controller/memcntrl_ram_data_13" BEL
-        "memory_controller/memcntrl_ram_data_12" BEL
-        "memory_controller/memcntrl_ram_data_11" BEL
-        "memory_controller/memcntrl_ram_data_10" BEL
-        "memory_controller/memcntrl_ram_data_9" BEL
-        "memory_controller/memcntrl_ram_data_8" BEL
-        "memory_controller/memcntrl_ram_data_7" BEL
-        "memory_controller/memcntrl_ram_data_6" BEL
-        "memory_controller/memcntrl_ram_data_5" BEL
-        "memory_controller/memcntrl_ram_data_4" BEL
-        "memory_controller/memcntrl_ram_data_3" BEL
-        "memory_controller/memcntrl_ram_data_2" BEL
-        "memory_controller/memcntrl_ram_data_1" BEL
-        "memory_controller/memcntrl_ram_data_0" BEL
-        "memory_controller/memcntrl_data_out_7" BEL
-        "memory_controller/memcntrl_data_out_6" BEL
-        "memory_controller/memcntrl_data_out_5" BEL
-        "memory_controller/memcntrl_data_out_4" BEL
-        "memory_controller/memcntrl_data_out_3" BEL
-        "memory_controller/memcntrl_data_out_2" BEL
-        "memory_controller/memcntrl_data_out_1" BEL
-        "memory_controller/memcntrl_data_out_0" BEL
-        "memory_controller/DataLatch_15" BEL "memory_controller/DataLatch_14"
-        BEL "memory_controller/DataLatch_13" BEL
-        "memory_controller/DataLatch_12" BEL "memory_controller/DataLatch_11"
-        BEL "memory_controller/DataLatch_10" BEL
-        "memory_controller/DataLatch_9" BEL "memory_controller/DataLatch_8"
-        BEL "memory_controller/DataLatch_7" BEL
-        "memory_controller/DataLatch_6" BEL "memory_controller/DataLatch_5"
-        BEL "memory_controller/DataLatch_4" BEL
-        "memory_controller/DataLatch_3" BEL "memory_controller/DataLatch_2"
-        BEL "memory_controller/DataLatch_1" BEL
-        "memory_controller/DataLatch_0" BEL "memory_controller/idle_4" BEL
-        "memory_controller/idle_3" BEL "memory_controller/idle_2" BEL
-        "memory_controller/idle_1" BEL "memory_controller/idle_0" BEL
-        "memory_controller/memcntrl_cfg_busy" BEL "memory_controller/STATE_7"
-        BEL "memory_controller/STATE_6" BEL "memory_controller/STATE_5" BEL
-        "memory_controller/STATE_4" BEL "memory_controller/STATE_3" BEL
-        "memory_controller/STATE_2" BEL "memory_controller/STATE_1" BEL
-        "memory_controller/STATE_0" BEL "memory_controller/memcntrl_ram_ub"
-        BEL "memory_controller/memcntrl_ram_we" BEL
-        "memory_controller/memcntrl_ram_oe" BEL
-        "memory_controller/memcntrl_ram_adr_22" BEL
-        "memory_controller/memcntrl_ram_adr_21" BEL
-        "memory_controller/memcntrl_ram_adr_20" BEL
-        "memory_controller/memcntrl_ram_adr_19" BEL
-        "memory_controller/memcntrl_ram_adr_18" BEL
-        "memory_controller/memcntrl_ram_adr_17" BEL
-        "memory_controller/memcntrl_ram_adr_16" BEL
-        "memory_controller/memcntrl_ram_adr_15" BEL
-        "memory_controller/memcntrl_ram_adr_14" BEL
-        "memory_controller/memcntrl_ram_adr_13" BEL
-        "memory_controller/memcntrl_ram_adr_12" BEL
-        "memory_controller/memcntrl_ram_adr_11" BEL
-        "memory_controller/memcntrl_ram_adr_10" BEL
-        "memory_controller/memcntrl_ram_adr_9" BEL
-        "memory_controller/memcntrl_ram_adr_8" BEL
-        "memory_controller/memcntrl_ram_adr_7" BEL
-        "memory_controller/memcntrl_ram_adr_6" BEL
-        "memory_controller/memcntrl_ram_adr_5" BEL
-        "memory_controller/memcntrl_ram_adr_4" BEL
-        "memory_controller/memcntrl_ram_adr_3" BEL
-        "memory_controller/memcntrl_ram_adr_2" BEL
-        "memory_controller/memcntrl_ram_adr_1" BEL
-        "memory_controller/AdrLatch_22" BEL "memory_controller/AdrLatch_21"
-        BEL "memory_controller/AdrLatch_20" BEL
-        "memory_controller/AdrLatch_19" BEL "memory_controller/AdrLatch_18"
-        BEL "memory_controller/AdrLatch_17" BEL
-        "memory_controller/AdrLatch_16" BEL "memory_controller/AdrLatch_15"
-        BEL "memory_controller/AdrLatch_14" BEL
-        "memory_controller/AdrLatch_13" BEL "memory_controller/AdrLatch_12"
-        BEL "memory_controller/AdrLatch_11" BEL
-        "memory_controller/AdrLatch_10" BEL "memory_controller/AdrLatch_9" BEL
-        "memory_controller/AdrLatch_8" BEL "memory_controller/AdrLatch_7" BEL
-        "memory_controller/AdrLatch_6" BEL "memory_controller/AdrLatch_5" BEL
-        "memory_controller/AdrLatch_4" BEL "memory_controller/AdrLatch_3" BEL
-        "memory_controller/AdrLatch_2" BEL "memory_controller/AdrLatch_1" BEL
-        "memory_controller/memcntrl_ram_ce" BEL
-        "memory_controller/memcntrl_cfg_finish" BEL
-        "memory_controller/GND_34_o_memcntrl_clk_DFF_113" BEL
-        "divide_clock_by_3/clk_out" BEL "divide_clock_by_10000/clk_out" BEL
-        "memory_controller/GND_34_o_memcntrl_clk_DFF_127" BEL
-        "memory_controller/STATE_6_1" BEL "memory_controller/STATE_3_1" BEL
-        "memory_controller/STATE_2_1" BEL "memory_controller/STATE_1_1" BEL
-        "memory_controller/STATE_0_1" BEL "memory_controller/STATE_6_2" BEL
-        "memory_controller/STATE_7_1" BEL "memory_controller/STATE_5_1" BEL
-        "memory_controller/STATE_4_1" BEL "memory_controller/STATE_3_2" BEL
-        "memory_controller/STATE_2_2" BEL "memory_controller/STATE_1_2" BEL
-        "memory_controller/STATE_7_2" BEL "clk_BUFGP/BUFG";
+        "divide_clock_by_10000/COUNT1_14" BEL
+        "divide_clock_by_10000/COUNT1_15" BEL
+        "divide_clock_by_10000/COUNT1_16" BEL
+        "divide_clock_by_10000/COUNT1_17" BEL
+        "divide_clock_by_10000/COUNT1_18" BEL
+        "divide_clock_by_10000/COUNT1_19" BEL
+        "divide_clock_by_10000/COUNT1_20" BEL
+        "divide_clock_by_10000/COUNT1_21" BEL
+        "divide_clock_by_10000/COUNT1_22" BEL
+        "divide_clock_by_10000/COUNT1_23" BEL "sekunde2/clk_out" BEL
+        "sekunde1/clk_out" BEL "divide_clock_by_3/clk_out" BEL
+        "divide_clock_by_10000/clk_out" BEL "sekunde1/COUNT1_0" BEL
+        "sekunde1/COUNT1_1" BEL "sekunde1/COUNT1_2" BEL "sekunde1/COUNT1_3"
+        BEL "sekunde1/COUNT1_4" BEL "sekunde1/COUNT1_5" BEL
+        "sekunde1/COUNT1_6" BEL "sekunde1/COUNT1_7" BEL "sekunde1/COUNT1_8"
+        BEL "sekunde1/COUNT1_9" BEL "sekunde1/COUNT1_10" BEL
+        "sekunde1/COUNT1_11" BEL "sekunde1/COUNT1_12" BEL "sekunde1/COUNT1_13"
+        BEL "sekunde1/COUNT1_14" BEL "sekunde1/COUNT1_15" BEL
+        "sekunde1/COUNT1_16" BEL "sekunde1/COUNT1_17" BEL "sekunde1/COUNT1_18"
+        BEL "sekunde1/COUNT1_19" BEL "sekunde1/COUNT1_20" BEL
+        "sekunde1/COUNT1_21" BEL "sekunde1/COUNT1_22" BEL "sekunde1/COUNT1_23"
+        BEL "clk_BUFGP/BUFG";
 TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 SCHEMATIC END;
 

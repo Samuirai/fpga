@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "Z:/coding/fpga/VGABufferRAM/TopLayer_isim_beh.exe" -prj "Z:/coding/fpga/VGABufferRAM/TopLayer_beh.prj" "work.TopLayer" 
